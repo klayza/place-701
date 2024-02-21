@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Kodchasan:wght@200;500&family=Montserrat&display=swap&family=Unbounded" rel="stylesheet">
+  <link rel="stylesheet" href="core.css">
+  <title>Clayplace</title>
+  <style>
+    .intro-name {
+      color: rgb(100, 100, 100);
+      font-size: 4vw;
+      font-family: Unbounded;
+      font-style: italic;
+      top: 0px;
+      font-weight: bolder;
+      letter-spacing: 5px;
+      padding: 20px 0px 20px 0px;
+      color: red;
+      margin-top: 100px;
+    }
+
+    .intro-desc {
+      display: inline-flex;
+    }
+
+    .intro-desc li {
+      text-align: justify;
+      font-size: 1.8vw;
+      max-width: 80%;
+      font-family: Unbounded;
+      color: white;
+      list-style-type: square;
+    }
+
+    .intro-desc li:not(:first-child) {
+      margin-left: 30px;
+    }
+
+    .intro-desc li:first-child {
+      list-style-type: none;
+      margin-left: 10px;
+    }
+
+    .intro {
+      /* margin-top: 20px; */
+      width: 100%;
+      display: inline-flex;
+      gap: 20px;
+      /* background: linear-gradient(to bottom, rgb(27, 27, 27), black, black, black, black); */
+      /* background-image: url('https://files.oaiusercontent.com/file-VANEyPraZ0V704uKWgYQb5o6?se=2024-02-19T02%3A21%3A08Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D31ed5061-4c00-4ec3-8196-9262e2d90f40.webp&sig=GTb/dCv8XA5J0aDYM7jQADs/07uGKTJN8VbakCEIJWI%3D'); */
+      z-index: 5;
+      /* margin-bottom: 100px; */
+      padding-bottom: 100px;
+      position: relative;
+    }
+
+    /* .intro::before {
+      font-family: Consolas;
+      letter-spacing: 5px;
+      content: "> How far down the rabbit hole will you go?";
+      position: absolute;
+      font-size: 1.5em;
+      color: rgb(113, 156, 88);
+      width: fit-content;
+      overflow: hidden;
+      margin-top: 10px;
+      font-style: italic;
+      bottom: 10px;
+    } */
+    .intro-left {
+      margin: 20px auto;
+    }
+
+    .intro-intro {
+      margin-top: 10px;
+      /* border-top: 1px dashed rgb(54, 54, 54); */
+      padding: 20px 10px;
+      /* text-align: justify; */
+      max-width: 60vw;
+      letter-spacing: 1.5px;
+      font-size: 1.2vw;
+      font-style: italic;
+      color: rgb(211, 211, 211);
+    }
+
+    .intro-intro p {
+      font-family: Ultra;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="nav">
+      <a href="projects.html"><span>Projects</span></a>
+      <span>About</span>
+      <span>Contact</span>
+      <span id="light-toggle" data-theme="dark"><img width="20px" height="auto" src="img/moon.png"></span>
+    </div>
+    <div class="intro">
+      <div class="intro-left">
+        <div class="intro-name">Clayton Wieberg</div>
+        <div class="intro-desc">
+          <li>Software Engineer</li>
+          <li>Student</li>
+          <li>Entrepreneur</li>
+        </div>
+        <div class="intro-intro">
+          <p>My name's Clay and I'm a 20 year old software engineer. I live abroad and make cool things on the internet. I'm into AI, automation, philosophy, and improving life with software. </p>
+        </div>
+      </div>
+      <!-- <div class="profile"></div> -->
+    </div>
+    <canvas>
+    </canvas>
+    <!-- <span style="color: gray; font-size: 20px">======//////////////////////////////////=======///////===///////////==========////========///////===///////////////////////=========//////////////////////////===//////////////////////====</span> -->
+    <!-- <div class="img-sep" style="background-image: url('https://files.oaiusercontent.com/file-VANEyPraZ0V704uKWgYQb5o6?se=2024-02-19T02%3A21%3A08Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D31ed5061-4c00-4ec3-8196-9262e2d90f40.webp&sig=GTb/dCv8XA5J0aDYM7jQADs/07uGKTJN8VbakCEIJWI%3D');"></div> -->
+    <div class="projects-container">
+      <div class="big-text">
+        <h2>Projects</h2>
+      </div>
+      <div class="projects">
+        <div class="project-item">
+          <div class="project-item-arrow"><a href="https://scholars-quest.vercel.app/">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-67d7128c="">
+                <polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-67d7128c=""></polygon>
+              </svg>
+            </a>
+          </div>
+          <div class="project-header">
+            <div class="project-title">Scholar's Quest</div>
+            <div class="project-desc">A learning platform for creating and sharing courses with ease</div>
+            <div class="project-meta">
+              <div class="meta-item">0 MRR</div>
+              <div class="meta-item">1 User</div>
+            </div>
+          </div>
+          <div class="project-embed">
+            <img src="img/sq-land.png" width="auto" height="250px">
+            <!-- <img src="img/sq.webp" width="auto" height="250px">
+            <img src="img/sq-demo.png" width="auto" height="250px"> -->
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-item-arrow"><a href="https://github.com/klayza/day2day">
+              <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" style="width:1em;height:1em;" data-new="" aria-hidden="true" data-v-67d7128c="">
+                <polygon fill="currentColor" points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31" data-v-67d7128c=""></polygon>
+              </svg>
+            </a>
+          </div>
+          <div class="project-header">
+            <div class="project-title">day2day</div>
+            <div class="project-desc">Organize long term personal growth</div>
+            <div class="project-meta">
+              <div class="meta-item" style="color: gold;">Open Source</div>
+              <div class="meta-item">Python</div>
+              <div class="meta-item">Flask</div>
+              <div class="meta-item">jQuery</div>
+            </div>
+          </div>
+          <div class="project-embed">
+            <img src="https://github.com/klayza/day2day/raw/main/sisyphus.png" width="auto" height="250px">
+            <img src="https://github.com/klayza/day2day/raw/main/assets/habittracker.png" width="auto" height="250px">
+            <img src="https://github.com/klayza/day2day/raw/main/assets/quota.png" width="auto" height="250px">
+            <!-- <img src="img/sq.webp" width="auto" height="250px">
+            <img src="img/sq-demo.png" width="auto" height="250px"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="status">
+    <i style="color: red">Live: </i> Sleeping...
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
