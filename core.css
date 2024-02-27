@@ -336,6 +336,11 @@ div.project-item-arrow a svg {
   opacity: 1; /* Show the arrow on hover */
 }
 
+.post:hover .project-item-arrow {
+  opacity: 1; /* Show the arrow on hover */
+}
+
+
 .project-item-status {
   color: green;
   font-family: gruppo;
