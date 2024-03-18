@@ -56,15 +56,15 @@
 		const currentDate = new Date();
 		const diffTime = Math.abs(currentDate - date);
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-		return diffDays + ' days ago';
+		return diffDays + "d";
 		if (diffDays < 30) {
-			return `${diffDays} days`;
+			return `${diffDays}d`;
 		} else if (diffDays < 365) {
 			const diffMonths = Math.floor(diffDays / 30);
-			return `${diffMonths} mo`;
+			return `${diffMonths}mo`;
 		} else {
 			const diffYears = Math.floor(diffDays / 365);
-			return `${diffYears} yr`;
+			return `${diffYears}y`;
 		}
 	}
 
@@ -94,7 +94,7 @@
 	}
 </script>
 
-<!-- <div class="w-full p-6 pl-8 text-2xl border-b uppercase tracking-widest" style="background-image: url('https://github.com/klayza/HTML-Projects/blob/main/Secondary/assets/city.png?raw=true'); background-position: center;">projects</div> -->
+<!-- <div class="w-full p-6 pl-8 text-2xl border-b uppercase tracking-widest">projects</div> -->
 <main class="flex flex-row light-mode-{mode}">
 	<section class="border-r basis-1/4 flex flex-col">
 		<div class="border-b flex flex-1 flex-col">
@@ -114,10 +114,10 @@
 	</section>
 	<section class="border-r basis-3/4 flex flex-col">
 		{#each posts as post}
+			<a href="{'/thoughts/'+post.id}">
 			<div class="thought-post border-b p-6 pb-16 pt-3 h-fit fit relative">
 				<span class="text-xl">{post.date}</span>
-				<!-- Format: 12th February, 2024-->
-				<h1 class="text-3xl mt-16 ml-6">{post.title}</h1>
+				<h1 class="text-3xl w-fit mt-16 ml-6">{post.title}</h1>
 				<p class="ml-6 mt-6 mb-16 max-w-2xl">
 					{post.snippet}
 				</p>
@@ -133,6 +133,7 @@
 				</ul>
 				<span class="text-sm text-gray-500 absolute bottom-6 right-6">0.2204310W' 1.2000124N'</span>
 			</div>
+			</a>
 		{/each}
 	</section>
 </main>
@@ -154,8 +155,12 @@
 
 	.thought-post:hover {
 		/* box-shadow: 0px 2px 0px 0px; */
-		transition: box-shadow 0.5s ease;
+		/* transition: box-shadow 0.5s ease; */
+	}
+
+	.thought-post h1:hover {
 		cursor: pointer;
+		text-decoration: underline;
 	}
 
 	.latest-posts li:hover {

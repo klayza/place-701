@@ -1,0 +1,139 @@
+<script>
+	import '../../app.css';
+	import { onMount } from 'svelte';
+
+	let items = [
+		{ name: 'place-701', url: '/', type: 'primary' },
+		{
+			name: 'projects',
+			url: '/projects',
+			type: 'expand',
+			previewData: { totalStars: 28429, totalUsers: 1, totalMRR: 0 }
+		},
+		{ name: 'thoughts', url: '/thoughts', type: 'expand' },
+		{ name: 'travel', url: '/travel', type: 'expand' }
+	];
+
+	let hoveredItem = null;
+	function showPreview(item) {
+		hoveredItem = item;
+	}
+</script>
+
+<header class="w-full border-b flex relative">
+	{#each items as item, index}
+		<a
+			href={item.url}
+			class="head-item p-6 border-r {item.type == 'primary' ? 'w-1/3' : 'w-60'}"
+			on:mouseenter={() => showPreview(item)}
+			on:mouseleave={() => (hoveredItem = null)}
+		>
+			<div>
+				<span class="uppercase">{item.name}</span>
+				{#if item.type == 'expand'}
+					<span class="expandable float-end text-2xl">+</span>
+				{/if}
+			</div>
+		</a>
+		{#if hoveredItem === item && item.type == 'expand'}
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div
+				class="preview-panel"
+				on:mouseenter={() => showPreview(item)}
+				on:mouseleave={() => (hoveredItem = null)}
+			>
+				{#if hoveredItem.name === 'projects'}
+					<div class="flex flex-row justify-evenly p-3 tracking-widest uppercase">
+						<a href="https://github.com/klayza" class="flex-1 text-center">
+							<!-- <i class="fab fa-github"></i>  -->
+							Total Stars: ⭐<span class="text-green-700">{hoveredItem.previewData.totalStars}</span
+							></a
+						>
+						<a href="#" class="flex-1 text-center"
+							>Total Users: <span class="text-green-700">{hoveredItem.previewData.totalUsers}</span
+							></a
+						>
+						<a href="#" class="flex-1 text-center"
+							>Total MRR: <span class="text-green-700">{hoveredItem.previewData.totalMRR}</span></a
+						>
+						<a href="#" class="flex-1 text-center"
+							>Total Projects: <span class="text-green-700">3</span></a
+						>
+					</div>
+					<div class="flex flex-row border-t">
+						<div class="flex-1 border-r p-12 pt-4">
+							<h1 class="text-2xl">Completed</h1>
+							<li>
+								<a>Scholar's Quest....2mo</a>
+								<a>Scholar's Quest....2mo</a>
+							</li>
+						</div>
+						<div class="flex-1 border-r p-12 pt-4"><h1 class="text-2xl">Completed</h1></div>
+						<div class="flex-1 p-12 pt-4"><h1 class="text-2xl">Completed</h1></div>
+					</div>
+				{/if}
+			</div>
+		{/if}
+	{/each}
+</header>
+<slot />
+
+<style>
+	header {
+		border-color: var(--border-color);
+	}
+
+	.head-item {
+		border-color: var(--border-color);
+		transition:
+			background-color 0.4s ease,
+			color 0.3s ease;
+	}
+
+	.head-item:hover {
+		background-color: rgb(20, 20, 20);
+		cursor: pointer;
+	}
+
+	.head-item:first-child {
+		color: red;
+	}
+	.head-item a:first-child::before {
+		/* content: ">_ "; */
+		color: rgb(40, 40, 40);
+		font-size: 1.2em;
+	}
+
+	.preview-panel {
+		display: none; /* Hidden by default */
+		position: absolute;
+		width: 100%;
+		top: 100%; /* Position just below the navbar */
+		margin-top: 1px;
+		box-shadow: 0 8px 6px -6px black; /* Example shadow for visibility */
+		transition: transform 0.5s ease; /* Smooth transformation */
+		transform: translateY(-100%); /* Initially moved up */
+		z-index: 10;
+		background-color: black;
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	.head-item:hover + .preview-panel,
+	.preview-panel:hover {
+		display: block;
+		transform: translateY(0%);
+	}
+
+	@keyframes rotatePlus {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(45deg);
+		}
+	}
+
+	.expandable:hover {
+		animation: rotatePlus 0.3s forwards;
+	}
+</style>

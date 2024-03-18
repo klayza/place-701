@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="intro bg-gradient-to-b from-[#1b1b1b] to-black w-full inline-flex gap-5 z-5 relative pb-24">
+<div class="intro  inline-flex gap-5 z-5 relative pb-24">
 	<div class="intro-left m-auto">
 		<div class="intro-name text-red-100 italic font-bold leading-none mt-24 text-4xl tracking-widest p-5">Clayton Wieberg</div>
 		<!-- <div class="intro-desc inline-flex">
@@ -17,10 +17,14 @@
 		</div> -->
 	</div>
 </div>
-<canvas></canvas>
+
+<div class="absolute flex top-0 h-full w-full flex-row -z-10">
+	<div class="basis-1/3 flex border-r"></div>
+	<div class="basis-1/3 flex border-r "></div>
+	<div class="basis-1/3 flex"></div>
+</div>
 
 <style>
-	/* Tailwind doesn't support vw font sizes directly, so custom styles might still be needed */
 	.intro-name {
 		font-size: 4vw;
 	}
