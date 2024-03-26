@@ -7,11 +7,12 @@
 		{
 			name: 'projects',
 			url: '/projects',
-			type: 'expand',
+			type: 'normal',
 			previewData: { totalStars: 28429, totalUsers: 1, totalMRR: 0 }
 		},
-		{ name: 'thoughts', url: '/thoughts', type: 'expand' },
-		{ name: 'travel', url: '/travel', type: 'expand' }
+		{ name: 'thoughts', url: '/thoughts', type: 'normal' },
+		{ name: 'travel', url: '/travel', type: 'normal' },
+		{ name: 'links', url: '/links', type: 'normal' },
 	];
 
 	let hoveredItem = null;
@@ -21,6 +22,7 @@
 </script>
 
 <header class="w-full border-b flex relative">
+	<div class={hoveredItem && hoveredItem.type === 'expand' ? 'overlay show' : 'overlay'}></div>
 	{#each items as item, index}
 		<a
 			href={item.url}
@@ -65,7 +67,6 @@
 							<h1 class="text-2xl">Completed</h1>
 							<li>
 								<a>Scholar's Quest....2mo</a>
-								<a>Scholar's Quest....2mo</a>
 							</li>
 						</div>
 						<div class="flex-1 border-r p-12 pt-4"><h1 class="text-2xl">Completed</h1></div>
@@ -91,7 +92,7 @@
 	}
 
 	.head-item:hover {
-		background-color: rgb(20, 20, 20);
+		background-color: rgb(218, 218, 218);
 		cursor: pointer;
 	}
 
@@ -111,19 +112,27 @@
 		top: 100%; /* Position just below the navbar */
 		margin-top: 1px;
 		box-shadow: 0 8px 6px -6px black; /* Example shadow for visibility */
-		transition: transform 0.5s ease; /* Smooth transformation */
-		transform: translateY(-100%); /* Initially moved up */
+		transition: opacity 0.5s ease; /* Smooth opacity transition */
 		z-index: 10;
-		background-color: black;
+		/* background-color: black; */
 		border-bottom: 1px solid var(--border-color);
 	}
+	
 
+	.preview-panel::before {
+		content: ''; /* Necessary for the pseudo-element to show */
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1; /* Behind the content of .preview-panel */
+	}
 	.head-item:hover + .preview-panel,
 	.preview-panel:hover {
 		display: block;
-		transform: translateY(0%);
+		opacity: 1; /* Make visible */
 	}
-
 	@keyframes rotatePlus {
 		from {
 			transform: rotate(0deg);

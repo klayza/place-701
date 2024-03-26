@@ -65,10 +65,6 @@
 		font-size: 10vw;
 	}
 
-	.first-letter {
-		font-size: 5em;
-		/* line-height: 10em; */
-	}
 
 	span {
 		font-family: Ultra;

@@ -56,7 +56,7 @@
 		const currentDate = new Date();
 		const diffTime = Math.abs(currentDate - date);
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-		return diffDays + "d";
+		return diffDays + 'd';
 		if (diffDays < 30) {
 			return `${diffDays}d`;
 		} else if (diffDays < 365) {
@@ -94,9 +94,32 @@
 	}
 </script>
 
-<!-- <div class="w-full p-6 pl-8 text-2xl border-b uppercase tracking-widest">projects</div> -->
-<main class="flex flex-row light-mode-{mode}">
-	<section class="border-r basis-1/4 flex flex-col">
+<div class="w-full p-12 pl-8 text-3xl border-b uppercase tracking-widest"><p>thoughts</p></div>
+<div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / recent</p></div>
+<div>
+	<div class="latest border-b flex flex-row">
+		<div class="flex w-full p-52 flex-col">
+			<p class="text-center m-auto text-5xl">I shoved a fork up my ass</p>
+			<p class="m-auto mt-12 text-3xl">What are some of the side effects to having a rusty fork splender the confines of your bum?</p>
+		</div>
+		<div class="flex w-2/3 p-8">
+			<img src="img/clouds.png" />
+		</div>
+	</div>
+	<div class=""></div>
+</div>
+<div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / all </p></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
+  {#each posts as post}
+    <div class="border p-4 flex flex-col items-center">
+      <img src="img/clouds.png" alt="Post Image" class="w-600 h-600 object-cover mb-2">
+      <p class="text-lg font-semibold">{post.title}</p>
+      <p class="text-gray-500">{post.date}</p>
+    </div>
+  {/each}
+</div>
+<!-- <main class="flex flex-row light-mode-{mode}"> -->
+<!-- <section class="border-r basis-1/4 flex flex-col">
 		<div class="border-b flex flex-1 flex-col">
 			<h1 class="text-2xl p-3 uppercase text-center border-b">Latest Posts</h1>
 			<ul class="latest-posts p-6 mx-auto">
@@ -110,9 +133,8 @@
 				{/each}
 			</ul>
 		</div>
-		<!-- <div class="border-b flex-1"></div> -->
-	</section>
-	<section class="border-r basis-3/4 flex flex-col">
+	</section> -->
+<!-- <section class="border-r basis-3/4 flex flex-col">
 		{#each posts as post}
 			<a href="{'/thoughts/'+post.id}">
 			<div class="thought-post border-b p-6 pb-16 pt-3 h-fit fit relative">
@@ -135,8 +157,9 @@
 			</div>
 			</a>
 		{/each}
-	</section>
-</main>
+	</section> -->
+<!-- </main>
+ -->
 
 <style>
 	main {

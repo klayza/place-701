@@ -4,7 +4,7 @@
 <div class="intro  inline-flex gap-5 z-5 relative pb-24">
 	<div class="intro-left m-auto">
 		<div class="intro-name text-red-100 italic font-bold leading-none mt-24 text-4xl tracking-widest p-5">Clayton Wieberg</div>
-		<!-- <div class="intro-desc inline-flex">
+		 <div class="intro-desc inline-flex">
 			<li class="text-white text-lg ml-2.5">Software Engineer</li>
 			<li class="text-white text-lg ml-7 list-square">Student</li>
 			<li class="text-white text-lg ml-7 list-square">Entrepreneur</li>
@@ -14,7 +14,7 @@
 				My name's Clay and I'm a 20 year old software engineer. I live abroad and make cool things
 				on the internet. I'm into AI, automation, philosophy, and improving life with software.
 			</p>
-		</div> -->
+		</div>
 	</div>
 </div>
 
