@@ -1,18 +1,24 @@
 <script>
+	let dob = new Date('11/26/2003');
+	let age_years = new Date(new Date() - dob).getFullYear() - 1970;
 </script>
 
-<div class="intro  inline-flex gap-5 z-5 relative pb-24">
+<div class="intro inline-flex gap-5 z-5 relative pb-24">
 	<div class="intro-left m-auto">
-		<div class="intro-name text-red-100 italic font-bold leading-none mt-24 text-4xl tracking-widest p-5">Clayton Wieberg</div>
-		 <div class="intro-desc inline-flex">
+		<div
+			class="intro-name text-red-100 italic font-bold leading-none mt-24 text-4xl tracking-widest p-5"
+		>
+			Clayton Wieberg
+		</div>
+		<div class="intro-desc inline-flex">
 			<li class="text-white text-lg ml-2.5">Software Engineer</li>
 			<li class="text-white text-lg ml-7 list-square">Student</li>
 			<li class="text-white text-lg ml-7 list-square">Entrepreneur</li>
 		</div>
 		<div class="intro-intro mt-2.5 p-5 max-w-60vw tracking-wide text-lg italic text-gray-300">
-      <p>
-				My name's Clay and I'm a 20 year old software engineer. I live abroad and make cool things
-				on the internet. I'm into AI, automation, philosophy, and improving life with software.
+			<p>
+				My name's Clay and I'm a {age_years} year old software engineer. I live abroad and make cool
+				things on the internet. I'm into AI, automation, philosophy, and improving life with software.
 			</p>
 		</div>
 	</div>
@@ -20,28 +26,9 @@
 
 <div class="absolute flex top-0 h-full w-full flex-row -z-10">
 	<div class="basis-1/3 flex border-r"></div>
-	<div class="basis-1/3 flex border-r "></div>
+	<div class="basis-1/3 flex border-r"></div>
 	<div class="basis-1/3 flex"></div>
 </div>
-
-<style>
-	.intro-name {
-		font-size: 4vw;
-	}
-	.intro-name::before {
-		content: "> ";
-    color: green;
-	}
-
-	.intro-desc li {
-		font-size: 1.8vw;
-	}
-
-	.intro-intro {
-		font-size: 1.2vw;
-	}
-
-</style>
 
 <!-- <style>
 	.intro-name {
@@ -113,3 +100,21 @@
 		font-family: Space Mono;
 	}
 </style> -->
+
+<style>
+	.intro-name {
+		font-size: 4vw;
+	}
+	.intro-name::before {
+		content: '> ';
+		color: green;
+	}
+
+	.intro-desc li {
+		font-size: 1.8vw;
+	}
+
+	.intro-intro {
+		font-size: 1.2vw;
+	}
+</style>
