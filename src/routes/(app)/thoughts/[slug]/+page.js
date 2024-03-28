@@ -1,10 +1,11 @@
 import { error } from '@sveltejs/kit';
-import { getThought } from '$lib/data.js';
+import { thoughts } from '$lib/data.js';
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
     let thoughtID = params.slug;
-    let thought = getThought(thoughtID);
+    let thought = thoughts.find(thought => thought.id === thoughtID);
+
     if (thought) {
         return thought;
     }

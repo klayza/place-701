@@ -1,34 +1,8 @@
 <script>
 	/** @type {import('./$types').PageData} */
+	import { thoughts } from '$lib/data.js';
 	const mode = 'light';
-	let posts = [
-		{
-			id: 'next-discovery',
-			title: 'Next Discoveries',
-			snippet: 'What will be our next biggest discovery?',
-			date: '3/12/2024',
-			tags: ['thought experiment', 'existentialism', 'fundamentalism'],
-			img: 'img/next-discovery.png'
-		},
-		{
-			id: 'next-discovery',
-			title: 'Cars Politics',
-			snippet:
-				'Cars, the movie had to be one of the most existentially horiffic movies I have ever watched',
-			date: '1/12/2024',
-			tags: ['movie', 'existentialism', 'fundamentalism'],
-			img: 'img/cars-politics.png'
-		},
-		{
-			id: 'next-discovery',
-			title: 'Homo Sapien History',
-			snippet:
-				'One of the most remarkable achievements I have witnessed is the realization and adoption of intelligent machines.',
-			date: '3/12/2023',
-			tags: ['rainbow', 'clayton', 'deez nutz', 'yoyoyoyoyoyoyoyoyoyoyo'],
-			img: 'img/primitives.png'
-		},
-	];
+	let posts = thoughts
 
 	function tagColorGen(tag) {
 		let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -106,40 +80,47 @@
 	}
 </script>
 
-<div class="w-full p-12 pl-8 border-b tracking-widest">
-	<p class="uppercase text-3xl inline-block mr-8">thoughts</p>
-</div>
-<!-- <div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / recent</p></div> -->
-<!-- <div class="latest border-b flex flex-row">
-		<div class="flex w-full flex-col">
-			<a href="/thoughts/next-discovery"><p class="text-center m-auto text-4xl hover:text-blue-800  pt-12 pb-12">I shoved a fork up my ass</p></a>
-			<p class="mt-12 mt-6 text-2xl italic text-center">March 26th, 2024</p>
-			<p class="mt-12 text-2xl ">What are some of the side effects to having a rusty fork splender the confines of your bum?</p>
-		</div>
-		<div class="flex w-2/3 p-8">
-			<img src="img/clouds.png" class="h-full w-auto" />
-		</div>
-	</div> -->
-<div class="w-full p-4 pl-8 text-2xl bg-gray-200 uppercase tracking-widest">
-	<p>/ thoughts / all</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
-	{#each posts as post}
-		<div class="border p-4 flex flex-col">
-			<div class="mb-3 text-lg">
-				<p class="text-left inline">[{posts.indexOf(post) + 1}]</p>
-				<p class=" inline">{prettyDate(post.date)}</p>
+<main class="border-x">
+	<div
+		class="w-full p-12 pl-8 border-b tracking-widest"
+		style="background-image: linear-gradient(to right, rgb(255, 255, 230), white, white);"
+	>
+		<p class="uppercase text-3xl inline-block mr-8">thoughts</p>
+	</div>
+	<!-- <div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / recent</p></div> -->
+	<!-- <div class="latest border-b flex flex-row">
+			<div class="flex w-full flex-col">
+				<a href="/thoughts/next-discovery"><p class="text-center m-auto text-4xl hover:text-blue-800  pt-12 pb-12">I shoved a fork up my ass</p></a>
+				<p class="mt-12 mt-6 text-2xl italic text-center">March 26th, 2024</p>
+				<p class="mt-12 text-2xl ">What are some of the side effects to having a rusty fork splender the confines of your bum?</p>
 			</div>
-			<img
-				src={post.img ? post.img : 'img/clouds.png'}
-				alt="Post Image"
-				class="w-600 h-600 object-cover mb-2"
-			/>
-			<p class="text-lg my-6 font-semibold">{post.title}</p>
-			<p class="text-lg">{post.snippet}</p>
-		</div>
-	{/each}
-</div>
+			<div class="flex w-2/3 p-8">
+				<img src="img/clouds.png" class="h-full w-auto" />
+			</div>
+		</div> -->
+	<div class="w-full p-4 pl-8 text-2xl border-b border-dashed uppercase tracking-widest">
+		<p>/ thoughts / all</p>
+	</div>
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
+		{#each posts as post}
+			<a href=/thoughts/{post.id} on:hover={console.log("here")}>
+				<div class="border p-4 flex flex-col">
+					<div class="mb-3 text-lg">
+						<p class="text-left inline">[{posts.indexOf(post) + 1}]</p>
+						<p class=" inline">{prettyDate(post.date)}</p>
+					</div>
+					<img
+						src={post.img ? post.img : 'img/clouds.png'}
+						alt="Post Image"
+						class="w-300 h-300 object-cover mb-2"
+					/>
+					<p class="text-lg my-6 font-semibold">{post.title}</p>
+					<p class="text-lg">{post.snippet}</p>
+				</div>
+			</a>
+		{/each}
+	</div>
+</main>
 
 <!-- <main class="flex flex-row light-mode-{mode}"> -->
 <!-- <section class="border-r basis-1/4 flex flex-col">
@@ -187,6 +168,14 @@
 <style>
 	main {
 		height: 100vh;
+		width: 70vw;
+		margin: auto;
+	}
+
+	main::before {
+		background-image: url('img/clouds.png');
+		width: 100vw;
+		position: absolute;
 	}
 
 	.light-mode-light {

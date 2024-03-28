@@ -10,6 +10,6 @@
 
 <style>
 	.cover-img {
-		background-image: url('{data.img}')
+		/* background-image: url('{data.img}') */
 	}
 </style>
