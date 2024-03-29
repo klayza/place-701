@@ -13,6 +13,12 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	},
+	onwarn: (warning, handler) => {
+		if (warning.code === 'css-unused-selector') {
+			return;
+		}
+		handler(warning);
+	},
 };
 
 export default config;

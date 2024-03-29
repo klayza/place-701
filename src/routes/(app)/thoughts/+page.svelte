@@ -80,7 +80,7 @@
 	}
 </script>
 
-<main class="border-x">
+<main class="border-x w-full m-auto 2xl:w-9/12 h-screen">
 	<div
 		class="w-full p-12 pl-8 border-b tracking-widest"
 		style="background-image: linear-gradient(to right, rgb(255, 255, 230), white, white);"
@@ -104,7 +104,7 @@
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
 		{#each posts as post}
 			<a href=/thoughts/{post.id} on:hover={console.log("here")}>
-				<div class="border p-4 flex flex-col">
+				<div class="p-4 flex flex-col max-h-">
 					<div class="mb-3 text-lg">
 						<p class="text-left inline">[{posts.indexOf(post) + 1}]</p>
 						<p class=" inline">{prettyDate(post.date)}</p>
@@ -166,18 +166,6 @@
  -->
 
 <style>
-	main {
-		height: 100vh;
-		width: 70vw;
-		margin: auto;
-	}
-
-	main::before {
-		background-image: url('img/clouds.png');
-		width: 100vw;
-		position: absolute;
-	}
-
 	.light-mode-light {
 		background-color: white;
 		color: black;

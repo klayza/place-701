@@ -30,7 +30,7 @@
 	<div class="basis-1/3 flex"></div>
 </div> -->
 
-<div class="gridlines absolute flex top-0 h-full w-full flex-col -z-10" style="border: 30px solid; border-color: black">
+<div class="gridlines absolute flex top-0 h-full w-full flex-col -z-10" style="border-left: 30px solid; border-right: 30px solid; border-color: black; ">
 	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
 	<div class="basis-1/3 flex flex-row"><span class="border-b basis-8"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-8"></span></div>
 	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>

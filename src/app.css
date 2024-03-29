@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face  {
+@font-face {
   font-family: Space Mono;
   src: url("/fonts/MonoSpace.woff2");
 }
 
-@font-face  {
+@font-face {
   font-family: Ultra;
   src: url("/fonts/ultra.otf");
 }
@@ -30,6 +30,7 @@ body.dark {
   background-color: black;
   color: white;
 }
+
 body.light {
   background-color: rgb(255, 255, 255);
   color: black;
@@ -42,4 +43,167 @@ html {
 .first-letter {
   font-size: 5em;
   /* line-height: 10em; */
+}
+
+
+::selection {
+  background: rgb(218, 208, 255);
+}
+
+
+
+/* Base styles for Markdown content */
+.md-output {
+  /* color: #333; */
+}
+
+/* Styling blockquotes */
+.md-output blockquote {
+  margin: 20px !important;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #ccc;
+  font-style: italic;
+}
+
+/* Definition lists, description details */
+.md-output dl,
+.md-output dd {
+  margin: 30px !important;
+}
+
+/* Headers */
+.md-output h1 {
+  margin: 30px !important;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.md-output h2 {
+  margin: 30px !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.md-output h3 {
+  margin: 30px !important;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.md-output h4 {
+  margin: 30px !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.md-output h5 {
+  margin: 30px !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.md-output h6 {
+  margin: 30px !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Horizontal rule */
+.md-output hr {
+  margin: 30px !important;
+  border: 0;
+  height: 1px;
+  background: #ccc;
+}
+
+/* Figures & Paragraphs */
+.md-output figure,
+.md-output p {
+  margin: 30px !important;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* Preformatted text */
+.md-output pre {
+  margin: 30px !important;
+  background-color: #f4f4f4;
+  padding: 15px;
+  overflow: auto;
+}
+
+/* Inline code */
+.md-output code {
+  background-color: #eaeaea;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Adjusting list styles */
+.md-output ul,
+.md-output ol {
+  margin: 30px !important;
+  padding-left: 40px;
+}
+
+.md-output li {
+  margin: 10px 0px;
+  padding-left: 10px;
+  list-style-type: square;
+}
+
+/* Links */
+.md-output a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.md-output a:hover {
+  text-decoration: underline;
+}
+
+/* Images within Markdown */
+.md-output img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Tables */
+.md-output table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px auto; /* Centers the table and adds margin */
+}
+
+.md-output th,
+.md-output td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ccc; /* Adds a light border to table cells */
+}
+
+.md-output th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.md-output tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra-striping for rows */
+}
+
+.md-output tr:hover {
+  background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+.md-output table a {
+  color: #007bff; /* Link color in tables, adjust as needed */
+  text-decoration: underline;
+}
+
+.md-output table a:hover {
+  text-decoration: none; /* Change hover effect for links in tables */
 }

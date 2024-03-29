@@ -1,5 +1,9 @@
 {
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.plugin.svelte.compilerWarnings": {
+    "\"css-unused-selector\": \"ignore\"": "ignore",
+    "css-unused-selector": "ignore"
   }
 }
