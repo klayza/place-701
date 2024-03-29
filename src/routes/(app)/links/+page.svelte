@@ -34,6 +34,10 @@
 		{
 			url: 'https://sarahdrasnerdesign.com/projects/',
 			name: "Sarah Drasner's Projects"
+		},
+		{
+			url: "https://www.narrativeark.xyz/p/succession",
+			name: "Narrative Ark"
 		}
 	];
 </script>

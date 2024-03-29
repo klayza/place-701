@@ -3,7 +3,7 @@
 	let age_years = new Date(new Date() - dob).getFullYear() - 1970;
 </script>
 
-<div class="intro inline-flex gap-5 z-5 relative pb-24">
+<div class="intro inline-flex gap-5 z-5 relative pb-24 px-20">
 	<div class="intro-left m-auto">
 		<div
 			class="intro-name text-red-100 italic font-bold leading-none mt-24 text-4xl tracking-widest p-5"
@@ -24,11 +24,49 @@
 	</div>
 </div>
 
-<div class="absolute flex top-0 h-full w-full flex-row -z-10">
+<!-- <div class="absolute flex top-0 h-full w-full flex-row -z-10">
 	<div class="basis-1/3 flex border-r"></div>
 	<div class="basis-1/3 flex border-r"></div>
 	<div class="basis-1/3 flex"></div>
+</div> -->
+
+<div class="gridlines absolute flex top-0 h-full w-full flex-col -z-10" style="border: 30px solid; border-color: black">
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-8"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-8"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-14"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-14"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-8"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-8"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-14"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-14"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-8"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-8"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-10"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-10"></span></div>
+	<div class="basis-1/3 flex flex-row"><span class="border-b basis-14"></span><span class="border-b-white grow basis-2/3"></span><span class="border-b basis-14"></span></div>
 </div>
+
+<style>
+	.gridlines > div {
+		border-color: aliceblue;
+	}
+
+	.intro-name {
+		font-size: 4vw;
+	}
+	.intro-name::before {
+		content: '> ';
+		color: green;
+	}
+
+	.intro-desc li {
+		font-size: 1.8vw;
+	}
+
+	.intro-intro {
+		font-size: 1.2vw;
+	}
+
+</style>
 
 <!-- <style>
 	.intro-name {
@@ -101,20 +139,4 @@
 	}
 </style> -->
 
-<style>
-	.intro-name {
-		font-size: 4vw;
-	}
-	.intro-name::before {
-		content: '> ';
-		color: green;
-	}
 
-	.intro-desc li {
-		font-size: 1.8vw;
-	}
-
-	.intro-intro {
-		font-size: 1.2vw;
-	}
-</style>

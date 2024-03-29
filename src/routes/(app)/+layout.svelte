@@ -21,7 +21,7 @@
 	}
 </script>
 
-<header class="w-full border-b flex relative">
+<header class="w-full border-b flex relative bg-white">
 	<div class={hoveredItem && hoveredItem.type === 'expand' ? 'overlay show' : 'overlay'}></div>
 	{#each items as item, index}
 		<a
