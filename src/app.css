@@ -54,6 +54,8 @@ html {
 
 /* Base styles for Markdown content */
 .md-output {
+  font-family: Ultra;
+  letter-spacing: 1px;
   /* color: #333; */
 }
 
@@ -74,7 +76,7 @@ html {
 
 /* Headers */
 .md-output h1 {
-  margin: 30px !important;
+  margin: 100px !important;
   font-size: 36px;
   text-align: center;
   font-weight: bold;

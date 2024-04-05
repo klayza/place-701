@@ -36,8 +36,12 @@
 			name: "Sarah Drasner's Projects"
 		},
 		{
-			url: "https://www.narrativeark.xyz/p/succession",
-			name: "Narrative Ark"
+			url: 'https://sarahdrasnerdesign.com/projects/',
+			name: "Sarah Drasner's Projects"
+		},
+		{
+			url: "https://immieats.com",
+			name: "Immieats"
 		}
 	];
 </script>
