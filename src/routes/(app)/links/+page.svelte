@@ -36,8 +36,8 @@
 			name: "Sarah Drasner's Projects"
 		},
 		{
-			url: 'https://sarahdrasnerdesign.com/projects/',
-			name: "Sarah Drasner's Projects"
+			url: 'https://sissonsrowe.com/',
+			name: "Sissons+Rowe"
 		},
 		{
 			url: "https://immieats.com",
