@@ -1,6 +1,11 @@
 <script>
 	import '../../app.css';
 	import { onMount } from 'svelte';
+	onMount(() => {
+    import('boxicons').then((boxicons) => {
+    });
+  });
+
 
 	let items = [
 		{ name: 'place-701', url: '/', type: 'primary' },
@@ -11,7 +16,7 @@
 			previewData: { totalStars: 28429, totalUsers: 1, totalMRR: 0 }
 		},
 		{ name: 'thoughts', url: '/thoughts', type: 'normal' },
-		{ name: 'travel', url: '/travel', type: 'normal' },
+		// { name: 'travel', url: '/travel', type: 'normal' },
 		{ name: 'links', url: '/links', type: 'normal' },
 	];
 
@@ -21,12 +26,17 @@
 	}
 </script>
 
+<svelte:head>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</svelte:head>
+
 <header class="w-full border-b flex relative bg-white">
+	
 	<div class={hoveredItem && hoveredItem.type === 'expand' ? 'overlay show' : 'overlay'}></div>
 	{#each items as item, index}
 		<a
 			href={item.url}
-			class="head-item p-6 border-r {item.type == 'primary' ? 'w-1/3' : 'w-60'}"
+			class=" text-lg head-item p-6 border-r {item.type == 'primary' ? 'primary-logo w-1/3' : 'w-60'}"
 			on:mouseenter={() => showPreview(item)}
 			on:mouseleave={() => (hoveredItem = null)}
 		>

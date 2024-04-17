@@ -12,6 +12,11 @@
   src: url("/fonts/ultra.otf");
 }
 
+@font-face {
+  font-family: Grand Slang;
+  src: url("/fonts/GrandSlang.woff2");
+}
+
 :root {
   --border-color: rgb(40, 40, 40);
 }
@@ -54,7 +59,7 @@ html {
 
 /* Base styles for Markdown content */
 .md-output {
-  font-family: Ultra;
+  /* font-family: Ultra; */
   letter-spacing: 1px;
   /* color: #333; */
 }
