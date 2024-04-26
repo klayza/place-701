@@ -45,8 +45,10 @@
 <div class="places px-20">
 	<h1 class="text-5xl pb-2">Places</h1>
 	<hr />
-	<div class="places-grid flex flex-row gap-8 my-10 p-10">
-		<a href="/music" class="bg-black text-white text-xl p-4 px-12">Music</a>
+	<div class="places-grid flex overflow-x-scroll gap-8 my-10 p-10">
+		<div class="flex"><a href="/music" class="bg-black text-white text-xl p-4 px-12">Music</a><img style="width: 250px; height: auto;" src="/img/music.png"></div>
+		<div class="flex place-item relative"><a href="/travel" class="bg-black text-white text-xl p-4 px-12">Travel</a><img style="width: 250px; height: auto;" src="/img/travel.png"></div>
+		
 		<a href="/travel" class="bg-black text-white text-xl p-4 px-12">Travel</a>
 		<a href="/gallery" class="bg-black text-white text-xl p-4 px-12">Gallery</a>
 		<a href="/chill" class="bg-black text-white text-xl p-4 px-12">Chill</a>
@@ -73,3 +75,16 @@
 		</div>
 	</div>
 </div>
+
+
+<!-- <style>
+.place-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+  }</style> -->
