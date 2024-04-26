@@ -40,6 +40,14 @@
 			name: "Sissons+Rowe"
 		},
 		{
+			url: 'https://andymatuschak.org/',
+			name: "Andy Matuschak"
+		},
+		{
+			url: 'https://gracekind.net/',
+			name: "Gracekind"
+		},
+		{
 			url: "https://immieats.com",
 			name: "Immieats"
 		}
