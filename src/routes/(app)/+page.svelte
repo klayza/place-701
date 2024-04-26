@@ -45,6 +45,7 @@
 		<a href="/chill"><div class="bg-black text-xl text-white p-4 px-12">Chill</div></a>
 		<a href="/contact"><div class="bg-black text-xl text-white p-4 px-12">Contact</div></a>
 		<a href="/manifesto"><div class="bg-black text-xl text-white p-4 px-12">Manifesto</div></a>
+		<a href="/books"><div class="bg-black text-xl text-white p-4 px-12">Books</div></a>
 	</div>
 </div>
 

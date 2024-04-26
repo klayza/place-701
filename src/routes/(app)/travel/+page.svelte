@@ -16,7 +16,7 @@
 	</div>
 </div>
 
-<table class="w-full border table-fixed m-auto">
+<table class="w-full border table-fixed m-auto mb-24">
 	<tr>
 		<th class="p-6">Date</th>
 		<th class="p-6">Duration</th>
