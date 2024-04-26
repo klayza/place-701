@@ -27,8 +27,10 @@
 
 body {
   background-color: black;
-  font-family: Space Mono;
+  /* font-family: Space Mono; */
+  font-family: Consolas;
   color: white;
+
 }
 
 body.dark {
