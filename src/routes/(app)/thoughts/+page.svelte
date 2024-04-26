@@ -2,7 +2,7 @@
 	/** @type {import('./$types').PageData} */
 	import { thoughts } from '$lib/data.js';
 	const mode = 'light';
-	let posts = thoughts
+	let posts = thoughts;
 
 	function tagColorGen(tag) {
 		let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -103,7 +103,7 @@
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
 		{#each posts as post}
-			<a href=/thoughts/{post.id} on:hover={console.log("here")}>
+			<a href="/thoughts/{post.id}" on:hover={console.log('here')}>
 				<div class="p-4 flex flex-col max-h-">
 					<div class="mb-3 text-lg">
 						<p class="text-left inline">[{posts.indexOf(post) + 1}]</p>

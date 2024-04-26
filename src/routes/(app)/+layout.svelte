@@ -102,8 +102,9 @@
 	}
 
 	.head-item:hover {
-		background-color: rgb(218, 218, 218);
+		background-color: rgb(247, 248, 255);
 		cursor: pointer;
+		color: rgb(255, 0, 132);
 	}
 
 	.head-item:first-child {
