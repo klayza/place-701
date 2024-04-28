@@ -45,15 +45,15 @@
 <div class="places px-20">
 	<h1 class="text-5xl pb-2">Places</h1>
 	<hr />
-	<div class="places-grid flex overflow-x-scroll gap-8 my-10 p-10">
-		<div class="flex"><a href="/music" class="bg-black text-white text-xl p-4 px-12">Music</a><img style="width: 250px; height: auto;" src="/img/music.png"></div>
-		<div class="flex place-item relative"><a href="/travel" class="bg-black text-white text-xl p-4 px-12">Travel</a><img style="width: 250px; height: auto;" src="/img/travel.png"></div>
-		
-		<a href="/travel" class="bg-black text-white text-xl p-4 px-12">Travel</a>
-		<a href="/gallery" class="bg-black text-white text-xl p-4 px-12">Gallery</a>
-		<a href="/chill" class="bg-black text-white text-xl p-4 px-12">Chill</a>
-		<a href="/contact" class="bg-black text-white text-xl p-4 px-12">Contact</a>
-		<a href="/manifesto" class="bg-black text-white text-xl p-4 px-12">Manifesto</a>
+	<div class="places-grid flex flex-row gap-8 my-10 p-10">
+		<!-- <a href="/music"><div class="bg-black text-xl text-white p-8 px-24"><i class='bx bx-music'></i><p>Music</p></div></a> -->
+		<a href="/music"><div class="bg-black text-xl text-white p-4 px-12"><p>Music</p></div></a>
+		<a href="/travel"><div class="bg-black text-xl text-white p-4 px-12">Travel</div></a>
+		<a href="/gallery"><div class="bg-black text-xl text-white p-4 px-12">Gallery</div></a>
+		<a href="/chill"><div class="bg-black text-xl text-white p-4 px-12">Chill</div></a>
+		<a href="/contact"><div class="bg-black text-xl text-white p-4 px-12">Contact</div></a>
+		<a href="/manifesto"><div class="bg-black text-xl text-white p-4 px-12">Manifesto</div></a>
+		<a href="/books"><div class="bg-black text-xl text-white p-4 px-12">Books</div></a>
 	</div>
 </div>
 
