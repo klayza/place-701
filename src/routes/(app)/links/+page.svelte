@@ -59,6 +59,11 @@
 		description: 'A personal site of an AI researcher that has a substantial repository on Ideonomy'
 	},
 	{
+		url: 'https://www.extropic.ai/',
+		name: 'Extropic',
+		description: 'Futuristic + Minimal themed website'
+	},
+	{
 		url: 'https://immieats.com',
 		name: 'Immieats',
 		description: 'An instant-ramen delivery service with good design'
