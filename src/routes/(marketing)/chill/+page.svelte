@@ -27,22 +27,28 @@
 		"In the end it's all going to be ok."
 	];
 
-	shuffle(quotes);
-
 	let images = [
 		'https://w.wallhaven.cc/full/ex/wallhaven-ex136k.jpg',
 		'https://w.wallhaven.cc/full/l8/wallhaven-l8vp7y.jpg',
 		'https://w.wallhaven.cc/full/nr/wallhaven-nr9m3w.jpg'
 	];
 
-	let image = images[2];
+	shuffle(images);
+	shuffle(quotes);
 
+	let imageIndex = 0
+	let image = images[imageIndex];
+	let playing = false;
 	let currentQuoteIndex = 0;
+	let audio = null;
 
-	onMount(async () => {
+	onMount(() => {
 		try {
+			audio = new Audio('/sounds/C418 - Clark.mp3');
 			startLoop();
-		} catch {}
+		} catch {
+			console.log("Error in mount")
+		}
 	});
 
 	function startLoop() {
@@ -52,23 +58,31 @@
 		}, 20000);
 	}
 
-	function playMusic() {
-        console.log("Playing...")
-		const audio = new Audio('/sounds/C418 - Clark.mp3');
-		audio.play();
+	function toggleMusic() {
+		if (!playing) {
+			audio.play();
+			console.log('Playing...');
+			playing = true;
+		} else {
+			audio.pause();
+			console.log('Paused...');
+			playing = false;
+		}
 	}
 
-    
+	function showNextBackground() {
+		let element = document.querySelector(".main-bg");
+		imageIndex = imageIndex == images.length - 1 ? 0 : imageIndex + 1;
+			console.log('dawdawdawd...');
+		// element.style.background = `url('${images[imageIndex]}')`;
+		image = images[imageIndex]
+	}
+
 	function shuffle(array) {
 		let currentIndex = array.length;
-
-		// While there remain elements to shuffle...
 		while (currentIndex != 0) {
-			// Pick a remaining element...
 			let randomIndex = Math.floor(Math.random() * currentIndex);
 			currentIndex--;
-
-			// And swap it with the current element.
 			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
 		}
 	}
@@ -92,20 +106,26 @@
 </script>
 
 <div
-	class="h-screen w-screen bg-cover bg-center flex justify-center items-center"
-	style="background-image: url('{image}'); "
+	class="main-bg h-screen w-screen bg-cover bg-center flex justify-center items-center overscroll-x-none overscroll-y-none max-w-full max-h-full"
+	style="background-image: url('{image}');"
 >
 	<p
 		id="quote"
 		class="text-6xl text-white text-center p-3"
 		style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"
 	></p>
-	<div
-		class="controls z-10 bg-gradient-to-b from-gray-500 to-black flex absolute bottom-0 left-0 h-4 w-full p-2 gap-8"
-	>
-		<div class="text-white cursor-pointer" on:click={playMusic()} >Play audio</div>
-		<div class="text-white cursor-pointer">Change background</div>
+</div>
+
+<div
+	class="controls bg-black bg-opacity-15 border-opacity-20 top-0 left-0 border-black border-2 flex absolute h-11 w-full p-2 gap-8"
+>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<div class="text-white cursor-pointer"><a href="/"><i class="bx bx-arrow-back ml-4 mr-6 text-lg text-red-500"></i></a></div>
+	<div class="text-white cursor-pointer" on:click={() => toggleMusic()}>
+		{playing ? 'Stop music' : 'Play music'}
 	</div>
+	<div class="text-white cursor-pointer" on:click={() => showNextBackground()}>Change background</div>
 </div>
 
 <style>
