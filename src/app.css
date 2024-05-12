@@ -226,3 +226,21 @@ html {
 .md-output table a:hover {
   text-decoration: none; /* Change hover effect for links in tables */
 }
+
+
+@media (max-width: 640px) {
+  .md-output p {
+    font-size: 15px; 
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .md-output img {
+    width: 100% !important; 
+  }
+
+  .md-output h1, .md-output h2, .md-output h3, .md-output h4 {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+
+}
