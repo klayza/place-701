@@ -5,7 +5,7 @@
 	marked.use({ breaks: true });
 	export let data;
 
-	let url = `/src/data/${data.id}.md`;
+	let url = `/data/${data.id}.md`;
 	let text = `Loading...`;
 
 	onMount(async () => {
@@ -15,7 +15,7 @@
 				text = await res.text();
 			} else {
 				console.error(`Failed to fetch: ${res.statusText}`);
-				text = `<h3 class="text-center text-gray-600">Hmm, seems like I forgot to write this part</h3>`;
+				text = `<h3 class="text-center">Sorry, this doesn't exist yet.</h3>`;
 			}
 		} catch (error) {
 			console.error(`Error fetching markdown file: ${error}`);
@@ -27,10 +27,10 @@
 	});
 </script>
 
-<div
-	class="cover-img border-b w-full h-96 bg-center bg-no-repeat bg-cover"
-	style="background-image: url('/{data.img}');"
-></div>
+<a href="/thoughts" class="py-4 px-8 m-8 absolute top-20 bg-white hover:bg-slate-100 left-0 border cursor-pointer "><i class='bx bx-arrow-back inline mr-4'></i><p class="inline mb-2">Back</p></a>
+
+
+<div class="cover-img border-b w-full h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/{data.img}');"></div>
 <div class="border-y p-24">
 	<h1 class="text-5xl font-bold text-center mt-6">{data.title}</h1>
 	<h1 class="text-xl font-semibold text-center m-auto mt-12 max-w-4xl mb-4">{data.snippet}</h1>

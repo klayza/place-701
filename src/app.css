@@ -25,12 +25,16 @@
   border-color: var(--border-color);
 }
 
+a {
+  color: red;
+}
+
 body {
   background-color: black;
-  /* font-family: Space Mono; */
-  font-family: Consolas;
+  font-family: Space Mono;
+  /* font-family: Consolas; */
   color: white;
-
+  overflow-x: hidden;
 }
 
 body.dark {
@@ -91,6 +95,8 @@ html {
 
 .md-output h2 {
   margin: 30px !important;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
   font-size: 30px;
   font-weight: bold;
 }
@@ -177,7 +183,11 @@ html {
 /* Images within Markdown */
 .md-output img {
   max-width: 100%;
+  width: 90%;
   height: auto;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 

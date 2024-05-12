@@ -81,10 +81,7 @@
 </script>
 
 <main class="border-x w-full m-auto 2xl:w-9/12 h-screen">
-	<div
-		class="w-full p-12 pl-8 border-b tracking-widest"
-		style="background-image: linear-gradient(to right, rgb(255, 255, 230), white, white);"
-	>
+	<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 255, 230), white, white);">
 		<p class="uppercase text-3xl inline-block mr-8">thoughts</p>
 	</div>
 	<!-- <div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / recent</p></div> -->
@@ -101,6 +98,11 @@
 	<div class="w-full p-4 pl-8 text-2xl border-b border-dashed uppercase tracking-widest">
 		<p>/ thoughts / all</p>
 	</div>
+
+	{#if thoughts.length == 0}
+		<p class="text-center text-3xl m-16">{thoughts.length === 0 ? "Nothing here yet" : ""}</p>
+	{/if}
+
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
 		{#each posts as post}
 			<a href="/thoughts/{post.id}" on:hover={console.log('here')}>
@@ -109,11 +111,7 @@
 						<p class="text-left inline">[{posts.indexOf(post) + 1}]</p>
 						<p class=" inline">{prettyDate(post.date)}</p>
 					</div>
-					<img
-						src={post.img ? post.img : 'img/clouds.png'}
-						alt="Post Image"
-						class="w-300 h-300 object-cover mb-2"
-					/>
+					<img src={post.img ? post.img : 'img/clouds.png'} alt="Post Image" class="w-300 h-300 object-cover mb-2" />
 					<p class="text-lg my-6 font-semibold">{post.title}</p>
 					<p class="text-lg">{post.snippet}</p>
 				</div>
@@ -191,4 +189,8 @@
 		/* border-bottom: 1px solid; */
 		box-shadow: 0 0 0 1px black;
 	}
+	a {
+		color: black !important;
+	}
+
 </style>

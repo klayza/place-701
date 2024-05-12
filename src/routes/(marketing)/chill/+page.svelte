@@ -45,7 +45,7 @@
 	onMount(() => {
 		try {
 			audio = new Audio('/sounds/C418 - Clark.mp3');
-			startLoop();
+			// startLoop(); // DISABLED currently
 		} catch {
 			console.log("Error in mount")
 		}

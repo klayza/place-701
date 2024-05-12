@@ -1,11 +1,37 @@
 <script>
 	/** @type {import('./$types').PageData} */
-	export let data;
+	import { onMount } from 'svelte';
+	import { trips } from '$lib/data.js';
+
+
+	function daysSinceDate(startDate) {
+		const start = new Date(startDate);
+		const today = new Date();
+		const difference = today - start;
+		const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+		return days;
+	}
+
+	function daysDifference(startDate, endDate) {
+		const start = new Date(startDate);
+		const end = new Date(endDate);
+		const difference = end - start;
+		const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+		return days;
+	}
+
 </script>
 
-<p class="m-24 p-8 border-red-800 border"><span class="text-red-400">(NYI)</span> Here be all the places I've been on a big map! </p>
+<!-- <p class="m-24 p-8 border-red-800 border"><span class="text-red-400">(NYI)</span> Here be all the places I've been on a big map! </p> -->
 
-<div class="map relative bg-blue-200 w-full" style="min-height: 50vh;">
+<!-- <main class="border-x w-full m-auto 2xl:w-9/12 h-screen"> -->
+<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(230, 255, 230), white, white);">
+	<p class="uppercase text-3xl inline-block mr-8">travel</p>
+</div>
+
+<!-- </main> -->
+
+<!-- <div class="map relative bg-blue-200 w-full" style="min-height: 50vh;">
 	<div class="right-8 top-1/2 absolute flex items-center justify-center">
 		<i class="bx bx-pin mx-1"></i>
 		<p>Japan</p>
@@ -14,44 +40,50 @@
 		<i class="bx bx-pin mx-1"></i>
 		<p>Mexico</p>
 	</div>
-</div>
+</div> -->
 
-<table class="w-full border table-fixed m-auto mb-24">
-	<tr>
-		<th class="p-6">Date</th>
-		<th class="p-6">Duration</th>
-		<th>Place</th>
-		<th>Pictures</th>
-	</tr>
-	<tr class="border">
-		<td class="border text-center p-4">May 27, 2024 <span class="italic"> (320 days ago)</span></td>
-		<td class="border text-center p-4">9 days</td>
-		<td
-			class="bg-gradient-to-br from-white to-red-200 bg-no-repeat border text-center w-fit p-2 text-lg font-semibold drop-shadow shadow-white"
-			>⛩️Japan</td
-		>
-		<td class="border w-fit"
-			><div class="flex-row flex gap-2 p-2">
-				<div class="bg-red-300 border w-fit p-2 text-white">img1</div>
-				<div class="bg-red border w-fit p-2 bg-black text-white">img2</div>
-			</div></td
-		>
-	</tr>
-	<tr class="border">
-		<td class="border text-center p-4">July 3, 2021 <span class="italic"> (932 days ago)</span></td>
-		<td class="border text-center p-4">7 days</td>
-		<td
-			class="bg-gradient-to-bl from-white to-blue-200 bg-no-repeat border text-center w-fit p-2 text-lg font-semibold drop-shadow shadow-white"
-			>🌺Hawaii</td
-		>
-		<td class="border w-fit"
-			><div class="flex-row flex gap-2 p-2">
-				<div class="bg-red-300 border w-fit p-2 text-white">img1</div>
-				<div class="bg-red border w-fit p-2 bg-black text-white">img2</div>
-			</div></td
-		>
-	</tr>
-</table>
+<h1 class="sm:mx-8 mx-4 text-2xl sm:text-4xl pb-2 mt-20 sm:mt-24">Places I've Been</h1>
+<hr class="sm:mx-8 mx-4" />
+
+<ul>
+	{#each trips as trip}
+		<li class="my-12 sm:my-24 sm:mx-12 list-none">
+			<div class="mx-8 border">
+				<div class="border-b bg-gradient-to-tr w-full from-white to-{trip.color}  bg-no-repeat text-center p-8 pb-8 drop-shadow shadow-white">
+					<h1 class="m-auto text-xl sm:text-3xl">{trip.name} <span class="uppercase font-light text-lg">{trip.isOngoing ? `(ongoing)` : ``}</span></h1>
+					<p class="text-md sm:text-lg mt-4"><a href="/travel/{trip.id}">View journal</a></p>
+				</div>
+				<div class="flex flex-col sm:flex-row">
+					<div class="flex w-full border-b sm:border-r sm:border-b-white text-center text-md sm:text-lg px-2 p-1 sm:p-4">Start: {trip.start} {!trip.isOngoing ? "(" + daysSinceDate(trip.start) + " days ago)" : ""}</div>
+					<div class="flex w-full border-b sm:border-r sm:border-b-white text-center text-md sm:text-lg px-2 p-1 sm:p-4">
+						<p>Duration:</p>
+						<p class="{trip.isOngoing ? "fade-text" : ""} ml-2" id="daysCounter">{trip.isOngoing ? daysSinceDate(trip.start) : daysDifference(trip.start, trip.end)}</p>
+						<p class="ml-2">days</p>
+					</div>
+					<div class="flex w-full text-center text-md sm:text-lg p-1 px-2 sm:p-4">Pictures: {trip.pictures}</div>
+				</div>
+			</div>
+		</li>
+	{/each}
+</ul>
+
 
 <style>
+	@keyframes fadeInOut {
+		0%,
+		100% {
+			opacity: 0.1;
+		}
+		50% {
+			opacity: 1;
+		}
+	}
+
+	.fade-text {
+		animation: fadeInOut 3s infinite;
+	}
+
+	a {
+		color: rgb(48, 60, 219);
+	}
 </style>

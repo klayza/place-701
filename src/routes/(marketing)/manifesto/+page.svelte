@@ -44,13 +44,18 @@
 			with mere existence, but who dared claim the world could bow to their imagined reality.
 		</p>
 
-		<p class="max-w-6xl text-black text-2xl m-auto my-96 leading-10">
+		<p class="max-w-6xl text-black text-2xl m-auto my-96 mb-30 leading-10">
 			What started as a single human sucking at merely getting by, ignited the very essence of human
 			progress. From the first crude ax to sprawling cities, what makes civilization itself possible
-			is the belief that things *don't* have to be the way they are. This is the gift of sucking —
+			is the belief that things <i>don't</i> have to be the way they are. This is the gift of sucking —
 			the restlessness, the dissatisfaction that makes us build our own golden meadows, one
 			invention at a time.
 		</p>
+
+		<p class="max-w-6xl text-black text-2xl text-center m-auto my-10 leading-10">
+			<a href="/" class="w-full m-auto text-3xl hover:underline">Return</a>
+		</p>
+
 	</div>
 
 	<div class="absolute border-none top-0 bottom-0 w-full h-full -z-3 flex flex-row">
@@ -61,6 +66,10 @@
 </body>
 
 <style>
+	body {
+		
+	}
+
 	h1 {
 		font-size: 10vw;
 	}

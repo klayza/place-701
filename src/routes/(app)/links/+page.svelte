@@ -64,6 +64,11 @@
 		description: 'Futuristic + Minimal themed website'
 	},
 	{
+		url: 'https://100r.co/',
+		name: '100r',
+		description: 'Futuristic + Minimal themed website'
+	},
+	{
 		url: 'https://immieats.com',
 		name: 'Immieats',
 		description: 'An instant-ramen delivery service with good design'

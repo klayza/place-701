@@ -3,9 +3,25 @@
 
 	let dob = new Date('11/26/2003');
 	let age_years;
-	let intro = `I'm a software engineer, lifelong student, and entrepreneur. I live abroad and make cool
+	let intro = `I'm a software engineer, informal student, and entrepreneur. I live abroad and make cool
 				things on the internet. I write about AI, automation, philosophy, and improving life with
 				software.`;
+
+	let places = [
+		{ name: 'music', description: 'Listen to some bangers.' },
+		{ name: 'travel', description: "See where I've been." },
+		{ name: 'chill', description: 'A chill splash screen with music.' },
+		{
+			name: 'manifesto',
+			description: 'Get a glimpse of the vision.',
+			img: 'https://w.wallhaven.cc/full/p2/wallhaven-p2evlp.png'
+		},
+		{ name: 'books', description: 'Some of my reccomended reads.' }
+	];
+
+	function capitalizeFirstLetter(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 
 	// Calculate age based on current date
 	function calculateAge(birthDate) {
@@ -23,59 +39,63 @@
 	});
 </script>
 
-<div class="intro inline-flex gap-20 z-5 relative pb-24 px-20">
-	<div class="intro-left m-auto">
-		<h1 class="text-6xl p-5 mt-24 mb-10 leading-none">
-			Welcome. This is the website of Clayton Wieberg.
-		</h1>
-		<div class="below-intro flex flex-row gap-10 mt-10">
-			<div class="typewrite-container mb-20 p-5 text-2xl flex-grow">
-				<p>{intro}</p>
-			</div>
-			<div>
-				<img src="/img/boulder.jpg" alt="Boulder" />
-				<p class="italic text-gray-800">
-					If you recognize this image, then you are in the right place.
+<div class="intro inline-flex gap-20 z-5 relative pb-20 max-w-full sm:px-20">
+	<div class="intro-left m-auto max-w-full">
+		<h1 class="p-5 mt-10 sm:mt-24 mb-10 leading-none max-w-full text-2xl sm:text-6xl ">Welcome. This is the website of Clayton Wieberg.</h1>
+		<div class="below-intro flex items-center justify-center flex-row gap-10 mt-10 px-8 sm:px-24">
+			<div class="sm:basis-3/4 text-md sm:text-left sm:p-5 sm:text-3xl flex-grow">
+				<p class="">
+					{intro}
+					<span class="text-center m-auto">Read more about me <a href="/about" class="italic">here</a></span>
 				</p>
+			</div>
+			<div class="basis-1/4">
+				<img src="/img/rasttoo.png" class="border hidden sm:block" alt="Boulder" />
+				<!-- <p class="italic text-gray-800">
+					If you recognize this image, then you are in the right place.
+				</p> -->
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="places px-20">
-	<h1 class="text-5xl pb-2">Places</h1>
+<div class="places px-5 sm:px-20 mb-20">
+	<h1 class="text-2xl sm:text-5xl pb-2">Places</h1>
 	<hr />
-	<div class="places-grid flex flex-row gap-8 my-10 p-10">
-		<!-- <a href="/music"><div class="bg-black text-xl text-white p-8 px-24"><i class='bx bx-music'></i><p>Music</p></div></a> -->
-		<a href="/music"><div class="bg-black text-xl text-white p-4 px-12"><p>Music</p></div></a>
-		<a href="/travel"><div class="bg-black text-xl text-white p-4 px-12">Travel</div></a>
-		<a href="/gallery"><div class="bg-black text-xl text-white p-4 px-12">Gallery</div></a>
-		<a href="/chill"><div class="bg-black text-xl text-white p-4 px-12">Chill</div></a>
-		<a href="/contact"><div class="bg-black text-xl text-white p-4 px-12">Contact</div></a>
-		<a href="/manifesto"><div class="bg-black text-xl text-white p-4 px-12">Manifesto</div></a>
-		<a href="/books"><div class="bg-black text-xl text-white p-4 px-12">Books</div></a>
+	<div class="places-grid flex flex-col sm:flex-row gap-2 sm:gap-8 my-4 sm:my-10 p-2 sm:p-10 overflow-x-hidden overflow-y-hidden">
+		{#each places as place}
+			<a href="/{place.name}" class="place-container overflow-hidden hover:border-red-600">
+				<p class="text-lg sm:text-2xl w-full p-2 text-white bg-black">{capitalizeFirstLetter(place.name)}</p>
+				<img src={place.img ? place.img : 'img/' + place.name + '.png'} alt={place.name} />
+				<div class="description bg-black text-xl text-white p-4 px-12">
+					<p>{capitalizeFirstLetter(place.description)}</p>
+				</div>
+			</a>
+		{/each}
 	</div>
 </div>
 
-<div class="px-20">
-	<div class="flex flex-row gap-16 p-10">
+<div class="px-5 sm:px-20">
+	<h1 class="text-2xl sm:text-5xl pb-2">Topics</h1>
+	<hr />
+	<p class="text-4xl m-8 text-center">UNDER CONSTRUCTION</p>
+	<!-- <div class="flex flex-row gap-16 p-10">
 		<div>
-			<h2 class="text-3xl mb-4 border p-2">Artificial Intelligence</h2>
+			<h2 class="text-2xl mb-4 border p-2">Artificial Intelligence</h2>
 			<ul>
 				<li style="list-style-type: square;">Robot evolution</li>
 				<li>Nanobot existential risk worth it?</li>
 			</ul>
 		</div>
 		<div>
-			<h2 class="text-3xl mb-4 border p-2">Self-Improvement</h2>
+			<h2 class="text-2xl mb-4 border p-2">Self-Improvement</h2>
 			<ul>
 				<li>Robot evolution</li>
 				<li>Nanobot existential risk worth it?</li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 </div>
-
 
 <!-- <style>
 .place-item::after {
@@ -88,3 +108,60 @@
     background: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     pointer-events: none;
   }</style> -->
+
+<style>
+body {
+	overflow-x: hidden;
+}
+
+	.place-container {
+		position: relative;
+		display: inline-block;
+		text-decoration: none;
+		overflow-y: hidden; 
+		height: 512px; 
+	}
+
+	.place-container img {
+		display: block;
+		height: 512px; /* Maintain the image height */
+		width: 512px; /* Allow the width to adjust automatically */
+		min-width: 100%; 
+		object-fit: cover; /* Ensure the image covers the space without distortion */
+		object-position: center; /* Center the image within the element */
+		transition: opacity 0.3s ease;
+	}
+
+	.place-container .name,
+	.place-container .description {
+		position: absolute;
+		left: 0;
+		right: 0;
+		text-align: center;
+		padding: 0.5rem 1rem;
+		transition:
+			background-color 0.3s,
+			color 0.3s;
+	}
+
+	.place-container .name {
+		top: 0; /* Position the name at the top of the container */
+		background-color: black;
+		color: white;
+	}
+
+	.place-container .description {
+		bottom: 0; /* Position the description at the bottom of the container */
+		background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+		opacity: 0; /* Initially hidden */
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.place-container:hover img {
+		opacity: 0.7; /* Dim the image on hover */
+	}
+
+	.place-container:hover .description {
+		opacity: 1; /* Show the description on hover */
+	}
+</style>
