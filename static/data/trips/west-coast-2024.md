@@ -93,30 +93,77 @@ Made some hamburger helper and I was happy. Shortly had a heart attack afterward
 
 ## Day 4
 
-Today was attempt 2 at a catch and cook. Spoiler alert, didn't happen.
+Today was attempt two at a catch and cook. Spoiler alert, didn't happen.
 
 <img src="/img/trips/west-coast-2024/0502-1.jpg">
-<img src="/img/trips/west-coast-2024/0502-2.jpg">
+
+Not paying a single penny in rent and I'm less than a 5 minute walk away from the beach. Fight me L.A. homeowners
+
 <img src="/img/trips/west-coast-2024/0502-3.jpg">
+
+All around L.A. you see lots of mural art. Usually cultural or based on a public figure. But this was different. Abstract. Made me want to surf. 
+
+<img src="/img/trips/west-coast-2024/0502-2.jpg">
+
+Walking to the pier. I can't wait to catch a fish!
+
+<div class="text-center text-xl my-12 italic">2 hours later ...</div>
+
+My fishing rod is broken. Nice. Don't underestimate those razor clams on the pier supports, they will always win. At least it was fun watching the elderly asian people reel in fish by the minute.
+
 <img src="/img/trips/west-coast-2024/0502-4.jpg">
+
+I needed a way to vent my frustration. After a long and hard morning of staring out at the sea waiting for literally anything to happen I decided I was going to sit down and get some work done. (This place is called The Cow's Rear End Cafe. And despite it's name it's my favorite place to chill in Venice Beach)
+
 <img src="/img/trips/west-coast-2024/0502-5.jpg">
+
+Skating through Venice beach to Santa Monica Pier.
+
 <img src="/img/trips/west-coast-2024/0502-6.jpg">
 <img src="/img/trips/west-coast-2024/0502-7.jpg">
+<img src="/img/trips/west-coast-2024/0502-8.jpg">
+
+JAPAN AND HOTDOGS! JAPAN + HOTDOG = JAPADOG! SO UNQIUE, LET'S SPEND $15 ON A HOTDOG! 
+
+It's absolutely worth it. 
 
 ## Day 5
 
+This was my last day in L.A. and I thought I would visit one last place before heading up north.
+
 <img src="/img/trips/west-coast-2024/0503-getty.jpg">
+
+The Getty is an art musesum open to the public for completely free. 
+
+(Although they do charge you $25 if you use their parking lot for longer than an hour. Speedran their exhibits in 58 minutes, no joke)
+
+<img src="/img/trips/west-coast-2024/0503-gettyfancy.jpg">
+
+Not much of an art guy but it was cool seeing the French interior. *Wonder how many people see this stuff and say to themselves they want this in their house?*
+
 <img src="/img/trips/west-coast-2024/0503-bricks.jpg">
+
+Bricks.
+
 <img src="/img/trips/west-coast-2024/0503-sunset.jpg">
+
+And it's time to head towards Yosemite!
+
 <img src="/img/trips/west-coast-2024/0503-backroads.jpg">
 <img src="/img/trips/west-coast-2024/0503-entrance.jpg">
+
+It got dark really, really fast. Like pitch dark. So driving through the middle of a pitch black forest in the middle of the night was interesting.
+
 <img src="/img/trips/west-coast-2024/0503-creepy.jpg">
 
 
----
-( still have yet to get to. stay tuned! )
 
 ## Day 6
+---
+
+<p class="text-center">( still have yet to get to. stay tuned! )</p>
+
+
 ## Day 7
 ## Day 8
 ## Day 9

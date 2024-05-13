@@ -24,8 +24,8 @@
 * {
   border-color: var(--border-color);
 }
+a:not(.article-nav-item a) {
 
-a {
   color: red;
 }
 
@@ -172,7 +172,7 @@ html {
 
 /* Links */
 .md-output a {
-  color: #0066cc;
+  color: rgb(0, 102, 204);
   text-decoration: none;
 }
 
@@ -230,8 +230,8 @@ html {
 
 @media (max-width: 640px) {
   .md-output p {
-    font-size: 15px; 
-    margin-left: 0px !important;
+    font-size: 17px; 
+    margin-left: 0px !important;  
     margin-right: 0px !important;
   }
   .md-output img {
