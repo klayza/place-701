@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 	import { trips } from '$lib/data.js';
 
-
 	function daysSinceDate(startDate) {
 		const start = new Date(startDate);
 		const today = new Date();
@@ -19,7 +18,6 @@
 		const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 		return days;
 	}
-
 </script>
 
 <!-- <p class="m-24 p-8 border-red-800 border"><span class="text-red-400">(NYI)</span> Here be all the places I've been on a big map! </p> -->
@@ -49,15 +47,16 @@
 	{#each trips as trip}
 		<li class="my-12 sm:my-24 sm:mx-12 list-none">
 			<div class="mx-8 border">
-				<div class="border-b bg-gradient-to-tr w-full from-white to-{trip.color}  bg-no-repeat text-center p-8 pb-8 drop-shadow shadow-white">
+				<!-- <div class="border-b bg-center bg-cover bg-no-repeat text-center p-8 pb-8" style="background-image: url('/img/trips/{trip.id}/cover.png')"> -->
+				<div class="border-b bg-gradient-to-tr w-full from-white to-{trip.color}  bg-no-repeat text-center p-8 pb-8 ">
 					<h1 class="m-auto text-xl sm:text-3xl">{trip.name} <span class="uppercase font-light text-lg">{trip.isOngoing ? `(ongoing)` : ``}</span></h1>
 					<p class="text-md sm:text-lg mt-4"><a href="/travel/{trip.id}">View journal</a></p>
 				</div>
 				<div class="flex flex-col sm:flex-row">
-					<div class="flex w-full border-b sm:border-r sm:border-b-white text-center text-md sm:text-lg px-2 p-1 sm:p-4">Start: {trip.start} {!trip.isOngoing ? "(" + daysSinceDate(trip.start) + " days ago)" : ""}</div>
+					<div class="flex w-full border-b sm:border-r sm:border-b-white text-center text-md sm:text-lg px-2 p-1 sm:p-4">Start: {trip.start} {!trip.isOngoing ? '(' + daysSinceDate(trip.start) + ' days ago)' : ''}</div>
 					<div class="flex w-full border-b sm:border-r sm:border-b-white text-center text-md sm:text-lg px-2 p-1 sm:p-4">
 						<p>Duration:</p>
-						<p class="{trip.isOngoing ? "fade-text" : ""} ml-2" id="daysCounter">{trip.isOngoing ? daysSinceDate(trip.start) : daysDifference(trip.start, trip.end)}</p>
+						<p class="{trip.isOngoing ? 'fade-text' : ''} ml-2" id="daysCounter">{trip.isOngoing ? daysSinceDate(trip.start) : daysDifference(trip.start, trip.end)}</p>
 						<p class="ml-2">days</p>
 					</div>
 					<div class="flex w-full text-center text-md sm:text-lg p-1 px-2 sm:p-4">Pictures: {trip.pictures}</div>
@@ -66,7 +65,6 @@
 		</li>
 	{/each}
 </ul>
-
 
 <style>
 	@keyframes fadeInOut {

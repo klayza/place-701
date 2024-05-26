@@ -70,13 +70,51 @@ html {
   /* color: #333; */
 }
 
+.md-output ol,
+.md-output ul {
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+}
+
+.md-output ol li {
+  list-style: numbered inside !important;
+}
+
 /* Styling blockquotes */
 .md-output blockquote {
-  margin: 20px !important;
+  position: relative;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
   padding: 10px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #ccc;
+  background-color: #1d1d1d;
+  color: rgb(203, 203, 203);
+  border-top: 5px solid #000000;
+  border-bottom: 5px solid #000000;
   font-style: italic;
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.md-output blockquote.expanded {
+  max-height: 1000px; /* Set a high value to accommodate the full content */
+}
+
+.md-output .expand-button {
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 5px;
+  border-radius: 50%;
+  background-clip: padding-box;
+  border: 1px solid #000000;
+  background-color: #262626;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Definition lists, description details */
@@ -183,7 +221,9 @@ html {
 /* Images within Markdown */
 .md-output img {
   max-width: 100%;
-  width: 90%;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
   height: auto;
   margin: auto;
   margin-top: 20px;
@@ -227,6 +267,16 @@ html {
   text-decoration: none; /* Change hover effect for links in tables */
 }
 
+.rotated {
+	transform: rotate(180deg);
+	transition: transform 0.3s ease;
+}
+
+.expand-button svg {
+	transition: transform 0.3s ease;
+}
+
+
 
 @media (max-width: 640px) {
   .md-output p {
@@ -236,6 +286,9 @@ html {
   }
   .md-output img {
     width: 100% !important; 
+    padding-right: 0px;
+    padding-left: 0px;
+
   }
 
   .md-output h1, .md-output h2, .md-output h3, .md-output h4 {

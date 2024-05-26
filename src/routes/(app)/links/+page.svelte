@@ -69,6 +69,16 @@
 		description: 'Futuristic + Minimal themed website'
 	},
 	{
+		url: 'https://localadventurer.com/',
+		name: 'Local Adventurer',
+		description: 'Well documented and thoughtful guides of sites to see'
+	},
+	{
+		url: 'https://redwoodhikes.com/',
+		name: 'David Redwood Hikes',
+		description: 'A taleted writer and experienced hiker\' collection of best spots to hike in the redwood forest'
+	},
+	{
 		url: 'https://immieats.com',
 		name: 'Immieats',
 		description: 'An instant-ramen delivery service with good design'
