@@ -8,15 +8,15 @@
 				software.`;
 
 	let places = [
-		{ name: 'music', description: 'Listen to some bangers.' },
 		{ name: 'travel', description: "See where I've been." },
-		{ name: 'chill', description: 'A chill splash screen with music.' },
+		{ name: 'books', description: 'Some of my reccomended reads.' },
 		{
 			name: 'manifesto',
 			description: 'Get a glimpse of the vision.',
 			img: 'https://w.wallhaven.cc/full/p2/wallhaven-p2evlp.png'
 		},
-		{ name: 'books', description: 'Some of my reccomended reads.' }
+		{ name: 'music', description: 'Listen to some bangers.' },
+		{ name: 'chill', description: 'A chill splash screen with music.' },
 	];
 
 	function capitalizeFirstLetter(string) {
@@ -67,7 +67,7 @@
 			<a href="/{place.name}" class="place-container overflow-hidden hover:border-red-600">
 				<p class="text-lg sm:text-2xl w-full p-2 text-white bg-black">{capitalizeFirstLetter(place.name)}</p>
 				<img src={place.img ? place.img : 'img/' + place.name + '.png'} alt={place.name} />
-				<div class="description bg-black text-xl text-white p-4 px-12">
+				<div class="description bg-black text-xl text-white p-4 px-12 opacity-100 sm:opacity-0">
 					<p>{capitalizeFirstLetter(place.description)}</p>
 				</div>
 			</a>
@@ -162,6 +162,6 @@ body {
 	}
 
 	.place-container:hover .description {
-		opacity: 1; /* Show the description on hover */
+		opacity: 1 !important; /* Show the description on hover */
 	}
 </style>

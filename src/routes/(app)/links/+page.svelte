@@ -66,7 +66,7 @@
 	{
 		url: 'https://100r.co/',
 		name: '100r',
-		description: 'Futuristic + Minimal themed website'
+		description: 'A detailed blog by a passionate couple who live on a sailboat'
 	},
 	{
 		url: 'https://localadventurer.com/',
@@ -77,6 +77,21 @@
 		url: 'https://redwoodhikes.com/',
 		name: 'David Redwood Hikes',
 		description: 'A taleted writer and experienced hiker\' collection of best spots to hike in the redwood forest'
+	},
+	{
+		url: 'https://www.bookmarked.club/',
+		name: 'Bookmarked Club',
+		description: 'A clean and minimal site to find the best books reccomended by well known people'
+	},
+	{
+		url: 'https://annas-archive.org/',
+		name: 'Anna\'s Archive',
+		description: 'The largest free e-book sharing website. Open-source :)'
+	},
+	{
+		url: 'https://audiobookbay.lu',
+		name: 'Audiobook Bay',
+		description: 'Download almost any audiobook for free'
 	},
 	{
 		url: 'https://immieats.com',

@@ -162,7 +162,7 @@
 	}
 
 	.md-output blockquote.expanded {
-		max-height: 1000px; /* Set a high value to accommodate the full content */
+		max-height: fit-content; /* Set a high value to accommodate the full content */
 	}
 
 	.md-output .expand-button {

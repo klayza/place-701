@@ -60,3 +60,13 @@ export let trips = [
     },
 
 ]
+
+
+
+export let books = [
+    {
+        name: "The Beginning of Infinity",
+        img: "beginning.jpg",
+        comment: "Deez nuts",
+    }
+]

@@ -423,7 +423,10 @@ Third day in San Francsico and yet again at another coffee shop. Like what else 
 <i>Thank you for reading this far, I'm hard at work on the next update so stay tuned!</i>
 <br>
 <br>
-<br>
+		<p class="max-w-6xl text-black text-2xl text-center m-auto my-10 leading-10">
+			<a href="/" class="w-full m-auto text-xl hover:underline">Return</a>
+		</p>
+
 
 
 <!--

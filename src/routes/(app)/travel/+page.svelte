@@ -1,6 +1,5 @@
 <script>
 	/** @type {import('./$types').PageData} */
-	import { onMount } from 'svelte';
 	import { trips } from '$lib/data.js';
 
 	function daysSinceDate(startDate) {
