@@ -176,9 +176,13 @@ html {
 /* Figures & Paragraphs */
 .md-output figure,
 .md-output p {
-  margin: 30px !important;
+  margin: 30px;
   font-size: 19px;
   line-height: 1.6;
+}
+
+.md-output li p {
+  margin: 10px;
 }
 
 /* Preformatted text */
@@ -304,7 +308,7 @@ html {
 
   0%,
   100% {
-    opacity: 0.7;
+    opacity: 0.6;
   }
 
   50% {
@@ -315,9 +319,6 @@ html {
 .fade-text-light {
   animation: fadeInOutLight 3s infinite;
 }
-
-
-
 
 
 @media (max-width: 640px) {
