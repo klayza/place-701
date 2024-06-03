@@ -10,3 +10,4 @@
 1. Superintellgence *by Nick Bostrom*  
 1. <span class="fade-text-light">The First Three Minutes *by Steven Weinberg*</span>
 1. <span class="fade-text-light">Meditations *by Marcus Aurelius (Emperor of Rome)*</span>  
+1. <span class="fade-text-light">Read Write Own *by Chris Dixon (Emperor of Rome)*</span>  

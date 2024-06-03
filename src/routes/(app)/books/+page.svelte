@@ -3,7 +3,6 @@
 	import { marked } from 'marked';
 	import { onMount } from 'svelte';
 	marked.use({ breaks: true });
-	export let data;
 
 	let book_goal = 2;
 	let book_counts = {

@@ -417,6 +417,137 @@ Super super good book that I happened to be reading at the same time as this guy
 
 Third day in San Francsico and yet again at another coffee shop. Like what else is there to do here? 
 
+## Day 15
+
+<img src="/img/trips/west-coast-2024/0513-1.jpg">
+
+For the past few days I've been hanging out around south San Francisco. Today I would go right into the heart of downtown and pray I wouldn't have my windows bashed in (because you are reading this they weren't).
+
+<img src="/img/trips/west-coast-2024/0513-2.jpg">
+
+Coffee time. 
+
+<img src="/img/trips/west-coast-2024/0513-3.jpg">
+
+Downtown Chinatown. Couldn't help getting some milk tea. 
+
+<img src="/img/trips/west-coast-2024/0513-4.jpg">
+
+SF has 23 historic cable cars which date back to the 1870s. Pretty special huh?
+
+<img src="/img/trips/west-coast-2024/0513-5.jpg">
+<img src="/img/trips/west-coast-2024/0513-6.jpg">
+
+## Day 16
+
+<img src="/img/trips/west-coast-2024/0514-1.jpg">
+
+Thought it'd be safer to leave my vehicle as far away from downtown as possible. But how do I get there without a vehicle?
+
+<img src="/img/trips/west-coast-2024/0514-2.jpg">
+
+Public transportation! Got a ride to Golden Gate park, the third-most visited urban park in the United States. Huge too, at 1,017 acres.
+
+<img src="/img/trips/west-coast-2024/0514-3.jpg">
+
+This was the vibe throughout the park. Spent a good chunk of my day here.
+
+<img src="/img/trips/west-coast-2024/0514-4.jpg">
+
+Somewhat creepy yet beautiful medieval looking bridge.
+
+## Day 17
+
+<img src="/img/trips/west-coast-2024/0515-1.jpg">
+
+Getting groceries from my favorite grocery store! (As long as there are things I cannot pronounce I'm into it)
+
+<img src="/img/trips/west-coast-2024/0515-2.jpg">
+
+Today, I started my introduction into <a href="https://www.susanrigetti.com/physics">physics</a> and <a href="https://www.susanrigetti.com/philosophy">philosophy</a>. Thanks to <a href="https://www.susanrigetti.com/">Susan Rigetti</a> for her comprehensive and thoughtful guides on learning each of these subjects in depth. 
+
+For anyone reading this that is even remotely interested in learning something I highly reccommend you do and dig a little deeper into that one thing that's been popping in and out of your head.
+
+<img src="/img/trips/west-coast-2024/0515-3.jpg">
+
+Brain food.
+
+## Day 18
+
+<img src="/img/trips/west-coast-2024/0516-1.jpg">
+
+Today was another coffee shop day. Saw this huge doggo keeping watch over the neighborhood.
+
+<img src="/img/trips/west-coast-2024/0516-2.jpg">
+
+Cozy night walk through a park.
+
+## Day 19
+
+<img src="/img/trips/west-coast-2024/0517-1.jpg">
+
+Slept right next to the beach. And 30 feet away from a coffee shop!
+
+<img src="/img/trips/west-coast-2024/0517-2.jpg">
+
+This spot called Chit Chat Coffee was a coffee lover's paradise. (How many times have I said coffee now?) Super fast wifi, free refills, and right next to the beach. 
+
+This sandwich went hard. Sourdough, egg, and tomato. That's it! Fresh tomato and eggs is crazy underrated.
+
+Downloading the entirety of Wikipedia as well.
+
+<img src="/img/trips/west-coast-2024/0517-3.jpg">
+
+Lunch on the coast.
+
+<img src="/img/trips/west-coast-2024/0517-4.jpg">
+
+Homemade fries and avocado. Absolutely drenched in ketchup after taking this photo.
+
+## Day 20
+
+<img src="/img/trips/west-coast-2024/0518-1.jpg">
+
+Chickpeas, quinoa, golden curry, and spinach. Needed brain fuel for navigating through the dense traffic of San Francisco. (It was not sufficient. At least 5 energy drinks would've done the trick.)
+
+<img src="/img/trips/west-coast-2024/0518-2.jpg">
+
+Is this foreshadowing something? Is my van going to get impaled during a pride event?
+
+<img src="/img/trips/west-coast-2024/0518-3.jpg">
+<img src="/img/trips/west-coast-2024/0518-4.jpg">
+
+Overcast was here all week unfortunately. The red was barely visible so used a filter to take advantage of the clouds and it turned out looking like it was taken in the 70's. Pretty neat.
+
+<img src="/img/trips/west-coast-2024/0518-5.jpg">
+
+Who designed this car and gave it a gotee?!  
+
+<img src="/img/trips/west-coast-2024/0518-6.jpg">
+
+Pacific highway at last!
+
+<img src="/img/trips/west-coast-2024/0518-7.jpg">
+
+Needed to find a place to crash for the night... hm, that phrase doesn't work if you live in a car.
+
+Headed inland a bit to look for some campsites.
+
+<img src="/img/trips/west-coast-2024/0518-8.jpg">
+
+Driving thrugh clouds.
+
+<img src="/img/trips/west-coast-2024/0518-9.jpg">
+
+Right before the sun faded below the clouds I got a short glimpse of easily the most beautiful sunsets of my life.  
+
+<img src="/img/trips/west-coast-2024/0518-10.jpg">
+
+As soon as the sun disappeared I felt like I was driving through a horror movie set.
+
+<img src="/img/trips/west-coast-2024/0518-12.png">
+
+
 <br>
 <br>
 <br>
@@ -427,57 +558,7 @@ Third day in San Francsico and yet again at another coffee shop. Like what else 
 			<a href="/" class="w-full m-auto text-xl hover:underline">Return</a>
 		</p>
 
-
-
-<!--
-## Day 15
-
-<img src="/img/trips/west-coast-2024/0513-1.jpg">
-<img src="/img/trips/west-coast-2024/0513-2.jpg">
-<img src="/img/trips/west-coast-2024/0513-3.jpg">
-<img src="/img/trips/west-coast-2024/0513-4.jpg">
-<img src="/img/trips/west-coast-2024/0513-5.jpg">
-<img src="/img/trips/west-coast-2024/0513-6.jpg">
-
-## Day 16
-
-<img src="/img/trips/west-coast-2024/0514-1.jpg">
-<img src="/img/trips/west-coast-2024/0514-2.jpg">
-<img src="/img/trips/west-coast-2024/0514-3.jpg">
-<img src="/img/trips/west-coast-2024/0514-4.jpg">
-
-## Day 17
-
-<img src="/img/trips/west-coast-2024/0515-1.jpg">
-<img src="/img/trips/west-coast-2024/0515-2.jpg">
-<img src="/img/trips/west-coast-2024/0515-3.jpg">
-
-## Day 18
-
-<img src="/img/trips/west-coast-2024/0516-1.jpg">
-<img src="/img/trips/west-coast-2024/0516-2.jpg">
-
-## Day 19
-
-<img src="/img/trips/west-coast-2024/0517-1.jpg">
-<img src="/img/trips/west-coast-2024/0517-2.jpg">
-<img src="/img/trips/west-coast-2024/0517-3.jpg">
-<img src="/img/trips/west-coast-2024/0517-4.jpg">
-
-## Day 20
-
-<img src="/img/trips/west-coast-2024/0518-1.jpg">
-<img src="/img/trips/west-coast-2024/0518-2.jpg">
-<img src="/img/trips/west-coast-2024/0518-3.jpg">
-<img src="/img/trips/west-coast-2024/0518-4.jpg">
-<img src="/img/trips/west-coast-2024/0518-5.jpg">
-<img src="/img/trips/west-coast-2024/0518-6.jpg">
-<img src="/img/trips/west-coast-2024/0518-7.jpg">
-<img src="/img/trips/west-coast-2024/0518-8.jpg">
-<img src="/img/trips/west-coast-2024/0518-9.jpg">
-<img src="/img/trips/west-coast-2024/0518-10.jpg">
-<img src="/img/trips/west-coast-2024/0518-12.png">
-
+<!-- 
 ## Day 21
 
 <img src="/img/trips/west-coast-2024/0519-1.jpg">
@@ -492,6 +573,8 @@ Third day in San Francsico and yet again at another coffee shop. Like what else 
 <img src="/img/trips/west-coast-2024/0520-4.jpg">
 <img src="/img/trips/west-coast-2024/0520-5.jpg">
 <img src="/img/trips/west-coast-2024/0520-6.jpg">
+
+
 
 ## Day 23
 
