@@ -548,50 +548,69 @@ As soon as the sun disappeared I felt like I was driving through a horror movie 
 <img src="/img/trips/west-coast-2024/0518-12.png">
 
 
-<br>
-<br>
-<br>
-<i>Thank you for reading this far, I'm hard at work on the next update so stay tuned!</i>
-<br>
-<br>
-		<p class="max-w-6xl text-black text-2xl text-center m-auto my-10 leading-10">
-			<a href="/" class="w-full m-auto text-xl hover:underline">Return</a>
-		</p>
-
-<!-- 
 ## Day 21
 
 <img src="/img/trips/west-coast-2024/0519-1.jpg">
+
+Felt good to be out of the city again. I camped about 30 miles from the coast on some old logging road. 
+
 <img src="/img/trips/west-coast-2024/0519-2.jpg">
+
+Lounged about all day here, reading, coding, eating. One benefit to having a small van, or rather home, is that you don't need to physically move! It's got a kitchen, outlet, bed, closet, pantry, all within arm's reach. Got to be careful though, if I don't move enough I will end up like Peter Griffin in the episode he lived in a food truck. (He had to be lifted out with a crane after a week)
+
 <img src="/img/trips/west-coast-2024/0519-3.jpg">
+
+Found this fella and a few of his siblings in the creek next to where I was staying. 
 
 ## Day 22
 
 <img src="/img/trips/west-coast-2024/0520-1.jpg">
+
+Californian staple food.
+
 <img src="/img/trips/west-coast-2024/0520-2.jpg">
+
+An insightful book about the problems of smarter-than-human computers. To sum it up, it's not looking good for us. So remember to use your please and thank you's when talking to ChatGPT and you might be spared! 
+
 <img src="/img/trips/west-coast-2024/0520-3.jpg">
 <img src="/img/trips/west-coast-2024/0520-4.jpg">
 <img src="/img/trips/west-coast-2024/0520-5.jpg">
 <img src="/img/trips/west-coast-2024/0520-6.jpg">
 
+I finally caught him! It wasn't that hard, actually. They move as slowly and non-chalantly as people do in hot tubs.
 
+It's called a Rough-skinned Newt. Fun fact they are toxic. Only if you put them in your mouth. (I didn't)
 
 ## Day 23
 
 <img src="/img/trips/west-coast-2024/0521-1.jpg">
+
+Thanks to the sun I would be able to watch The Office. From the moment sunlight photons strike the photovoltaic cells in my solar panels, they are converted into electrical energy via the photovoltaic effect. This direct current (DC) is then routed through an inverter, converting it to alternating current (AC), which travels along conductive cables to my computer's power supply. Here, the electrical energy is utilized to power the computer's circuits, enabling the digital processing unit (CPU) and graphics processing unit (GPU) to decode and reassemble binary data into coherent video frames, which are ultimately rendered on the display screen as the show "The Office."
+
 <img src="/img/trips/west-coast-2024/0521-2.jpg">
 <img src="/img/trips/west-coast-2024/0521-3.jpg">
 <img src="/img/trips/west-coast-2024/0521-4.jpg">
+
+Beyond the dirt lot I was comfortably parked on was a 70ft cliff into sharp ocean rock. Wouldn't even complain if I woke up in the middle of the night to hear my breaks go out and realize I forgot the parking brake... cause that view is killer.
+
 <img src="/img/trips/west-coast-2024/0521-5.jpg">
 <img src="/img/trips/west-coast-2024/0521-6.jpg">
 
-## Day 24
+There is this thing I like to do that helps for remembering settings like this. It's kind of like a meditation. You go through all five of your senses and focus on each of them. What do you see? Hear? Smell? Feel? Taste? It's proven worthwhile since I started doing it as a kid. 
+
+## Day 24 <p class="inline text-gray-700  font-thin">Redwood Forest</p>
 
 <img src="/img/trips/west-coast-2024/0522-1.jpg">
+
+Redwood forest time!
+
 <img src="/img/trips/west-coast-2024/0522-2.jpg">
 <img src="/img/trips/west-coast-2024/0522-3.jpg">
 <img src="/img/trips/west-coast-2024/0522-4.jpg">
 <img src="/img/trips/west-coast-2024/0522-5.jpg">
+
+Avenue of the giants road. 10/10, felt like an ant.
+
 <img src="/img/trips/west-coast-2024/0522-6.jpg">
 <img src="/img/trips/west-coast-2024/0522-7.jpg">
 <img src="/img/trips/west-coast-2024/0522-8.jpg">
@@ -602,6 +621,24 @@ As soon as the sun disappeared I felt like I was driving through a horror movie 
 <img src="/img/trips/west-coast-2024/0522-13.jpg">
 <img src="/img/trips/west-coast-2024/0522-14.jpg">
 <img src="/img/trips/west-coast-2024/0522-15.jpg">
+
+Made it to Eureka.
+
 <img src="/img/trips/west-coast-2024/0522-16.jpg">
 <img src="/img/trips/west-coast-2024/0522-17.jpg">
 <img src="/img/trips/west-coast-2024/0522-18.jpg">
+
+
+
+
+
+<br>
+<br>
+<br>
+<i>Thank you for reading this far, I'm hard at work on the next update so stay tuned!</i>
+<br>
+<br>
+		<p class="max-w-6xl text-black text-2xl text-center m-auto my-10 leading-10">
+			<a href="/" class="w-full m-auto text-xl hover:underline">Return</a>
+		</p>
+
