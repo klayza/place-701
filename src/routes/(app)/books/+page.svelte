@@ -11,7 +11,7 @@
 		march: 0,
 		april: 3,
 		may: 2,
-		june: 0,
+		june: 4,
 		july: 0,
 		august: 0,
 		september: 0,
