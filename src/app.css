@@ -32,8 +32,8 @@ a:not(.article-nav-item a) {
 
 body {
   background-color: black;
-  font-family: Space Mono;
-  /* font-family: Consolas; */
+  font-family: Ultra;
+  /* font-family: Space Mono; */
   color: white;
   overflow-x: hidden;
 }

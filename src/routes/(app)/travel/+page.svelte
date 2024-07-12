@@ -24,7 +24,7 @@
         <div class="bg-white p-6 flex-grow flex flex-col">
           <h2 class="text-3xl font-bold mb-2 border-b-black">{trip.name}</h2>
           {#if trip.isOngoing}
-
+            <span class="bg-green-300 rounded-full px-2 w-fit">ONGOING</span>
 					{/if}
           <div class="flex-grow flex flex-col justify-end">
             <div class="grid grid-cols-2 gap-4 mt-4">

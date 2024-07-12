@@ -13,7 +13,7 @@
 		{
 			name: 'manifesto',
 			description: 'Get a glimpse of the vision.',
-			img: 'https://w.wallhaven.cc/full/p2/wallhaven-p2evlp.png'
+			img: '/img/think.jpg'
 		},
 		{ name: 'music', description: 'Listen to some bangers.' },
 		{ name: 'chill', description: 'A chill splash screen with music.' },
@@ -38,7 +38,7 @@
 	});
 </script>
 
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="container mx-auto px-4 sm:px -6 lg:px-8">
 	<header class="py-16 sm:py-24">
 		<h1 class="text-4xl sm:text-6xl font-bold mb-4">CLAYTON WIEBERG</h1>
 		<p class="text-xl sm:text-2xl mb-8">{intro}</p>
