@@ -1,0 +1,27 @@
+[
+  {
+    "week": 1,
+    "title": "Los Angeles",
+    "cover": "/img/trips/west-coast-2024/0430-la.jpg"
+  },
+  {
+    "week": 2,
+    "title": "Yosemite National Park",
+    "cover": "/img/trips/west-coast-2024/0508-4.jpg"
+  },
+  {
+    "week": 3,
+    "title": "San Francisco",
+    "cover": "/img/trips/west-coast-2024/0513-6.jpg"
+  },
+  {
+    "week": 4,
+    "title": "Redwood Forest",
+    "cover": "/img/trips/west-coast-2024/0522-5.jpg"
+  },
+  {
+    "week": 5,
+    "title": "Crater Lake",
+    "cover": "/img/trips/west-coast-2024/0529-2.jpg"
+  }
+]

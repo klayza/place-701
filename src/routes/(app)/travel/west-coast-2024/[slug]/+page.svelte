@@ -3,8 +3,9 @@
 	import { onMount } from 'svelte';
 	marked.use({ breaks: true });
 	export let data;
+	let tripId = `west-coast-2024`;
 
-	let url = `/data/trips/west-coast-2024/${data.id}.md`;
+	let url = `/data/trips/${tripId}/${data.id}.md`;
 	let text = ``;
 
 	function initializePage(mdText) {
@@ -94,7 +95,7 @@
 	}
 </script>
 
-<a href="/travel" class="sm:py-4 py-2 px-4 sm:px-8 m-8 absolute top-10 sm:top-12 bg-white -left-4 sm:-left-7 cursor-pointer">
+<a href="/travel/{tripId}" class="sm:py-4 py-2 px-4 sm:px-8 m-8 absolute top-10 sm:top-12 bg-white -left-4 sm:-left-7 cursor-pointer">
 	<i class="bx bx-arrow-back inline mr-4"></i>
 	<p class="inline mb-2">Back</p>
 </a>
@@ -102,7 +103,6 @@
 <!-- <div class="cover-img border-b w-full h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/{data.img}');"></div> -->
 <div class="border-b pt-12 pb-12">
 	<h1 class="text-5xl font-bold px-2 sm:px-0 text-center mt-6">West Coast Trip 2024</h1>
-	<p class="italic mt-6 text-center text-lg">Last updated 6/9/2024</p>
 	<!-- <h1 class="text-xl font-semibold text-center m-auto mt-12 max-w-4xl mb-4">{data.snippet}</h1> -->
 </div>
 
@@ -118,6 +118,11 @@
 	<div class="md-output all-initial mt-12">
 		{@html marked(text)}
 	</div>
+
+	<p class="max-w-6xl text-black text-2xl text-center m-auto my-10 leading-10">
+		<a href="/travel/{tripId}" class="w-full m-auto text-xl hover:underline">Return</a>
+	</p>
+
 </div>
 
 <style>

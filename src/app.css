@@ -17,6 +17,11 @@
   src: url("/fonts/GrandSlang.woff2");
 }
 
+@font-face {
+  font-family: Marker;
+  src: url("/fonts/PermanentMarker-Regular.ttf");
+}
+
 :root {
   --border-color: rgb(40, 40, 40);
 }
