@@ -12,7 +12,7 @@
 		april: 3,
 		may: 2,
 		june: 4,
-		july: 0,
+		july: 1,
 		august: 0,
 		september: 0,
 		october: 0,

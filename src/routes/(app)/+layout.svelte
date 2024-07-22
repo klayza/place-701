@@ -37,6 +37,11 @@
       <span class="uppercase text-xl">place-701</span>
     </div>
   </a>
+  <!-- <a href="/" class="text-md sm:text-xl head-item p-4 sm:p-6">
+    <div>
+      <span class="text-black text-xl">Clayton Wieberg</span>
+    </div>
+  </a> -->
   <button class="sm:hidden p-4" on:click={toggleMenu}>
     <i class="bx bx-menu text-2xl"></i>
   </button>

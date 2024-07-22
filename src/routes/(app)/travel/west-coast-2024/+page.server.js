@@ -1,4 +1,4 @@
-import { getWeekEntries, getWeekData } from '$lib/server/util.js';
+import { getWeekEntries, getWeekData } from '$lib/util.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {

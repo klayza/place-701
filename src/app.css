@@ -22,6 +22,28 @@
   src: url("/fonts/PermanentMarker-Regular.ttf");
 }
 
+/* =================
+
+Trying to get  global italic values to use the font below
+
+================== */
+
+/* @font-face {
+  font-family:adobe-garamond-pro;
+  src:url(https://use.typekit.net/af/5cace6/00000000000000003b9b00c2/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),
+  url(https://use.typekit.net/af/5cace6/00000000000000003b9b00c2/27/d?subset_id=2&fvd=i4&v=3) format("woff"),
+  url(https://use.typekit.net/af/5cace6/00000000000000003b9b00c2/27/a?subset_id=2&fvd=i4&v=3) format("opentype");
+  font-weight:400;
+  font-style:italic;
+  font-stretch:normal;
+  font-display:auto;
+}
+
+:global(em), :global(i), :global(.italic) {
+  font-family: 'adobe-garamond-pro' !important;
+} */
+
+
 :root {
   --border-color: rgb(40, 40, 40);
 }
@@ -89,6 +111,7 @@ html {
 /* Styling blockquotes */
 .md-output blockquote {
   position: relative;
+  margin: 20px;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
   padding: 10px;
@@ -337,8 +360,12 @@ html {
     width: 100% !important;
     padding-right: 0px;
     padding-left: 0px;
-
   }
+
+  .md-output blockquote {
+    margin: 0px;
+  }
+
 
   .md-output h1,
   .md-output h2,
