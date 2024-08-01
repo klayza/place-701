@@ -14,8 +14,8 @@
 1. On the Shortness of Life *by Seneca*
 1. Character of Physical Law *by Richard Feynman*
 1. The Dark Forest *by Cixin Liu*
+1. Physics of the Impossible *by Michio Kaku*
 
 **Currently reading**
-1. <span class="fade-text-light">Physics of the Impossible *by Michio Kaku*</span>
 1. <span class="fade-text-light">Think: A Compelling Introduction to Philosophy *by Simon Blackburn*</span>
 1. <span class="fade-text-light">Death's End *by Cixin Liu*</span>

@@ -89,6 +89,12 @@ export let trip_data = {
             "title": "Crater Lake",
             "cover": "/img/trips/west-coast-2024/0529-2.jpg",
             "updated": "7/10/2024"
+        },
+        {
+            "week": 6,
+            "title": "Portland",
+            "cover": "/img/trips/west-coast-2024/0607-1.jpg",
+            "updated": "8/1/2024"
         }
     ]
 }

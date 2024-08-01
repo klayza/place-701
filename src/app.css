@@ -53,7 +53,6 @@ Trying to get  global italic values to use the font below
 }
 
 a:not(.article-nav-item a) {
-
   color: red;
 }
 
@@ -191,6 +190,12 @@ html {
   margin: 30px !important;
   font-size: 16px;
   font-weight: bold;
+}
+
+.md-output video {
+  padding: 20px;
+  width: 100%;
+  height: auto;
 }
 
 /* Horizontal rule */

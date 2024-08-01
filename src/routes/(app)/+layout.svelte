@@ -28,13 +28,13 @@
 
 <svelte:head>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet"> -->
 </svelte:head>
 
 <header class="w-full border-b flex justify-between items-center relative bg-white">
-  <a href="/" class="text-md sm:text-xl head-item p-4 sm:p-6 primary-logo">
-    <div class="logo">
-      <span class="uppercase text-xl">place-701</span>
+  <a href="/" class="m-2 ml-6">
+    <div>
+      <span class="uppercase text-xl"><img src="favicon.png" alt="logo" class="h-12 w-auto"></span>
     </div>
   </a>
   <!-- <a href="/" class="text-md sm:text-xl head-item p-4 sm:p-6">
@@ -47,7 +47,7 @@
   </button>
   <nav class="hidden sm:flex flex-grow justify-end">
     {#each items.slice(1) as item}
-      <a href={item.url} class="text-md sm:text-lg head-item p-4 sm:p-6 border-r">
+      <a href={item.url} class="hover:text-red-500 text-black  text-md sm:text-lg head-item p-4 sm:p-6 border-r">
         <div>
           <span class="uppercase">{item.name}</span>
         </div>
@@ -63,7 +63,7 @@
         <i class="bx bx-x text-3xl"></i>
       </button>
     </div>
-    <nav class="flex flex-col items-center justify-center flex-grow">
+    <nav class="flex flex-col items-center  justify-center flex-grow">
       {#each items.slice(1) as item}
         <a href={item.url} class="text-white text-2xl py-4" on:click={toggleMenu}>
           <span class="uppercase">{item.name}</span>
