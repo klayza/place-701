@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import '../../app.css';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
@@ -28,8 +28,46 @@
 
 <svelte:head>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet"> -->
+</svelte:head> -->
+
+
+<script>
+	import '../../app.css';
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+  import SEO from '$lib/components/SEO.svelte';
+
+  onMount(() => {
+    import('boxicons').then((boxicons) => {});
+  });
+
+  let items = [
+    { name: 'place-701', url: '/', type: 'primary' },
+    {
+      name: 'projects',
+      url: '/projects',
+      type: 'normal',
+      previewData: { totalStars: 28429, totalUsers: 1, totalMRR: 0 }
+    },
+    { name: 'thoughts', url: '/thoughts', type: 'normal' },
+    { name: 'links', url: '/links', type: 'normal' }
+  ];
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
+</script>
+
+<SEO />
+
+<svelte:head>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </svelte:head>
+
+<!-- Rest of your layout code remains the same -->
+
 
 <header class="w-full border-b flex justify-between items-center relative bg-white">
   <a href="/" class="m-2 ml-6">

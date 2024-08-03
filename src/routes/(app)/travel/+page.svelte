@@ -1,6 +1,8 @@
 <script>
   // @type {import('./$types').PageData}
   import { trips } from '$lib/data.js';
+  import SEO from '$lib/components/SEO.svelte';
+  
   function daysSinceDate(startDate) {
     const start = new Date(startDate);
     const today = new Date();
@@ -14,6 +16,12 @@
     return Math.floor(difference / (1000 * 60 * 60 * 24));
   }
 </script>
+
+
+<SEO 
+  title="Travel &mdash; Clayton Wieberg"
+/>
+
 
 <header class="w-full bg-black text-white text-2xl p-4 sticky top-0">Travel</header>
 
