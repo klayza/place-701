@@ -17,6 +17,7 @@
 		},
 		{ name: 'music', description: 'Listen to some bangers.' },
 		{ name: 'chill', description: 'A chill splash screen with music.' },
+		{ name: 'recipes', description: 'Meals I make often.' },
 	];
 
 	function capitalizeFirstLetter(string) {
