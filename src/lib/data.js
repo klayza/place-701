@@ -95,6 +95,12 @@ export let trip_data = {
             "title": "Portland",
             "cover": "/img/trips/west-coast-2024/0607-1.jpg",
             "updated": "8/1/2024"
+        },
+        {
+            "week": 7,
+            "title": "Ape Cave",
+            "cover": "/img/trips/west-coast-2024/0613-2.jpg",
+            "updated": "8/7/2024"
         }
     ]
 }

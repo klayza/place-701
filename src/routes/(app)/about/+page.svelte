@@ -36,6 +36,6 @@
 	</p>
     <br>
 	<p>
-		Outside of work I like to tinker with fun <a href="/projects">projects</a> such as web development, simluation, cellular automata, web scrapers, AI assistants, and user design. I like to read about scifi and philosophy late at night. My favorite movies are Tron, Dune, Her, and Fight Club. Occasionally I play games like Satisfactory, Factorio, Minecraft (modded), Stellaris, and Terraria. Rhythm games are somewhat an addiction for me... I play Beat Saber, Osu!, and Sound Voltex. 
+		Outside of work I like to tinker with fun <a href="/projects">projects</a> such as web development, simluation, cellular automata, web scrapers, AI assistants, and user design. I like to read about scifi and philosophy late at night. My favorite movies are Tron, Dune, Her, and Bladerunner 2077. Occasionally I play games like Satisfactory, Factorio, Minecraft (modded), Stellaris, and Terraria. Rhythm games are somewhat an addiction for me... I play Beat Saber, Osu!, and Sound Voltex. 
 	</p>
 </div>

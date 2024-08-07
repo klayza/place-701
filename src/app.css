@@ -193,7 +193,7 @@ html {
 }
 
 .md-output video {
-  padding: 20px;
+  /* padding: 20px; */
   width: 100%;
   height: auto;
 }
