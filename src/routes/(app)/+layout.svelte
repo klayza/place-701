@@ -72,7 +72,7 @@
 <header class="w-full border-b flex justify-between items-center relative bg-white">
   <a href="/" class="m-2 ml-6">
     <div>
-      <span class="uppercase text-xl"><img src="favicon.png" alt="logo" class="h-12 w-auto"></span>
+      <span class="uppercase text-xl"><img src="/favicon.png" alt="logo" class="h-12 w-auto"></span>
     </div>
   </a>
   <!-- <a href="/" class="text-md sm:text-xl head-item p-4 sm:p-6">
