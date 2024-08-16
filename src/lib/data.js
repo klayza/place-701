@@ -1,4 +1,4 @@
-export let thoughts = [
+export const thoughts = [
     // {
     //     id: 'next-discovery',
     //     title: 'Next Discoveries',
@@ -30,7 +30,7 @@ export let thoughts = [
 
 
 
-export let trips = [
+export const trips = [
     {
         name: "West Coast",
         id: "west-coast-2024",
@@ -62,7 +62,7 @@ export let trips = [
 ]
 
 
-export let trip_data = {
+export const trip_data = {
     "west-coast-2024": [
         {
             "week": 1,
@@ -111,13 +111,34 @@ export let trip_data = {
     ]
 }
 
-export let books = [
+export const books = [
     {
         name: "The Beginning of Infinity",
         img: "beginning.jpg",
         comment: "Deez nuts",
     }
 ]
+
+export const projects = [
+    {
+      title: "Scholar's Quest",
+      description: "A learning platform for creating and sharing courses with ease",
+      url: "https://scholars-quest.vercel.app/",
+      tags: ["0 MRR", "1 User"],
+      images: ["/img/sq-land.png"]
+    },
+    {
+      title: "day2day",
+      description: "Organize long term personal growth",
+      url: "https://github.com/klayza/day2day",
+      tags: ["Open Source", "Python", "Flask", "jQuery"],
+      images: [
+        "https://github.com/klayza/day2day/raw/main/sisyphus.png",
+        "https://github.com/klayza/day2day/raw/main/assets/habittracker.png",
+        "https://github.com/klayza/day2day/raw/main/assets/quota.png"
+      ]
+    }
+  ];
 
 
 export const links = [
@@ -221,7 +242,7 @@ export const links = [
 
 
 
-export let recipes = [
+export const recipes = [
     {
         id: "canadian-pizza",
         name: "Canadian Pizza 🍕",
