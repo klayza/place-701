@@ -367,6 +367,13 @@ html {
     padding-left: 0px;
   }
 
+  .md-output video {
+    padding: 0px;
+    width: 100%;
+    height: auto;
+  }
+  
+
   .md-output blockquote {
     margin: 0px;
   }

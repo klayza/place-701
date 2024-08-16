@@ -101,7 +101,13 @@ export let trip_data = {
             "title": "Ape Cave",
             "cover": "/img/trips/west-coast-2024/0613-2.jpg",
             "updated": "8/7/2024"
-        }
+        },
+        {
+            "week": 8,
+            "title": "Rainier National Park",
+            "cover": "/img/trips/west-coast-2024/0620-4.jpg",
+            "updated": "8/16/2024"
+        },
     ]
 }
 
