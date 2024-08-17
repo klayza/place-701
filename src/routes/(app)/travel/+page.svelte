@@ -3,11 +3,18 @@
   import { trips } from '$lib/data.js';
   import SEO from '$lib/components/SEO.svelte';
   
-  function daysSinceDate(startDate) {
+  function daysSinceDate(startDate, id="") {
+    let subtractor = 0;
+    if (id == "west-coast-2024") {
+      // When I flew back to missouri
+      subtractor = 23;
+    }
+
+
     const start = new Date(startDate);
     const today = new Date();
     const difference = today - start;
-    return Math.floor(difference / (1000 * 60 * 60 * 24));
+    return Math.floor(difference / (1000 * 60 * 60 * 24)) - subtractor;
   }
   function daysDifference(startDate, endDate) {
     const start = new Date(startDate);
@@ -42,7 +49,7 @@
               </div>
               <div>
                 <p class="font-semibold">Duration</p>
-                <p>{trip.isOngoing ? daysSinceDate(trip.start) : daysDifference(trip.start, trip.end)} days</p>
+                <p>{trip.isOngoing ? daysSinceDate(trip.start, trip.id) : daysDifference(trip.start, trip.end)} days</p>
               </div>
             </div>
             <div class="mt-4">

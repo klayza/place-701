@@ -15,9 +15,9 @@
 			description: 'Get a glimpse of the vision.',
 			img: '/img/think.jpg'
 		},
-		{ name: 'music', description: 'Listen to some bangers.' },
-		{ name: 'chill', description: 'A chill splash screen with music.' },
-		{ name: 'recipes', description: 'Meals I make often.' },
+		// { name: 'music', description: 'Listen to some bangers.' },
+		// { name: 'chill', description: 'A chill splash screen with music.' },
+		{ name: 'recipes', description: 'Meals I make often.' }
 	];
 
 	function capitalizeFirstLetter(string) {
@@ -79,7 +79,8 @@
 		max-width: 1200px;
 	}
 
-	h1, h2 {
+	h1,
+	h2 {
 		font-weight: 900;
 		letter-spacing: 0.05em;
 	}
@@ -92,7 +93,9 @@
 		font-size: 1.125rem;
 		font-weight: bold;
 		text-transform: uppercase;
-		transition: background-color 0.3s, transform 0.3s;
+		transition:
+			background-color 0.3s,
+			transform 0.3s;
 	}
 
 	.btn-primary:hover {

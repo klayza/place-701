@@ -85,9 +85,9 @@
   </button>
   <nav class="hidden sm:flex flex-grow justify-end">
     {#each items.slice(1) as item}
-      <a href={item.url} class="hover:text-red-500 text-black  text-md sm:text-lg head-item p-4 sm:p-6 border-r">
+      <a href={item.url} class="hover:text-red-500 text-black  text-md sm:text-lg head-item p-4 sm:p-6">
         <div>
-          <span class="uppercase">{item.name}</span>
+          <span class="capitalize">{item.name}</span>
         </div>
       </a>
     {/each}
