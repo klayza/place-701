@@ -110,7 +110,7 @@
 	<ul class="p-4 sm:pl-20 mb-12"></ul>
 </div>
 
-<div class="max-w-5xl m-auto text-md sm:text-lg py-12 sm:py-12 cursor-default p-6 sm:p-8">
+<div class="max-w-5xl m-auto text-md sm:text-lg py-12 sm:py-12 cursor-default p-3 sm:p-8">
 	<img class="loading m-auto p-12" src="/ico/loading.gif" alt="loading" />
 
 	<br />

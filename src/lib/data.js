@@ -108,9 +108,21 @@ export const trip_data = {
             "cover": "/img/trips/west-coast-2024/0620-4.jpg",
             "updated": "8/16/2024"
         },
+        {
+            "week": 9,
+            "title": "Seattle",
+            "cover": "/img/trips/west-coast-2024/0624-3.jpg",
+            // "cover": "/img/trips/west-coast-2024/0724-11.jpg",
+            "updated": "8/20/2024"
+        },
+        // {
+        //     "week": 10,
+        //     "title": "Northwest Peninsula",
+        //     "cover": "/img/trips/west-coast-2024/0727-8.jpg",
+        //     "updated": "8/20/2024"
+        // },
     ]
 }
-
 export const books = [
     {
         name: "The Beginning of Infinity",
