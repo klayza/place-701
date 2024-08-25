@@ -115,12 +115,12 @@ export const trip_data = {
             // "cover": "/img/trips/west-coast-2024/0724-11.jpg",
             "updated": "8/20/2024"
         },
-        // {
-        //     "week": 10,
-        //     "title": "Northwest Peninsula",
-        //     "cover": "/img/trips/west-coast-2024/0727-8.jpg",
-        //     "updated": "8/20/2024"
-        // },
+        {
+            "week": 10,
+            "title": "Northwest Peninsula",
+            "cover": "/img/trips/west-coast-2024/0727-8.jpg",
+            "updated": "8/23/2024"
+        },
     ]
 }
 export const books = [
