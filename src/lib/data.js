@@ -121,6 +121,12 @@ export const trip_data = {
             "cover": "/img/trips/west-coast-2024/0727-8.jpg",
             "updated": "8/23/2024"
         },
+        {
+            "week": 11,
+            "title": "Vancouver",
+            "cover": "/img/trips/west-coast-2024/0804-8.jpg",
+            "updated": "8/27/2024"
+        },
     ]
 }
 export const books = [
@@ -254,7 +260,16 @@ export const books = [
         end: "",
         comment: "",
         isbn: "9780135159552",
-    }
+    },
+    {
+        name: "Death's End",
+        author: "Cixin Liu",
+        start: "7/8/2024",
+        end: "8/23/2024",
+        comment: "Existential dread.",
+        isbn: "9780765377104",
+    },
+
 ];
 
 
