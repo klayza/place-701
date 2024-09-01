@@ -127,6 +127,18 @@ export const trip_data = {
             "cover": "/img/trips/west-coast-2024/0804-8.jpg",
             "updated": "8/27/2024"
         },
+        {
+            "week": 12,
+            "title": "Banff National Park",
+            "cover": "/img/trips/west-coast-2024/0809-7.jpg",
+            "updated": "9/1/2024"
+        },
+        // {
+        //     "week": 13,
+        //     "title": "Glacier National Park",
+        //     "cover": "/img/trips/west-coast-2024/0813-2.jpg",
+        //     "updated": "8/31/2024"
+        // },
     ]
 }
 export const books = [
@@ -138,6 +150,14 @@ export const books = [
         comment: "Incredibly moving last page. Reading pg. 459 for motivation.",
         isbn: "9781101549827",
         img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1311705051i/10483171.jpg",
+    },
+    {
+        name: "Think : a compelling introduction to philosophy Introduction to Philosophy",
+        author: "Simon Blackburn",
+        start: "6/26/2024",
+        end: "8/31/2024",
+        comment: "This shit is an introduction? wtf. I thought I was reading another language!",
+        isbn: "9780192854254",
     },
     {
         name: "The Three Body Problem",

@@ -51,6 +51,10 @@
 		return getBooksReadThisMonth().length;
 	}
 
+	function toggleFullTitle(element) {
+    element.classList.toggle('full-title');
+  }
+
 	function updateReadingStatus() {
 		const booksReadLastMonth = calculateBooksReadLastMonth();
 		books_read_this_month = calculateBooksReadThisMonth();
@@ -99,7 +103,8 @@
 				{:else}
 					<span class="block sm:inline"
 						>I read {books_read_last_month}
-						{books_read_last_month < 2 ? 'book' : 'books'} last month and {books_read_this_month} {books_read_this_month < 2 ? 'book' : 'books'} ({getBooksReadThisMonth()
+						{books_read_last_month < 2 ? 'book' : 'books'} last month and {books_read_this_month}
+						{books_read_this_month < 2 ? 'book' : 'books'} ({getBooksReadThisMonth()
 							.map((book) => book.name)
 							.join(', ')}) this month. I have {days_until_next_month}
 						{days_until_next_month < 2 ? 'day' : 'days'} left to read {books_left_to_read}
@@ -114,13 +119,52 @@
 		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 			{#each books as book}
 				<div class="group h-64 flex flex-col items-center justify-center p-4">
-					<img src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} alt={`${book.name} cover`} class="h-40 mb-4 object-contain" />
-					<div class="text-center">
-						<div class="font-semibold">{book.name}</div>
+					<img 
+						src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} 
+						alt={`${book.name} cover`} 
+						class="h-40 mb-4 object-contain"
+					/>
+					<div class="text-center w-full">
+						<div class="title-container font-semibold cursor-pointer" 
+								 title={book.name}
+								 on:click={(e) => toggleFullTitle(e.target)}>
+							{book.name}
+						</div>
 						<div class="text-sm text-gray-600">{book.author}</div>
 					</div>
 				</div>
 			{/each}
 		</div>
 	</div>
-</div>
+	</div>	
+	
+	<style>
+		.title-container {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-height: 2.5em; /* Adjust this value based on your font size and line height */
+		}
+	
+		.title-container::after {
+			content: "...";
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			padding: 0 0.25em;
+			background: white; /* Match this with your background color */
+			font-weight: normal;
+		}
+	
+		.full-title {
+			display: block;
+			-webkit-line-clamp: unset;
+			max-height: none;
+		}
+	
+		.full-title::after {
+			display: none;
+		}
+	</style>
