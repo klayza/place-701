@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #suggestions {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        #suggestions li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        #suggestions li:hover {
+            background-color: #f0f0f0;
+        }
+        #book-details {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: none;
+        }
+        #book-cover {
+            max-width: 100px;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Search</h1>
+    <input type="text" id="search-input" placeholder="Start typing a book title...">
+    <ul id="suggestions"></ul>
+    <div id="book-details"></div>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const suggestionsList = document.getElementById('suggestions');
+        const bookDetails = document.getElementById('book-details');
+
+        let debounceTimer;
+
+        searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                const query = this.value.trim();
+                if (query.length > 2) {
+                    fetchSuggestions(query);
+                } else {
+                    suggestionsList.innerHTML = '';
+                }
+            }, 300);
+        });
+
+        async function fetchSuggestions(query) {
+            try {
+                const response = await fetch(`https://openlibrary.org/search.json?title=${encodeURIComponent(query)}&limit=5`);
+                const data = await response.json();
+                displaySuggestions(data.docs);
+            } catch (error) {
+                console.error('Error fetching suggestions:', error);
+            }
+        }
+
+        function displaySuggestions(books) {
+            suggestionsList.innerHTML = '';
+            books.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = book.title;
+                li.addEventListener('click', () => selectBook(book));
+                suggestionsList.appendChild(li);
+            });
+        }
+
+        async function selectBook(book) {
+            searchInput.value = book.title;
+            suggestionsList.innerHTML = '';
+            
+            try {
+                const response = await fetch(`https://openlibrary.org${book.key}.json`);
+                const details = await response.json();
+                displayBookDetails(book, details);
+            } catch (error) {
+                console.error('Error fetching book details:', error);
+            }
+        }
+
+        function displayBookDetails(book, details) {
+            const coverUrl = book.cover_i 
+                ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+                : 'https://via.placeholder.com/100x150';
+
+            bookDetails.innerHTML = `
+                <img id="book-cover" src="${coverUrl}" alt="Book cover">
+                <h2>${book.title}</h2>
+                <p><strong>Author:</strong> ${book.author_name ? book.author_name.join(', ') : 'Unknown'}</p>
+                <p><strong>First Published:</strong> ${book.first_publish_year || 'Unknown'}</p>
+                <p><strong>ISBN:</strong> ${book.isbn ? book.isbn[0] : 'Not available'}</p>
+            `;
+            bookDetails.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

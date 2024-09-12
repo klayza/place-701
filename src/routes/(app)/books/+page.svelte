@@ -1,103 +1,170 @@
 <script>
-	/** @type {import('./$types').PageData} */
-	import { marked } from 'marked';
+	import { books } from '$lib/data.js';
 	import { onMount } from 'svelte';
-	marked.use({ breaks: true });
 
-	let book_goal = 2;
-	let book_counts = {
-		january: 0,
-		february: 0,
-		march: 0,
-		april: 3,
-		may: 2,
-		june: 4,
-		july: 0,
-		august: 0,
-		september: 0,
-		october: 0,
-		november: 0,
-		december: 0
-	};
+	const monthly_book_goal = 2;
+	let books_left_to_read = 0;
+	let days_until_next_month = 0;
+	let show_penalty_message = false;
+	let penalty_amount = 0;
+	let books_read_this_month = 0;
+	let books_read_this_month_list = getBooksReadThisMonth();
+	let books_read_last_month = calculateBooksReadLastMonth();
+	let message_color = calculateMessageColor();
 
-	// Get the current month and the previous month
-	let today = new Date();
-	let month_names = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-	let current_month = today.getMonth();
-	let previous_month = current_month === 0 ? 11 : current_month - 1; // handle January case
-
-	// Get the number of books read in the previous month
-	let books_read = book_counts[month_names[previous_month]];
-
-	// Calculate the number of days left in the current month
-	let lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-	let days_left = lastDayOfMonth.getDate() - today.getDate();
-
-	const failed = books_read < book_goal;
-
-	// Generate the output statement
-	let fail = `	<div class="border sm:m-8 m-0 my-6 p-6 bg-gray-200">
-	<p class="italic text-md sm:text-xl">${books_read < book_goal ? `Last month I read <span class="text-red-400">${books_read}</span> ${books_read === 1 ? 'book' : 'books'}, so if you see this and are that family member then you get $${(book_goal - books_read) * 100} dollars.` : ''}</p></div>`;
-	let output = `   <p class="italic text-md sm:text-xl">I love to read, and have just begun to read regularly. My goal is to read two books a month. I have setup a deal with family to pay them $100 for every book I fail to complete.</p>	${failed ? fail : ""}`;
-
-	let url = `/data/books.md`;
-	let text = ``;
-
-	onMount(async () => {
-		try {
-			const res = await fetch(url);
-			if (res.ok) {
-				text = await res.text();
-			} else {
-				console.error(`Failed to fetch: ${res.statusText}`);
-				text = `<h3 class="text-center">Sorry, this doesn't exist yet.</h3>`;
-			}
-		} catch (error) {
-			console.error(`Error fetching markdown file: ${error}`);
-			text = `<h3 class="text-center text-gray-600">Error loading content...</h3>`;
+	function calculateMessageColor() {
+		if (books_left_to_read == 0) {
+			return 'green';
+		} else if (books_left_to_read > 0 && !show_penalty_message) {
+			return 'blue';
+		} else if (show_penalty_message) {
+			return 'red';
 		}
-		// Assuming there's an element with the class 'loading' to be removed
-		const loadingElement = document.querySelector('.loading');
-		if (loadingElement) loadingElement.remove();
+	}
+
+	function calculateDaysUntilNextMonth() {
+		const today = new Date();
+		const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+		return Math.ceil((nextMonth - today) / (1000 * 60 * 60 * 24));
+	}
+
+	function calculateBooksReadLastMonth() {
+		const today = new Date();
+		const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+		return books.filter((book) => {
+			const endDate = new Date(book.end);
+			return endDate >= lastMonth && endDate < today;
+		}).length;
+	}
+
+	function getBooksReadThisMonth() {
+		const today = new Date();
+		const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+		const nextMonthStart = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+		return books.filter((book) => {
+			const endDate = new Date(book.end);
+			return endDate >= currentMonthStart && endDate < nextMonthStart;
+		});
+	}
+
+	function calculateBooksReadThisMonth() {
+		return getBooksReadThisMonth().length;
+	}
+
+	function toggleFullTitle(element) {
+    element.classList.toggle('full-title');
+  }
+
+	function updateReadingStatus() {
+		const booksReadLastMonth = calculateBooksReadLastMonth();
+		books_read_this_month = calculateBooksReadThisMonth();
+		books_left_to_read = Math.max(0, monthly_book_goal - books_read_this_month);
+		days_until_next_month = calculateDaysUntilNextMonth();
+
+		if (booksReadLastMonth < monthly_book_goal) {
+			show_penalty_message = true;
+			penalty_amount = (monthly_book_goal - booksReadLastMonth) * 100;
+		} else {
+			show_penalty_message = false;
+			penalty_amount = 0;
+		}
+	}
+
+	onMount(() => {
+		updateReadingStatus();
 	});
 </script>
 
-<!-- <a href="/" class="py-4 px-8 m-4 mt-4 border absolute top-20 bg-white hover:bg-slate-100 left-0 cursor-pointer "><i class='bx bx-arrow-back inline mr-4'></i><p class="inline mb-2">Back</p></a> -->
+<p class="w-full bg-black text-white uppercase text-2xl z-10 p-4">Reading List</p>
 
-<p class="w-full bg-black text-white text-2xl z-10 p-4">Reading List</p>
+<div class="max-w-screen-lg m-auto text-lg p-2 py-12 sm:py-16 sm:p-8">
+	<div>
+		<p class="text-md sm:text-xl">I love to read, and have just begun to read regularly. My goal is to read two books a month. I have setup a deal with family to pay them $100 for every book I fail to complete. If I do fail, a message will appear here and whoever sees it will get to steal my cash.</p>
+		<p></p>
 
-<!-- <div class="cover-img border-b w-full h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/{data.img}');"></div> -->
-<!-- <div class="border-y p-24">
-	<h1 class="text-5xl font-bold text-center mt-6">{data.title}</h1>
-	<h1 class="text-xl font-semibold text-center m-auto mt-12 max-w-4xl mb-4">{data.snippet}</h1>
-</div> -->
-<div class="max-w-5xl m-auto text-lg py-24 cursor-default p-8">
-	{@html output}
-	<img class="loading m-auto p-12" src="/ico/loading.gif" alt="loading" />
+		{#if show_penalty_message}
+			<div class="bg-{calculateMessageColor()}-100 border border-{calculateMessageColor()}-400 text-{calculateMessageColor()}-700 px-4 py-3 rounded relative mt-8" role="alert">
+				<strong class="font-bold"></strong>
+				<span class="block sm:inline">If you are seeing this then I failed to meet my reading goal last month. 😢 Claim ${penalty_amount} by texting me before the end of the month.</span>
+			</div>
+		{/if}
+		{#if !show_penalty_message}
+			<div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mt-8" role="alert">
+				<strong class="font-bold"></strong>
+				{#if books_read_this_month == 0}
+					<span class="block sm:inline"
+						>I read {books_read_last_month}
+						{books_read_last_month < 2 ? 'book' : 'books'} last month and none this month. I have {days_until_next_month}
+						{days_until_next_month < 2 ? 'day' : 'days'} left to read {books_left_to_read}
+						{books_left_to_read < 2 ? 'book' : 'books'}.
+					</span>
+				{:else if books_read_this_month == monthly_book_goal}
+					<span class="block sm:inline">I met my goal by reading {monthly_book_goal} {monthly_book_goal < 2 ? 'book' : 'books'} this month. </span>
+				{:else}
+					<span class="block sm:inline"
+						>I read {books_read_last_month}
+						{books_read_last_month < 2 ? 'book' : 'books'} last month and {books_read_this_month}
+						{books_read_this_month < 2 ? 'book' : 'books'} ({getBooksReadThisMonth()
+							.map((book) => book.name)
+							.join(', ')}) this month. I have {days_until_next_month}
+						{days_until_next_month < 2 ? 'day' : 'days'} left to read {books_left_to_read}
+						{books_left_to_read < 2 ? 'book' : 'books'}.
+					</span>
+				{/if}
+			</div>
+		{/if}
+	</div>
 
-	<div class="md-output all-initial text-sm sm:text-xl mt-20">{@html marked(text)}</div>
-</div>
-
-<style>
-	.md-output code {
-		background-color: gray !important;
-	}
-
-	.md-output p {
-		/* margin-bottom: 16px !important; */
-	}
-
-	li {
-		list-style-position: outside !important;
-	}
-
-	a {
-		color: rgb(48, 60, 219);
-	}
-
-	.md-output p {
-		margin: 10px !important;
-		font-size: 19px;
-		line-height: 1 !important;
-	}
-</style>
+	<div class="md-output all-initial text-md sm:text-xl mt-20">
+		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+			{#each books as book}
+				<div class="group h-64 flex flex-col items-center justify-center p-4">
+					<img 
+						src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} 
+						alt={`${book.name} cover`} 
+						class="h-40 mb-4 object-contain"
+					/>
+					<div class="text-center w-full">
+						<div class="title-container font-semibold cursor-pointer" 
+								 title={book.name}
+								 on:click={(e) => toggleFullTitle(e.target)}>
+							{book.name}
+						</div>
+						<div class="text-sm text-gray-600">{book.author}</div>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+	</div>	
+	
+	<style>
+		.title-container {
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-height: 2.5em; /* Adjust this value based on your font size and line height */
+		}
+	
+		.title-container::after {
+			content: "...";
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			padding: 0 0.25em;
+			background: white; /* Match this with your background color */
+			font-weight: normal;
+		}
+	
+		.full-title {
+			display: block;
+			-webkit-line-clamp: unset;
+			max-height: none;
+		}
+	
+		.full-title::after {
+			display: none;
+		}
+	</style>

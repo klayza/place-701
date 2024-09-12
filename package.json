@@ -33,7 +33,9 @@
 	"type": "module",
 	"dependencies": {
 		"boxicons": "^2.1.4",
+		"lucide-svelte": "^0.424.0",
 		"marked": "^12.0.1",
-		"market": "^1.0.0"
+		"market": "^1.0.0",
+		"sqlite3": "^5.1.7"
 	}
 }

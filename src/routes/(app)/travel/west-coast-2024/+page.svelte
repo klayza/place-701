@@ -1,102 +1,139 @@
 <script>
-  // @type {import('./$types').PageData}
-  export let data;
-  const { totalMdFiles, mostRecentModifiedDate } = data;
+	// @type {import('./$types').PageData}
+	export let data;
+	let email = '';
+	let message = '';
+	let messageType = ''; // 'success' or 'error'
+	let showMessage = false;
+
+	const { totalMdFiles, mostRecentModifiedDate, weekData } = data;
+	console.log(weekData);
+	function weekTitle(weekNum) {
+		const week = weekData.find((w) => w.week == weekNum);
+		if (!week) {
+			return ' ';
+		} else if (week.title) {
+			return '' + week.title;
+		} else {
+			return ' ';
+		}
+	}
+	function formatDate(dateString) {
+		const date = new Date(dateString);
+		return date.toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		});
+	}
+	function weekCover(weekNum) {
+		const week = weekData.find((w) => w.week == weekNum);
+		return week?.cover || '';
+	}
+
+	async function submitEmail() {
+		try {
+			const response = await fetch('/api/subscribe', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ email })
+			});
+
+			const data = await response.json();
+
+			if (response.ok) {
+				message = data.message;
+				messageType = 'success';
+				email = ''; // Clear the input
+			} else {
+				message = data.error || 'Something went wrong';
+				messageType = 'error';
+			}
+		} catch (err) {
+			message = 'Network error';
+			messageType = 'error';
+		}
+
+		showMessage = true;
+
+		// Hide the message after a few seconds
+		setTimeout(() => {
+			showMessage = false;
+		}, 3000);
+	}
 </script>
 
-<a href="/travel" class="sm:py-4 py-2 px-4 sm:px-8 m-8 absolute top-10 sm:top-12 bg-white -left-4 sm:-left-7 cursor-pointer">
+<a href="/travel" class="sm:py-4 py-2 px-4 sm:px-8 m-8 absolute top-10 sm:top-12 bg-white -left-4 sm:-left-7 cursor-pointer z-10">
 	<i class="bx bx-arrow-back inline mr-4"></i>
 	<p class="inline mb-2">Back</p>
 </a>
 
 <div class="border-b pt-12 pb-12">
 	<h1 class="text-5xl font-bold px-2 sm:px-0 text-center mt-6">West Coast Trip 2024</h1>
-	<p class="italic mt-6 text-center text-lg">{mostRecentModifiedDate}</p>
+	<p class="italic mt-6 text-center text-lg">Last updated {formatDate(mostRecentModifiedDate)}</p>
 </div>
 
-<div class="article-navigation sm:block px-2 sm:px-18 pt-0">
-	<ul class="p-4 sm:pl-20 mb-12"></ul>
+<div class="max-w-5xl mx-auto py-12 pt-0 px-4 sm:px-8">
+	<div class="p-6 border my-4 rounded relative mt-4" role="alert">
+		<strong class="font-bold"></strong>
+		<span class="block sm:inline">Want to stay updated? Get emailed when I make a new post.</span>
+		<div class="m-auto my-2 mb-0 flex-row flex relative">
+			<input type="email" class="border px-2 bg-black text-white" placeholder="Enter your email" bind:value={email} />
+			<button class="uppercase bg-red-700 text-white border px-4 py-2" on:click={submitEmail}>Submit</button>
+
+			{#if showMessage}
+					<p class="py-2 ml-4 border-b bg-gray-100 px-3 {`notification ${messageType} show`}">{message}</p>
+			{/if}
+		</div>
+	</div>
+
+  <div class="space-y-8">
+		{#each Array(totalMdFiles).reverse() as _, i}
+			<a href="/travel/west-coast-2024/w{totalMdFiles - i}" class="block overflow-hidden group relative h-64">
+				<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({weekCover(totalMdFiles - i)});">
+					<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
+				</div>
+				<div class="relative h-full flex flex-col justify-center items-center text-white">
+					<p style="font-family: Marker;" class="text-3xl text-center line-clamp-3 text-shadow">{weekTitle(totalMdFiles - i)}</p>
+					<p class="text-2xl absolute bottom-2 left-4 font-bold mb-2 text-shadow italic text-gray-200">Week {totalMdFiles - i}</p>
+				</div>
+			</a>
+		{/each}
+	</div>
 </div>
-
-<div>
-	{#each {length: totalMdFiles} as _, i}
-		<a class="border" href="/travel/west-coast-2024/w{i}">
-			<p>Week {i}</p>
-		</a>	
-	{/each}
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
-	img {
-		border-radius: 40px !important;
+	.text-shadow {
+		text-shadow:
+			1px 1px 2px rgba(0, 0, 0, 0.5),
+			0 0 1px rgba(0, 0, 0, 0.5);
 	}
 
-	h2 {
-		margin-bottom: 50px;
-		margin-top: 50px !important;
-	}
-
-	.md-output code {
-		background-color: gray !important;
-	}
-
-	/* Example to add margin specifically */
-	.md-output p {
-		margin-bottom: 16px !important;
-	}
-
-	.article-navigation a {
-		color: #0066cc !important;
-		/* text-decoration: none; */
-	}
-
-	.annotation {
-		display: none;
-	}
-
-	.md-output blockquote {
-		position: relative;
-		margin: 20px !important;
-		padding: 10px;
-		background-color: #262626;
-		color: white;
-		border: 5px solid #000000;
-		font-style: italic;
-		max-height: 200px;
-		overflow: hidden;
-		transition: max-height 0.3s ease;
-	}
-
-	.md-output blockquote.expanded {
-		max-height: fit-content; /* Set a high value to accommodate the full content */
-	}
-
-	.md-output .expand-button {
-		cursor: pointer;
+	/* .notification {
 		position: absolute;
-		z-index: 10;
-		right: 50%;
-		transform: translateX(50%);
-		bottom: 5px;
-		border-radius: 50%;
-		background-clip: padding-box;
-		border: 1px solid #000000;
-		background-color: #262626;
-		padding: 0.5em;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		top: 100%;
+		left: 0;
+		right: 0;
+    bottom: 0;
+		margin: auto;
+		text-align: center;
+		transition: top 0.5s;
+    border: 1px solid;
+	} */
+
+	.notification.success {
+		/* background-color: rgb(0, 211, 0); */
+    color: green;
+	}
+
+	.notification.error {
+		/* background-color: red; */
+		color: red;
+	}
+
+	.notification.show {
+		top: 0;
 	}
 </style>
