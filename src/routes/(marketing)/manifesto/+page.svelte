@@ -1,7 +1,6 @@
 <script>
 	// import { marked } from 'marked';
 	/** @type {import('./$types').PageData} */
-	export let data;
 </script>
 
 <body>
@@ -11,6 +10,11 @@
 			<div class="author">- Buddha</div>
 		</div>
 		<div class="gradient-overlay"></div>
+		<div class="scroll-indicator">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M12 5v14M19 12l-7 7-7-7" />
+			</svg>
+		</div>
 	</div>
 	<div class="essay sm:max-w-screen-lg px-4 m-auto text-xl">
 		<p class="mt-20">
@@ -23,26 +27,13 @@
 
 		<p>Then, there was fire. That primal human, staring at the flames, saw not just warmth or cooked meat, but a spark of the meadow they carried inside. Fire bent the world to their will! Trees became homes, clay became pots that didn't leak, the night became less fearful. Their siblings, initially wary by the changes, were now awestruck. Here was a person not content with mere existence, but who dared claim the world could bow to their imagined reality.</p>
 
-		<p style="margin-top: 100px; margin-bottom: 100px;" class="sm:p-12">
+		<p>
 			What started as a single human sucking at merely getting by, ignited the very essence of human progress. From the first crude ax to sprawling cities, what makes civilization itself possible is the belief that things <i>don't</i> have to be the way they are. This is the gift of sucking — the restlessness, the dissatisfaction that makes us build our own golden meadows, one invention at a time.
 		</p>
-
 	</div>
 	<p class="m-auto my-10 leading-10 text-center">
 		<a href="/" class="w-full m-auto text-xl hover:underline">Return</a>
 	</p>
-
-	<!-- <div class="bg relative bg-no-repeat" style="background-image: url('/img/clouds.png')">
-		<h1 class="absolute" style="z-index: 100;">What you think is what you become.</h1>
-		<span class="absolute bottom-0 bg-below w-full bg-black text-blue-100"> - Buddha</span>
-	</div> -->
-	<!-- <div class="gradien t-descent bg-gradient-to-b from-transparent to-white h-24"></div> -->
-
-	<!-- <div class="absolute border-none top-0 bottom-0 w-full h-full -z-3 flex flex-row">
-		<div class="basis-1/3 h-full border-r border-gray-600"></div>
-		<div class="basis-1/3 h-full border-r border-gray-600"></div>
-		<div class="basis-1/3 h-full"></div>
-	</div> -->
 </body>
 
 <style>
@@ -51,6 +42,8 @@
 		margin: 0;
 		padding: 0;
 		height: 100%;
+		background-color: black;
+		color: white;
 		/* font-family: Arial, sans-serif; */
 	}
 	p {
@@ -76,7 +69,7 @@
 		left: 0;
 		right: 0;
 		height: 200px;
-		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 100%);
 	}
 	.quote-container {
 		text-align: center;
@@ -96,6 +89,15 @@
 
 	.essay {
 		/* font-size: 18px; */
+	}
+	.scroll-indicator {
+		position: absolute;
+		bottom: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: rgba(255, 255, 255, 0.7);
+		animation: bounce 2s infinite;
+		z-index: 20;
 	}
 
 	@media (max-width: 768px) {

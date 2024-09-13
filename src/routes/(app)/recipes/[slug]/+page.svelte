@@ -94,9 +94,9 @@
 	}
 </script>
 
-<a href="/recipes" class="sm:py-4 py-2 px-4 sm:px-8 m-7 sm:m-7 sm:hover:bg-slate-100 sm:border absolute top-12 sm:top-12 bg-white -left-4 sm:-left-7 cursor-pointer">
-	<i class="bx bx-arrow-back inline mr-4"></i>
-	<p class="inline mb-2">Back</p>
+<a href="/recipes" class="absolute top-20 sm:top-24 left-4 sm:left-8 py-2 px-4 bg-white hover:bg-slate-100 border rounded-md shadow-md z-50">
+	<i class='bx bx-arrow-back inline mr-2'></i>
+	<span class="inline">Back</span>
 </a>
 
 <!-- <a href="/" class="py-4 px-8 m-8 absolute top-0 left-0 border hover:bg-slate-100 cursor-pointer "><i class='bx bx-arrow-back inline mr-4'></i><p class="inline mb-2">Back</p></a> -->
@@ -113,7 +113,7 @@
 
 	<br />
 
-	<div class="md-output all-initial mt-12">
+	<div class="md-output all-initial ">
 		{@html marked(text)}
 	</div>
 </div>

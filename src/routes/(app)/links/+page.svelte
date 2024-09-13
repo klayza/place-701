@@ -1,27 +1,23 @@
 <script>
 	/** @type {import('./$types').PageData} */
-	import { links } from "$lib/data.js"
+	import { links } from '$lib/data.js';
 </script>
 
 <!-- <main class="border-x w-full m-auto 2xl:w-9/12 h-screen"> -->
-<!-- <div
-		class="w-full p-12 pl-8 border-b tracking-widest"
-		style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);"
-	>
-		<p class="uppercase text-3xl inline-block mr-8">links</p>
-	</div> -->
+<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);">
+	<p class="uppercase text-3xl inline-block mr-8">links</p>
+</div>
 
-<p class="w-full bg-black uppercase text-white text-2xl z-10 p-4">Links</p>
 
-<div class="sm:p-4 p-2 m-2 pt-12 pb-20 sm:pt-24 text-xl sm:max-w-screen-sm sm:m-auto">
+<div class="p-8 gap-8 sm:p-4m-2 pt-12 pb-20 sm:pt-24 text-xl sm:max-w-4xl ">
 	<ul class="">
 		{#each links as link}
 			<li class="border-b border-black mt-12">
-				<a class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out list-none text-xl flex" href={link.url}><div>{link.name} →</div></a> 
+				<a class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out list-none text-xl sm:text-2xl flex" href={link.url}><div>{link.name} →</div></a>
 				<!-- {@html link.description ? `<i class="ml-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-white"> ` + link.description + `</i>` : ''} -->
 			</li>
-			<p class="text-sm">{link.description}</p>
-			{/each}
+			<p class="text-sm sm:text-lg">{link.description}</p>
+		{/each}
 	</ul>
 </div>
 

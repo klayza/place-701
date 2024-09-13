@@ -95,25 +95,26 @@
 				<img src="img/clouds.png" class="h-full w-auto" />
 			</div>
 		</div> -->
-	<div class="w-full p-4 pl-8 text-2xl border-b border-dashed uppercase tracking-widest">
+	<!-- <div class="w-full p-4 pl-8 text-2xl border-b border-dashed uppercase tracking-widest">
 		<p>/ thoughts / all</p>
-	</div>
+	</div> -->
 
 	{#if thoughts.length == 0}
-		<p class="text-center text-3xl m-16">{thoughts.length === 0 ? "Nothing here yet" : ""}</p>
+		<p class="text-center text-3xl m-16">{thoughts.length === 0 ? 'Nothing here yet' : ''}</p>
 	{/if}
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8">
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 gap-8">
 		{#each posts as post}
-			<a href="/thoughts/{post.id}" on:hover={console.log('here')}>
-				<div class="p-4 flex flex-col max-h-">
-					<div class="mb-3 text-lg">
-						<p class="text-left inline">[{posts.indexOf(post) + 1}]</p>
-						<p class=" inline">{prettyDate(post.date)}</p>
+			<a href="/thoughts/{post.id}" class="border pb-4" on:hover={console.log('here')}>
+				<!-- svelte-ignore a11y-img-redundant-alt -->
+				<div class="p-4 flex flex-col">
+					<!-- <p class="text-left inline">[{posts.indexOf(post) + 1}]</p> -->
+					<img src={post.img ? post.img : 'img/clouds.png'} alt="Post Image" class="w-300 h-300 object-cover mb-2 m-4 rounded-lg " />
+					<div class="px-6">
+						<p class="text-xl my-6 font-semibold">{post.title}</p>
+						<p class=" text-left">{prettyDate(post.date)}</p>
+						<p class="mt-6">{post.snippet}</p>
 					</div>
-					<img src={post.img ? post.img : 'img/clouds.png'} alt="Post Image" class="w-300 h-300 object-cover mb-2" />
-					<p class="text-lg my-6 font-semibold">{post.title}</p>
-					<p class="text-lg">{post.snippet}</p>
 				</div>
 			</a>
 		{/each}
@@ -192,5 +193,4 @@
 	a {
 		color: black !important;
 	}
-
 </style>

@@ -10,14 +10,13 @@
 	let places = [
 		{ name: 'travel', description: "See where I've been." },
 		{ name: 'books', description: 'Some of my recommended reads.' },
-		{
-			name: 'manifesto',
-			description: 'Get a glimpse of the vision.',
-			img: '/img/think.jpg'
-		},
 		// { name: 'music', description: 'Listen to some bangers.' },
 		// { name: 'chill', description: 'A chill splash screen with music.' },
-		{ name: 'recipes', description: 'Meals I make often.' }
+		{ name: 'projects', description: 'Work and play.' },
+		{ name: 'thoughts', description: 'My opinions on the world.' },
+		{ name: 'links', description: 'My favorite sites around the net.' },
+		{ name: 'manifesto', description: 'Get a glimpse of the vision.', img: '/img/think.jpg' },
+		// { name: 'recipes', description: 'Meals I make often.' },
 	];
 
 	function capitalizeFirstLetter(string) {
@@ -122,7 +121,8 @@
 		background-color: rgba(0, 0, 0, 0.8);
 		color: #fff;
 		padding: 1rem;
-		transform: translateY(100%);
+		transform: translateY(0%);
+		/* transform: translateY(100%); */
 		transition: transform 0.3s;
 	}
 

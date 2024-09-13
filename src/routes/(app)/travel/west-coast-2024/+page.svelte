@@ -65,9 +65,9 @@
 	}
 </script>
 
-<a href="/travel" class="sm:py-4 py-2 px-4 sm:px-8 m-8 absolute top-10 sm:top-12 bg-white -left-4 sm:-left-7 cursor-pointer z-10">
-	<i class="bx bx-arrow-back inline mr-4"></i>
-	<p class="inline mb-2">Back</p>
+<a href="/travel" class="absolute top-20 sm:top-24 left-4 sm:left-8 py-2 px-4 bg-white hover:bg-slate-100 border rounded-md shadow-md z-50">
+	<i class='bx bx-arrow-back inline mr-2'></i>
+	<span class="inline">Back</span>
 </a>
 
 <div class="border-b pt-12 pb-12">
@@ -75,8 +75,8 @@
 	<p class="italic mt-6 text-center text-lg">Last updated {formatDate(mostRecentModifiedDate)}</p>
 </div>
 
-<div class="max-w-5xl mx-auto py-12 pt-0 px-4 sm:px-8">
-	<div class="p-6 border my-4 rounded relative mt-4" role="alert">
+<div class="max-w-5xl mx-auto pt-8 py-12 px-4 sm:px-8">
+	<!-- <div class="p-6 border my-4 rounded relative mt-4" role="alert">
 		<strong class="font-bold"></strong>
 		<span class="block sm:inline">Want to stay updated? Get emailed when I make a new post.</span>
 		<div class="m-auto my-2 mb-0 flex-row flex relative">
@@ -88,7 +88,7 @@
 			{/if}
 		</div>
 	</div>
-
+ -->
   <div class="space-y-8">
 		{#each Array(totalMdFiles).reverse() as _, i}
 			<a href="/travel/west-coast-2024/w{totalMdFiles - i}" class="block overflow-hidden group relative h-64">

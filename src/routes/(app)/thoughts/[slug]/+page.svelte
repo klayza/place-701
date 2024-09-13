@@ -1,53 +1,21 @@
 <script>
 	/** @type {import('./$types').PageData} */
-	import { marked } from 'marked';
-	import { onMount } from 'svelte';
-	marked.use({ breaks: true });
 	export let data;
 
-	let url = `/data/${data.id}.md`;
-	let text = `Loading...`;
-
-	onMount(async () => {
-		try {
-			const res = await fetch(url);
-			if (res.ok) {
-				text = await res.text();
-			} else {
-				console.error(`Failed to fetch: ${res.statusText}`);
-				text = `<h3 class="text-center">Sorry, this doesn't exist yet.</h3>`;
-			}
-		} catch (error) {
-			console.error(`Error fetching markdown file: ${error}`);
-			text = `<h3 class="text-center text-gray-600">Error loading content...</h3>`;
-		}
-		// Assuming there's an element with the class 'loading' to be removed
-		const loadingElement = document.querySelector('.loading');
-		if (loadingElement) loadingElement.remove();
-	});
+	import Article from '$lib/components/Article.svelte';
+	import ArticleHead from '$lib/components/ArticleHead.svelte';
+	import ArticleBody from '$lib/components/ArticleBody.svelte';
+	import SM from '../sm.svelte';
+	// import MDoutput from '$lib/components/MDoutput.svelte';
 </script>
 
-<a href="/thoughts" class="py-4 px-8 m-8 absolute top-20 bg-white hover:bg-slate-100 left-0 border cursor-pointer "><i class='bx bx-arrow-back inline mr-4'></i><p class="inline mb-2">Back</p></a>
-
-
-<div class="cover-img border-b w-full h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/{data.img}');"></div>
-<div class="border-y p-24">
-	<h1 class="text-5xl font-bold text-center mt-6">{data.title}</h1>
-	<h1 class="text-xl font-semibold text-center m-auto mt-12 max-w-4xl mb-4">{data.snippet}</h1>
-</div>
-<div class="max-w-5xl m-auto text-lg py-24 cursor-default p-8">
-	<img class="loading m-auto p-12" src="/ico/loading.gif" alt="loading" />
-
-	<div class="md-output all-initial">{@html marked(text)}</div>
-</div>
-
-<style>
-	.md-output code {
-		background-color: gray !important;
-	}
-
-	/* Example to add margin specifically */
-	.md-output p {
-		margin-bottom: 16px !important;
-	}
-</style>
+{#if data.source == 'md'}
+	<Article title={data.title} description={data.snippet} backPath="/thoughts" mdPath="/data/{data.id}.md" html="deez"></Article>
+{:else}
+	<ArticleHead backPath="/thoughts" title={data.title} ></ArticleHead>
+	<ArticleBody backPath="/thoughts">
+		{#if data.id == 'sm'}
+			<SM></SM>
+		{/if}
+	</ArticleBody>
+{/if}

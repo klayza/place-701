@@ -50,8 +50,9 @@
       previewData: { totalStars: 28429, totalUsers: 1, totalMRR: 0 }
     },
     { name: 'thoughts', url: '/thoughts', type: 'normal' },
-    { name: 'links', url: '/links', type: 'normal' }
-  ];
+    { name: 'links', url: '/links', type: 'normal' },
+    { name: 'about', url: '/about', type: 'normal' },
+];
 
   let isMenuOpen = false;
 

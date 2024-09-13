@@ -1,5 +1,6 @@
 <script>
 	import { books } from '$lib/data.js';
+
 	import { onMount } from 'svelte';
 
 	const monthly_book_goal = 2;
@@ -51,10 +52,6 @@
 		return getBooksReadThisMonth().length;
 	}
 
-	function toggleFullTitle(element) {
-    element.classList.toggle('full-title');
-  }
-
 	function updateReadingStatus() {
 		const booksReadLastMonth = calculateBooksReadLastMonth();
 		books_read_this_month = calculateBooksReadThisMonth();
@@ -75,7 +72,9 @@
 	});
 </script>
 
-<p class="w-full bg-black text-white uppercase text-2xl z-10 p-4">Reading List</p>
+<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 230), white, white);">
+	<p class="uppercase text-3xl inline-block mr-8">reading list</p>
+</div>
 
 <div class="max-w-screen-lg m-auto text-lg p-2 py-12 sm:py-16 sm:p-8">
 	<div>
@@ -119,52 +118,13 @@
 		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 			{#each books as book}
 				<div class="group h-64 flex flex-col items-center justify-center p-4">
-					<img 
-						src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} 
-						alt={`${book.name} cover`} 
-						class="h-40 mb-4 object-contain"
-					/>
-					<div class="text-center w-full">
-						<div class="title-container font-semibold cursor-pointer" 
-								 title={book.name}
-								 on:click={(e) => toggleFullTitle(e.target)}>
-							{book.name}
-						</div>
+					<img src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} alt={`${book.name} cover`} class="h-40 mb-4 object-contain" />
+					<div class="text-center">
+						<div class="font-semibold">{book.name}</div>
 						<div class="text-sm text-gray-600">{book.author}</div>
 					</div>
 				</div>
 			{/each}
 		</div>
 	</div>
-	</div>	
-	
-	<style>
-		.title-container {
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			-webkit-box-orient: vertical;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			max-height: 2.5em; /* Adjust this value based on your font size and line height */
-		}
-	
-		.title-container::after {
-			content: "...";
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			padding: 0 0.25em;
-			background: white; /* Match this with your background color */
-			font-weight: normal;
-		}
-	
-		.full-title {
-			display: block;
-			-webkit-line-clamp: unset;
-			max-height: none;
-		}
-	
-		.full-title::after {
-			display: none;
-		}
-	</style>
+</div>
