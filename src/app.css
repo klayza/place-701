@@ -98,7 +98,7 @@ html {
   /* color: #333; */
 }
 
-.md-output > * {
+.md-output>* {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
 }
@@ -159,6 +159,17 @@ html {
 }
 
 /* Headers */
+
+
+.md-output h1 p,
+.md-output h2 p,
+.md-output h3 p,
+.md-output h4 p {
+  /* margin-left: 0px !important; */
+  margin-left: 10px !important;
+}
+
+
 .md-output h1 {
   margin: 100px !important;
   font-size: 36px;
@@ -175,7 +186,7 @@ html {
 }
 
 
-.md-output h2 > p {
+.md-output h2>p {
   margin-left: 20px;
 }
 
@@ -370,7 +381,8 @@ html {
 @media (max-width: 640px) {
 
   .md-output {
-    padding: 7px !important;
+    padding: 2px !important;
+    /* padding: 7px !important; */
   }
 
   .md-output p {
@@ -390,7 +402,7 @@ html {
     width: 100%;
     height: auto;
   }
-  
+
 
   .md-output blockquote {
     margin: 0px;

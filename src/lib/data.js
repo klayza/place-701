@@ -142,12 +142,12 @@ export const trip_data = {
             "cover": "/img/trips/west-coast-2024/0809-7.jpg",
             "updated": "9/1/2024"
         },
-        // {
-        //     "week": 13,
-        //     "title": "Glacier National Park",
-        //     "cover": "/img/trips/west-coast-2024/0813-2.jpg",
-        //     "updated": "8/31/2024"
-        // },
+        {
+            "week": 13,
+            "title": "Glacier National Park",
+            "cover": "/img/trips/west-coast-2024/0814-7.jpg",
+            "updated": "9/17/2024"
+        },
     ]
 }
 export const books = [
@@ -303,28 +303,74 @@ export const books = [
 
 
 export const projects = [
-    // {
-    //   title: "Scholar's Quest",
-    //   description: "A learning platform for creating and sharing courses with ease",
-    //   url: "https://scholars-quest.vercel.app/",
-    //   tags: ["0 MRR", "1 User"],
-    //   images: ["/img/sq-land.png"]
-    // },
-    // {
-    //   title: "day2day",
-    //   description: "Organize long term personal growth",
-    //   url: "https://github.com/klayza/day2day",
-    //   tags: ["Open Source", "Python", "Flask", "jQuery"],
-    //   images: [
-    //     "https://github.com/klayza/day2day/raw/main/sisyphus.png",
-    //     "https://github.com/klayza/day2day/raw/main/assets/habittracker.png",
-    //     "https://github.com/klayza/day2day/raw/main/assets/quota.png"
-    //   ]
-    // }
-  ];
+    {
+        id: 'scholars-quest',
+        title: "Scholar's Quest",
+        url: 'https://scholars-quest.vercel.app/landing',
+        image: '/img/sq-land.png',
+        category: "past",
+    },
+    {
+        id: 'indie-students',
+        title: "Indie Students",
+        url: 'https://github.com/klayza/indiestudent',
+        image: '/img/projects/indiestudent.png',
+        category: "current",
+    },
+    {
+        id: 'place-701',
+        title: "Claycode.net",
+        url: 'https://github.com/klayza/place-701',
+        image: '/img/projects/place-701.png',
+        category: "current",
+    },
+    {
+        id: 'physarum',
+        title: 'Physarum',
+        url: 'https://github.com/klayza/physarum',
+        image: '/img/projects/physarum.png',
+        category: "current",
+    },
+    {
+        id: 'day2day',
+        title: 'day2day',
+        url: 'https://github.com/klayza/day2day',
+        image: 'https://github.com/klayza/day2day/raw/main/assets/habittracker.png',
+        category: "past",
+    },
+    {
+        id: 'simple-instagram',
+        title: 'Simple Instagram',
+        url: 'https://github.com/klayza/simple-instagram',
+        image: '/img/projects/simple-instagram.png',
+        category: "past"
+    },
+    {
+        id: 'asteroids',
+        title: 'Asteroids',
+        url: 'https://klayza.github.io/weekly-projects/37%20-%20Asteroids/',
+        image: '/img/projects/asteroids.png',
+        category: "weekly"
+    },
+];
 
 
 export const links = [
+    {
+        url: 'https://folkert.cargo.site/',
+        name: 'Folkert Gorter',
+        description: 'A designer\'s portfolio, with many beautiful and unique designs'
+    },
+    {
+        url: 'https://www.siteinspire.com/',
+        name: 'Siteinspire',
+        description: 'Awesome designer sites many unique ideas'
+    },
+    {
+        url: 'https://shiflett.org/',
+        name: 'Chris Shiflett',
+        description: 'An entrepreneur and web dev with high quality bookmarks + lots to read'
+    },
     {
         url: 'https://projects.kwon.nyc/internet-is-fun/',
         name: 'Internet is Fun',

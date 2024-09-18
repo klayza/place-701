@@ -2,7 +2,7 @@
 	export let backPath;
 </script>
 
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto px-1 sm:px-6 lg:px-8">
 	<div class="article-navigation mt-8 mb-12">
 		<ul class="space-y-2 sm:columns-2 lg:columns-3"></ul>
 	</div>
@@ -14,7 +14,7 @@
 	</p>
 </div>
 
-<style>
+<!-- <style>
 	.md-output img {
 		border-radius: 1.5rem;
 		margin-top: 1rem;
@@ -83,4 +83,4 @@
 			column-count: 3;
 		}
 	}
-</style>
+</style> -->
