@@ -10,6 +10,6 @@
 </script>
 
 <ArticleHead {backPath} {title} {description}></ArticleHead>
-<ArticleBody {backPath}>
-	<MDoutput url={mdPath}></MDoutput>
+<ArticleBody>
+	<MDoutput url={mdPath} backPath={backPath}></MDoutput>
 </ArticleBody>

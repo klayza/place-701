@@ -74,80 +74,86 @@ export const trips = [
 export const trip_data = {
     "west-coast-2024": [
         {
-            "week": 1,
+            "id": 1,
             "title": "Los Angeles",
             "cover": "/img/trips/west-coast-2024/0430-la.jpg"
         },
         {
-            "week": 2,
+            "id": 2,
             "title": "Yosemite National Park",
             "cover": "/img/trips/west-coast-2024/0508-4.jpg"
         },
         {
-            "week": 3,
+            "id": 3,
             "title": "San Francisco",
             "cover": "/img/trips/west-coast-2024/0513-6.jpg"
         },
         {
-            "week": 4,
+            "id": 4,
             "title": "Redwood Forest",
             "cover": "/img/trips/west-coast-2024/0522-5.jpg"
         },
         {
-            "week": 5,
+            "id": 5,
             "title": "Crater Lake",
             "cover": "/img/trips/west-coast-2024/0529-2.jpg",
             "updated": "7/10/2024"
         },
         {
-            "week": 6,
+            "id": 6,
             "title": "Portland",
             "cover": "/img/trips/west-coast-2024/0607-1.jpg",
             "updated": "8/1/2024"
         },
         {
-            "week": 7,
+            "id": 7,
             "title": "Ape Cave",
             "cover": "/img/trips/west-coast-2024/0613-2.jpg",
             "updated": "8/7/2024"
         },
         {
-            "week": 8,
+            "id": 8,
             "title": "Rainier National Park",
             "cover": "/img/trips/west-coast-2024/0620-4.jpg",
             "updated": "8/16/2024"
         },
         {
-            "week": 9,
+            "id": 9,
             "title": "Seattle",
             "cover": "/img/trips/west-coast-2024/0624-3.jpg",
             // "cover": "/img/trips/west-coast-2024/0724-11.jpg",
             "updated": "8/20/2024"
         },
         {
-            "week": 10,
+            "id": 10,
             "title": "Northwest Peninsula",
             "cover": "/img/trips/west-coast-2024/0727-8.jpg",
             "updated": "8/23/2024"
         },
         {
-            "week": 11,
+            "id": 11,
             "title": "Vancouver",
             "cover": "/img/trips/west-coast-2024/0804-8.jpg",
             "updated": "8/27/2024"
         },
         {
-            "week": 12,
+            "id": 12,
             "title": "Banff National Park",
             "cover": "/img/trips/west-coast-2024/0809-7.jpg",
             "updated": "9/1/2024"
         },
         {
-            "week": 13,
+            "id": 13,
             "title": "Glacier National Park",
             "cover": "/img/trips/west-coast-2024/0814-7.jpg",
-            "updated": "9/17/2024"
+            "updated": "9/18/2024"
         },
+        // {
+        //     "id": 14,
+        //     "title": "Yellowstone National Park",
+        //     "cover": "/img/trips/west-coast-2024/0821-8.jpg",
+        //     "updated": "9/17/2024"
+        // },
     ]
 }
 export const books = [

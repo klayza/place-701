@@ -7,9 +7,8 @@
 	let showMessage = false;
 
 	const { totalMdFiles, mostRecentModifiedDate, weekData } = data;
-	console.log(weekData);
 	function weekTitle(weekNum) {
-		const week = weekData.find((w) => w.week == weekNum);
+		const week = weekData.find((w) => w.id == weekNum);
 		if (!week) {
 			return ' ';
 		} else if (week.title) {
@@ -27,7 +26,7 @@
 		});
 	}
 	function weekCover(weekNum) {
-		const week = weekData.find((w) => w.week == weekNum);
+		const week = weekData.find((w) => w.id == weekNum);
 		return week?.cover || '';
 	}
 

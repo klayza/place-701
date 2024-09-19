@@ -52,7 +52,7 @@
 	}
 
 	.bg-container {
-		background-image: url('/img/clouds.png');
+		background-image: url('/img/manifesto.png');
 		background-size: cover;
 		background-position: center;
 		height: 100vh;

@@ -1,5 +1,4 @@
 <script>
-	export let backPath;
 </script>
 
 <div class="max-w-5xl mx-auto px-1 sm:px-6 lg:px-8">
@@ -9,9 +8,10 @@
 	<div class="md-output">
 		<slot />
 	</div>
-	<p class="text-center my-10">
-		<a href={backPath} class="text-xl hover:underline">Return</a>
-	</p>
+
+		<!-- <p class="text-center my-10">
+			<a href={backPath} class="text-xl hover:underline">Return</a>
+		</p> -->
 </div>
 
 <!-- <style>

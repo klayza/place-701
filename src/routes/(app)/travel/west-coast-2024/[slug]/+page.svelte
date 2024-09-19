@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import { marked } from 'marked';
 	import { onMount } from 'svelte';
 	marked.use({ breaks: true });
@@ -198,4 +198,19 @@
 			column-count: 3;
 		}
 	}
-</style>
+</style> -->
+
+
+
+<script>
+	import Article from '$lib/components/Article.svelte';
+	export let data;
+
+	function getYear(startDateStr) {
+    return new Date(startDateStr).getFullYear();
+}
+
+</script>
+
+<Article title="{data.week.title}" description="" backPath="/travel/{data.trip.id}" mdPath="/data/trips/{data.trip.id}/w{data.week.id}.md" />
+
