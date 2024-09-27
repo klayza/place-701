@@ -192,14 +192,6 @@ export const books = [
         isbn: "9780735211292",
     },
     {
-        name: "Death's End",
-        author: "Cixin Liu",
-        start: "7/8/2024",
-        end: "",
-        comment: "",
-        isbn: "9780765386632",
-    },
-    {
         name: "Meditations",
         author: "Marcus Aurelius",
         start: "5/16/2024",
@@ -229,9 +221,18 @@ export const books = [
         name: "Steve Jobs",
         author: "Walter Isaacson",
         start: "8/6/2024",
-        end: "",
+        end: "9/30/2024",
         comment: "",
         isbn: "9781451648539",
+    },
+    {
+        name: "Astrophysics for People in a Hurry",
+        author: "Neil Degrasse Tyson",
+        start: "9/28/2024",
+        end: "9/30/2024",
+        comment: "",
+        isbn: "0393609391",
+        img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562761669i/32191710.jpg"
     },
     {
         name: "Superintelligence",
@@ -279,14 +280,6 @@ export const books = [
         end: "5/16/2024",
         comment: "",
         isbn: "9780307887894",
-    },
-    {
-        name: "Think - A Compelling Introduction to Philosophy",
-        author: "Simon Blackburn",
-        start: "6/26/2024",
-        end: "",
-        comment: "The goal is to read this 4x",
-        isbn: "9780192854254",
     },
     {
         name: "University Physics with Modern Physics",

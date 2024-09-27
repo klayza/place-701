@@ -13,6 +13,15 @@
 	let books_read_last_month = calculateBooksReadLastMonth();
 	let message_color = calculateMessageColor();
 
+
+	function sortBooksByFinishDate(books) {
+		return books.sort((a, b) => {
+			const dateA = new Date(a.end);
+			const dateB = new Date(b.end);
+			return dateB - dateA; // Sort in descending order (most recent first)
+		});
+	}
+
 	function calculateMessageColor() {
 		if (books_left_to_read == 0) {
 			return 'green';
@@ -116,7 +125,7 @@
 
 	<div class="md-output all-initial text-md sm:text-xl mt-20">
 		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-			{#each books as book}
+			{#each sortBooksByFinishDate(books) as book}
 				<div class="group h-64 flex flex-col items-center justify-center p-4">
 					<img src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} alt={`${book.name} cover`} class="h-40 mb-4 object-contain" />
 					<div class="text-center">
