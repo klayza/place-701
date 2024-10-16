@@ -148,10 +148,16 @@ export const trip_data = {
             "cover": "/img/trips/west-coast-2024/0814-7.jpg",
             "updated": "9/18/2024"
         },
+        {
+            "id": 14,
+            "title": "Yellowstone National Park",
+            "cover": "/img/trips/west-coast-2024/0821-8.jpg",
+            "updated": "10/15/2024"
+        },
         // {
-        //     "id": 14,
-        //     "title": "Yellowstone National Park",
-        //     "cover": "/img/trips/west-coast-2024/0821-8.jpg",
+        //     "id": 15,
+        //     "title": "Arches National Park",
+        //     "cover": "/img/trips/west-coast-2024/0828-1.jpg",
         //     "updated": "9/17/2024"
         // },
     ]

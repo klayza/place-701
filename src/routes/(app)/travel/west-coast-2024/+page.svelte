@@ -88,7 +88,7 @@
 		</div>
 	</div>
  -->
-  <div class="space-y-8">
+  <div class="space-y-1">
 		{#each Array(totalMdFiles).reverse() as _, i}
 			<a href="/travel/west-coast-2024/w{totalMdFiles - i}" class="block overflow-hidden group relative h-64">
 				<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({weekCover(totalMdFiles - i)});">

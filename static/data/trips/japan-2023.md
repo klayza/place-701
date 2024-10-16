@@ -51,14 +51,20 @@ As I got off the connecting flight plane I heard my name being blared, "Final bo
 
 ![image](/img/trips/japan-2023/0527-1.jpg)
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1010456213?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0527-1"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<!-- <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1010456213?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="0527-1"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
-<!-- <iframe src="https://www.youtube.com/embed/CUNdSPLkng0" title="0527 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+<iframe src="https://www.youtube.com/embed/CUNdSPLkng0" title="0527 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <iframe id="youtube-video" 
   src="https://www.youtube.com/embed/CUNdSPLkng0?autoplay=1&mute=1&loop=1&rel=0" 
-  title="0527 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+<iframe id="youtube-video" 
+  src="https://www.youtube.com/embed/CUNdSPLkng0?autoplay=1&mute=1&loop=1&rel=1&showinfo=0&autohide=1&playlist=CUNdSPLkng0" 
+  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 
 <!-- <video src="/img/trips/japan-2023/0527-1.mp4" type="video/mp4" autoplay loop playsinline muted controls="controls"></video> -->
