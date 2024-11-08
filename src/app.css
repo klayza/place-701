@@ -236,11 +236,11 @@ html {
 }
 
 .md-output h2 {
-    margin: 30px !important;
-    margin-top: 50px !important;
-    margin-bottom: 50px !important;
-    font-size: 30px;
-    font-weight: bold;
+  margin: 30px ;
+  margin-top: 50px ;
+  margin-bottom: 50px ;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 
@@ -332,9 +332,11 @@ html {
 }
 
 .md-output li {
-    margin: 10px 0px;
-    padding-left: 10px;
-    list-style-type: square;
+  margin: 10px 0px;
+  padding-left: 10px;
+  list-style-type: square;
+  font-size: 19px;
+  line-height: 1.6;
 }
 
 /* Links */
@@ -353,10 +355,10 @@ html {
     width: 100%;
     /* padding-left: 20px;
   padding-right: 20px; */
-    height: auto;
-    margin: auto;
-    /* margin-top: 20px;
-  margin-bottom: 20px; */
+  height: auto;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -451,11 +453,12 @@ html {
         /* padding: 7px !important; */
     }
 
-    .md-output p {
-        font-size: 17px;
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-    }
+  .md-output p,
+  .md-output li {
+    font-size: 17px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
 
     .md-output img {
         width: 100% !important;
@@ -483,11 +486,17 @@ html {
         margin-right: 0px !important;
     }
 
-    .md-output ul,
-    .md-output ol {
-        margin: 10px !important;
-        padding-left: 30px;
-    }
+  .md-output ul,
+  .md-output ol {
+    font-size: 17px;
+    margin: 8px !important;
+    padding-left: 15px;
+  }
+
+  .md-output ::marker {
+    padding-left: 12px !important;
+    margin-left: 12px !important;
+  }
 
 
 }
