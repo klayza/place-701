@@ -8,15 +8,15 @@ export const thoughts = [
     //     tags: ['thought experiment', 'existentialism', 'fundamentalism'],
     //     img: 'https://cdn.pixabay.com/photo/2017/01/27/18/50/male-2013929_960_720.jpg'
     // },
-    // {
-    //     id: 'the-state-of-education',
-    //     source: 'md',
-    //     title: 'The State of Education',
-    //     snippet: 'For the first time in history, anyone can become an expert in anything for free. We carry with us all of the information in the world right in our pockets, yet college tuition is still climbing? Something must be done.',
-    //     date: '9/12/2024',
-    //     tags: ['thought experiment', 'existentialism', 'fundamentalism'],
-    //     img: 'https://w.wallhaven.cc/full/01/wallhaven-01qmv9.jpg'
-    // },
+    {
+        id: 'the-state-of-education',
+        source: 'md',
+        title: 'The State of Education',
+        snippet: 'For the first time in history, anyone can become an expert in anything for free. We carry with us all of the information in the world right in our pockets, yet college tuition is still climbing? Something must be done.',
+        date: '9/12/2024',
+        tags: ['thought experiment', 'existentialism', 'fundamentalism'],
+        img: 'https://w.wallhaven.cc/full/01/wallhaven-01qmv9.jpg'
+    },
     // {
     //     id: 'cars-politics',
     //     title: 'Cars Politics',
@@ -50,15 +50,15 @@ export const trips = [
         color: "blue-200",
         img: "/img/trips/west-coast-2024/0521-2.jpg",
     },
-    // {
-    //     name: "Japan",
-    //     id: "japan-2023",
-    //     start: "May 24, 2023",
-    //     end: "June 2, 2023",
-    //     pictures: 30,
-    //     color: "red-200",
-    //     img: "/img/travel.png",
-    // },
+    {
+        name: "Japan",
+        id: "japan-2023",
+        start: "May 24, 2023",
+        end: "June 2, 2023",
+        pictures: 30,
+        color: "red-200",
+        img: "/img/travel.png",
+    },
     // {
     //     name: "Hawaii",
     //     id: "hawaii-2021",

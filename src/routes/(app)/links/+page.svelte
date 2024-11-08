@@ -5,7 +5,7 @@
 
 <!-- <main class="border-x w-full m-auto 2xl:w-9/12 h-screen"> -->
 <div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);">
-	<p class="uppercase text-3xl inline-block mr-8">links</p>
+	<h2 class="uppercase text-3xl inline-block mr-8">links</h2>
 </div>
 
 

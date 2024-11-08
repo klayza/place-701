@@ -88,7 +88,7 @@
 <!-- <header class="w-full bg-black text-white text-2xl p-4 sticky top-0">Travel</header> -->
 
 <div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);">
-	<p class="uppercase text-3xl inline-block mr-8">travel</p>
+	<h2 class="uppercase text-3xl inline-block mr-8">travel</h2>
 </div>
 
 <!-- <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 m-auto sm:max-w-screen-lg">

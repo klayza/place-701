@@ -16,7 +16,7 @@
 			</svg>
 		</div>
 	</div>
-	<div class="essay sm:max-w-screen-lg px-4 m-auto text-xl">
+	<div class="essay sm:max-w-screen-lg px-4 m-auto text-2xl">
 		<p class="mt-20">
 			<span class="first-letter mr-1">L</span>ong ago when humanity was still playing in the mud, not worrying if their spiced latte was accidentaly made with whole milk instead of soy milk, or what events the people on the magical metal rectancles are saying... one of these primal humans had an interesting thought. They imagined a sprawling, golden meadow, rich with wildberries, rabbits, deer, and any other food they could possibly imagine. Their siblings were far too occupied with foraging wild berries across the river rapids.
 		</p>

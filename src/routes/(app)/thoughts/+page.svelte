@@ -82,7 +82,7 @@
 
 <main class="border-x w-full m-auto 2xl:w-9/12 h-screen">
 	<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 255, 230), white, white);">
-		<p class="uppercase text-3xl inline-block mr-8">thoughts</p>
+		<h2 class="uppercase text-3xl inline-block mr-8">thoughts</h2>
 	</div>
 	<!-- <div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / recent</p></div> -->
 	<!-- <div class="latest border-b flex flex-row">

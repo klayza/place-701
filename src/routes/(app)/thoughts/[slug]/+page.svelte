@@ -10,7 +10,7 @@
 </script>
 
 {#if data.source == 'md'}
-	<Article title={data.title} description={data.snippet} backPath="/thoughts" mdPath="/data/{data.id}.md" html="deez"></Article>
+	<Article title={data.title} description={data.snippet} backPath="/thoughts" mdPath="/data/thoughts/{data.id}.md" html="deez"></Article>
 {:else}
 	<ArticleHead backPath="/thoughts" title={data.title} ></ArticleHead>
 	<ArticleBody backPath="/thoughts">

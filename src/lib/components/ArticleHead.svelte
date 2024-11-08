@@ -12,6 +12,6 @@
 <div class="border-b pt-12 pb-12">
 	<h1 class="text-5xl font-bold px-2 sm:px-0 text-center mt-6">{title}</h1>
 	{#if description}
-	<h1 class="text-xl text-center m-auto mt-12 max-w-4xl mb-4">{description}</h1>
+	<h1 class="text-xl text-center m-auto px-4 mt-12 max-w-4xl mb-4">{description}</h1>
 	{/if}
 </div>

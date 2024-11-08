@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
-	let dob = new Date('11/26/2003');
+	const dob = new Date('11/26/2003');
 	let age_years;
 	let intro = `I'm a software engineer, independent student, and entrepreneur. I live abroad and make cool
 				things on the internet. I write about AI, automation, philosophy, and improving life with

@@ -82,7 +82,7 @@
 </script>
 
 <div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 230), white, white);">
-	<p class="uppercase text-3xl inline-block mr-8">reading list</p>
+	<h2 class="uppercase text-3xl inline-block mr-8">reading list</h2>
 </div>
 
 <div class="max-w-screen-lg m-auto text-lg p-2 py-12 sm:py-16 sm:p-8">
