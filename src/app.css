@@ -94,13 +94,13 @@ html {
 .md-output {
   padding: 30px !important;
   /* font-family: Ultra; */
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   /* color: #333; */
 }
 
 .md-output>* {
-  margin-top: 30px !important;
-  margin-bottom: 30px !important;
+  margin-top: 30px ;
+  margin-bottom: 30px ;
 }
 
 .md-output ol,
@@ -178,9 +178,9 @@ html {
 }
 
 .md-output h2 {
-  margin: 30px !important;
-  margin-top: 50px !important;
-  margin-bottom: 50px !important;
+  margin: 30px ;
+  margin-top: 50px ;
+  margin-bottom: 50px ;
   font-size: 30px;
   font-weight: bold;
 }
@@ -277,6 +277,9 @@ html {
   margin: 10px 0px;
   padding-left: 10px;
   list-style-type: square;
+  font-size: 19px;
+  line-height: 1.6;
+
 }
 
 /* Links */
@@ -297,8 +300,8 @@ html {
   padding-right: 20px; */
   height: auto;
   margin: auto;
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -393,7 +396,8 @@ html {
     /* padding: 7px !important; */
   }
 
-  .md-output p {
+  .md-output p,
+  .md-output li {
     font-size: 17px;
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -427,8 +431,14 @@ html {
 
   .md-output ul,
   .md-output ol {
-    margin: 10px !important;
-    padding-left: 30px;
+    font-size: 17px;
+    margin: 8px !important;
+    padding-left: 15px;
+  }
+
+  .md-output ::marker {
+    padding-left: 12px !important;
+    margin-left: 12px !important;
   }
 
 

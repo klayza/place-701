@@ -1,10 +1,14 @@
 <script>
+	export let showNavigation;
+	showNavigation = showNavigation ? showNavigation : true
 </script>
 
 <div class="max-w-5xl mx-auto px-1 sm:px-6 lg:px-8">
-	<div class="article-navigation mt-8 mb-12">
-		<ul class="space-y-2 sm:columns-2 lg:columns-3"></ul>
-	</div>
+	{#if showNavigation == true}
+		<div class="article-navigation mt-8 mb-12">
+			<ul class="space-y-2 sm:columns-2 lg:columns-3"></ul>
+		</div>
+	{/if}
 	<div class="md-output">
 		<slot />
 	</div>

@@ -173,7 +173,7 @@ export const books = [
         img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1311705051i/10483171.jpg",
     },
     {
-        name: "Think : a compelling introduction to philosophy Introduction to Philosophy",
+        name: "Think : An Introduction to Philosophy",
         author: "Simon Blackburn",
         start: "6/26/2024",
         end: "8/31/2024",
@@ -302,6 +302,22 @@ export const books = [
         end: "8/23/2024",
         comment: "Existential dread.",
         isbn: "9780765377104",
+    },
+    {
+        name: "The Quantum and the Lotus",
+        author: "Cixin Liu",
+        start: "10/15/2024",
+        end: "10/16/2024",
+        comment: "",
+        isbn: "9780307566126",
+    },
+    {
+        name: "Zen in the Art of Writing",
+        author: "Ray Bradbury",
+        start: "10/15/2024",
+        end: "10/16/2024",
+        comment: "",
+        isbn: "0553296345",
     },
 
 ];
