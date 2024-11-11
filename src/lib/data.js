@@ -121,7 +121,6 @@ export const trip_data = {
             "id": 9,
             "title": "Seattle",
             "cover": "/img/trips/west-coast-2024/0624-3.jpg",
-            // "cover": "/img/trips/west-coast-2024/0724-11.jpg",
             "updated": "8/20/2024"
         },
         {
@@ -154,10 +153,16 @@ export const trip_data = {
             "cover": "/img/trips/west-coast-2024/0821-8.jpg",
             "updated": "10/15/2024"
         },
+        {
+            "id": 15,
+            "title": "Salt Lake City",
+            "cover": "/img/trips/west-coast-2024/0828-1.jpg",
+            "updated": "9/17/2024"
+        },
         // {
-        //     "id": 15,
+        //     "id": 16,
         //     "title": "Arches National Park",
-        //     "cover": "/img/trips/west-coast-2024/0828-1.jpg",
+        //     "cover": "/img/trips/west-coast-2024/0829-1.jpg",
         //     "updated": "9/17/2024"
         // },
     ]
