@@ -29,8 +29,8 @@
 	}
 
 	function getYear(startDateStr) {
-    return new Date(startDateStr).getFullYear();
-}
+		return new Date(startDateStr).getFullYear();
+	}
 
 	function getLastUpdated(tripID) {
 		// Find the most recent update date
@@ -137,7 +137,7 @@
 <div class="max-w-5xl mx-auto py-12 pt-0 px-4 sm:px-8 my-12">
 	<p class="text-lg my-24">Check out some of the places I've been to! I like going to new places and trying different ways of life. From living out of a van along the pacific west coast to enjoying ramen in Tokyo, I hope to try a little piece of everything. There are dozens of photos in each entry as well as some commentary, so give it a read.</p>
 
-
+	<h2 class="text-3xl sm:text-5xl font-bold mb-8">Trips</h2>
 	<div class="space-y-8">
 		{#each trips as trip}
 			<a href="/travel/{trip.id}" class="block overflow-hidden group relative h-80">
@@ -145,7 +145,7 @@
 					<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
 				</div>
 				<div class="relative h-full flex flex-col justify-center items-center text-white">
-					<p style="font-family: Marker;" class="text-3xl text-center line-clamp-3 text-shadow">
+					<p style="font-family: Marker;" class="text-3xl sm:text-4xl text-center line-clamp-3 text-shadow">
 						{trip.name}
 					</p>
 
