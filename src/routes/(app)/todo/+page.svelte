@@ -1,15 +1,12 @@
 <script>
 	import ArticleHead from '$lib/components/ArticleHead.svelte';
 	import ArticleBody from '$lib/components/ArticleBody.svelte';
-
-  
-
 </script>
 
-<ArticleBody showNavigation=false>
+<ArticleBody showNavigation="false">
 	<h2 class="text-center mt-8 mb-0">Things I must do before I die.</h2>
-  <p class="text-center italic">(or bad things will happen)</p>
-  <p class="text-center">✓ 3/100</p>
+	<p class="text-center italic">(or bad things will happen)</p>
+	<p class="text-center">✓ 3/100</p>
 	<ol class="max-w-md" style="margin: auto !important;">
 		<li>✓ Be fluent in Japanese</li>
 		<li>✗ Go cave diving</li>
@@ -23,17 +20,16 @@
 		<li>✗ Start a successful business</li>
 		<li>✗ Swim with whales</li>
 		<li>✗ See the northern lights</li>
-  </ol>
+		<li>✗ Snowboard in Hokkaido</li>
+	</ol>
 </ArticleBody>
 
-
 <style>
-  body {
-    background-color: black;
-    color: white;
-  }
-  li {
-    margin: 2px !important;
-  }
-
+	body {
+		background-color: black;
+		color: white;
+	}
+	li {
+		margin: 2px !important;
+	}
 </style>
