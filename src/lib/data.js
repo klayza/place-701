@@ -153,14 +153,14 @@ export const trip_data = {
 			id: 15,
 			title: 'Salt Lake City',
 			cover: '/img/trips/west-coast-2024/0828-4.jpg',
-			updated: '9/17/2024'
+			updated: '10/17/2024'
+		},
+		{
+			id: 16,
+			title: 'Arches National Park',
+			cover: '/img/trips/west-coast-2024/0903-7.jpg',
+			updated: '11/30/2024'
 		}
-		// {
-		// 	id: 16,
-		// 	title: 'Arches National Park',
-		// 	cover: '/img/trips/west-coast-2024/0903-7.jpg',
-		// 	updated: '9/17/2024'
-		// }
 	]
 };
 export const books = [
@@ -308,7 +308,7 @@ export const books = [
 		name: 'The Quantum and the Lotus',
 		author: 'Cixin Liu',
 		start: '10/15/2024',
-		end: '10/16/2024',
+		end: '11/16/2024',
 		comment: '',
 		isbn: '9780307566126'
 	},
@@ -316,7 +316,7 @@ export const books = [
 		name: 'Zen in the Art of Writing',
 		author: 'Ray Bradbury',
 		start: '10/15/2024',
-		end: '10/16/2024',
+		end: '11/16/2024',
 		comment: '',
 		isbn: '0553296345'
 	}
