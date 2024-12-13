@@ -54,31 +54,6 @@
 		});
 	}
 
-	function timeAgo(date) {
-		const now = new Date();
-		const diff = now - new Date(date);
-
-		const seconds = Math.floor(diff / 1000);
-		const minutes = Math.floor(seconds / 60);
-		const hours = Math.floor(minutes / 60);
-		const days = Math.floor(hours / 24);
-		const months = Math.floor(days / 30);
-		const years = Math.floor(days / 365);
-
-		if (years > 0) {
-			return `${years}y ago`;
-		} else if (months > 0) {
-			return `${months}mo ago`;
-		} else if (days > 0) {
-			return `${days} days ago`;
-		} else if (hours > 0) {
-			return `${hours}h ago`;
-		} else if (minutes > 0) {
-			return `${minutes}m ago`;
-		} else {
-			return `${seconds}s ago`;
-		}
-	}
 
 	// Example usage:
 </script>
@@ -87,9 +62,9 @@
 
 <!-- <header class="w-full bg-black text-white text-2xl p-4 sticky top-0">Travel</header> -->
 
-<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);">
+<!-- <div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);">
 	<h2 class="uppercase text-3xl inline-block mr-8">travel</h2>
-</div>
+</div> -->
 
 <!-- <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 m-auto sm:max-w-screen-lg">
 	{#each trips as trip}
@@ -135,7 +110,14 @@
 </ul> -->
 
 <div class="max-w-5xl mx-auto py-12 pt-0 px-4 sm:px-8 my-12">
-	<p class="text-lg my-24">Check out some of the places I've been to! I like going to new places and trying different ways of life. From living out of a van along the pacific west coast to enjoying ramen in Tokyo, I hope to try a little piece of everything. There are dozens of photos in each entry as well as some commentary, so give it a read.</p>
+	
+	
+	<canvas id="continents"></canvas>
+
+
+	
+	<!-- <p class="text-lg my-24">Check out some of the places I've been to! I like going to new places and trying different ways of life. From living out of a van along the pacific west coast to enjoying ramen in Tokyo, I hope to try a little piece of everything. There are dozens of photos in each entry as well as some commentary, so give it a read.</p> -->
+	 
 
 	<h2 class="text-3xl sm:text-5xl font-bold mb-8">Trips</h2>
 	<div class="space-y-8">

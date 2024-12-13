@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Continent Navigation</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="map"></canvas>
+  <script>
+    const canvas = document.getElementById('map');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = 500;
+    
+    // Pathfinding grid parameters
+    const GRID_SIZE = 20;
+    const gridWidth = Math.ceil(canvas.width / GRID_SIZE);
+    const gridHeight = Math.ceil(canvas.height / GRID_SIZE);
+    
+    const continents = [];
+    const discoveredContinents = new Set();
+    const dot = { 
+      x: Math.random() * canvas.width, 
+      y: Math.random() * canvas.height, 
+      speed: 1.5 
+    };
+    
+    // Create a 2D grid for pathfinding
+    const grid = Array(gridHeight).fill().map(() => Array(gridWidth).fill(0));
+    
+    // Function to create random continents
+    function generateContinents(count, vertexCount) {
+      for (let i = 0; i < count; i++) {
+        const vertices = [];
+        const centerX = Math.random() * canvas.width;
+        const centerY = Math.random() * canvas.height;
+        const radius = 50 + Math.random() * 100;
+        
+        // Create continent vertices
+        for (let j = 0; j < vertexCount; j++) {
+          const angle = (Math.PI * 2 * j) / vertexCount;
+          const x = centerX + Math.cos(angle) * (radius + Math.random() * 30);
+          const y = centerY + Math.sin(angle) * (radius + Math.random() * 30);
+          vertices.push({ x, y });
+        }
+        
+        // Store continent with its vertices and center
+        const continent = { 
+          vertices: vertices, 
+          center: { x: centerX, y: centerY } 
+        };
+        continents.push(continent);
+        
+        // Mark continent area in grid
+        markContinentInGrid(continent);
+      }
+    }
+    
+    // Mark continent area as blocked in the grid
+    function markContinentInGrid(continent) {
+      // Create a path from the continent vertices
+      const path = [];
+      for (let i = 0; i < continent.vertices.length; i++) {
+        path.push(continent.vertices[i]);
+      }
+      path.push(continent.vertices[0]); // Close the path
+      
+      // Flood fill algorithm to mark continent area
+      function isInside(x, y) {
+        let inside = false;
+        for (let i = 0, j = path.length - 1; i < path.length; j = i++) {
+          const xi = path[i].x, yi = path[i].y;
+          const xj = path[j].x, yj = path[j].y;
+          
+          const intersect = ((yi > y) !== (yj > y)) &&
+            (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+          
+          if (intersect) inside = !inside;
+        }
+        return inside;
+      }
+      
+      // Mark grid cells inside the continent
+      for (let y = 0; y < gridHeight; y++) {
+        for (let x = 0; x < gridWidth; x++) {
+          const gridX = x * GRID_SIZE;
+          const gridY = y * GRID_SIZE;
+          
+          if (isInside(gridX, gridY)) {
+            grid[y][x] = 1; // Mark as blocked
+          }
+        }
+      }
+    }
+    
+    // A* Pathfinding algorithm
+    function findPath(start, goal) {
+      const startX = Math.floor(start.x / GRID_SIZE);
+      const startY = Math.floor(start.y / GRID_SIZE);
+      const goalX = Math.floor(goal.x / GRID_SIZE);
+      const goalY = Math.floor(goal.y / GRID_SIZE);
+      
+      const openSet = [];
+      const closedSet = new Set();
+      
+      const startNode = {
+        x: startX,
+        y: startY,
+        g: 0,
+        h: heuristic(startX, startY, goalX, goalY),
+        f: 0,
+        parent: null
+      };
+      
+      openSet.push(startNode);
+      
+      const neighbors = [
+        {x: 1, y: 0}, {x: -1, y: 0},
+        {x: 0, y: 1}, {x: 0, y: -1},
+        {x: 1, y: 1}, {x: -1, y: -1},
+        {x: 1, y: -1}, {x: -1, y: 1}
+      ];
+      
+      while (openSet.length > 0) {
+        // Find the node with the lowest f score
+        let currentIndex = 0;
+        for (let i = 1; i < openSet.length; i++) {
+          if (openSet[i].f < openSet[currentIndex].f) {
+            currentIndex = i;
+          }
+        }
+        
+        const current = openSet[currentIndex];
+        
+        // Check if we've reached the goal
+        if (current.x === goalX && current.y === goalY) {
+          return reconstructPath(current);
+        }
+        
+        // Remove current from open set and add to closed set
+        openSet.splice(currentIndex, 1);
+        closedSet.add(`${current.x},${current.y}`);
+        
+        // Check neighboring nodes
+        for (const neighbor of neighbors) {
+          const newX = current.x + neighbor.x;
+          const newY = current.y + neighbor.y;
+          
+          // Check grid bounds and if cell is blocked
+          if (newX < 0 || newX >= gridWidth || newY < 0 || newY >= gridHeight ||
+              grid[newY][newX] === 1 || closedSet.has(`${newX},${newY}`)) {
+            continue;
+          }
+          
+          const newNode = {
+            x: newX,
+            y: newY,
+            g: current.g + Math.sqrt(neighbor.x*neighbor.x + neighbor.y*neighbor.y),
+            h: heuristic(newX, newY, goalX, goalY),
+            parent: current
+          };
+          newNode.f = newNode.g + newNode.h;
+          
+          // Check if this node is already in open set with a better path
+          const existingNodeIndex = openSet.findIndex(node => 
+            node.x === newX && node.y === newY && node.f <= newNode.f
+          );
+          
+          if (existingNodeIndex === -1) {
+            openSet.push(newNode);
+          }
+        }
+      }
+      
+      // No path found
+      return null;
+    }
+    
+    // Heuristic function (Manhattan distance)
+    function heuristic(x1, y1, x2, y2) {
+      return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    }
+    
+    // Reconstruct the path from goal to start
+    function reconstructPath(node) {
+      const path = [];
+      while (node) {
+        path.unshift({
+          x: node.x * GRID_SIZE + GRID_SIZE / 2,
+          y: node.y * GRID_SIZE + GRID_SIZE / 2
+        });
+        node = node.parent;
+      }
+      return path;
+    }
+    
+    // Draw all continents
+    function drawContinents() {
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Optionally draw grid for debugging
+      // drawGrid();
+      
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      continents.forEach((continent, index) => {
+        ctx.beginPath();
+        ctx.moveTo(continent.vertices[0].x, continent.vertices[0].y);
+        for (let i = 1; i < continent.vertices.length; i++) {
+          ctx.lineTo(continent.vertices[i].x, continent.vertices[i].y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = '#222';
+        ctx.fill();
+        ctx.stroke();
+        
+        if (discoveredContinents.has(index)) {
+          const flagX = continent.vertices[0].x;
+          const flagY = continent.vertices[0].y;
+          ctx.font = '20px Arial';
+          ctx.fillStyle = '#0f0';
+          ctx.fillText('🏁', flagX - 10, flagY + 10);
+        }
+      });
+    }
+    
+    // Optional: Draw grid for debugging pathfinding
+    function drawGrid() {
+      ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < gridWidth; x++) {
+        for (let y = 0; y < gridHeight; y++) {
+          if (grid[y][x] === 1) {
+            ctx.fillStyle = 'rgba(255,0,0,0.2)';
+            ctx.fillRect(x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE);
+          }
+          ctx.strokeRect(x * GRID_SIZE, y * GRID_SIZE, GRID_SIZE, GRID_SIZE);
+        }
+      }
+    }
+    
+    // Find the nearest undiscovered continent
+    function findNearestContinent() {
+      let nearest = null;
+      let minDistance = Infinity;
+      
+      for (let i = 0; i < continents.length; i++) {
+        if (discoveredContinents.has(i)) continue;
+        
+        const dx = continents[i].center.x - dot.x;
+        const dy = continents[i].center.y - dot.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearest = { 
+            index: i, 
+            target: continents[i].center 
+          };
+        }
+      }
+      
+      return nearest;
+    }
+    
+    // Current path and target
+    let currentPath = [];
+    let currentPathIndex = 0;
+    let target = null;
+    
+    // Move the dot along the path
+    function moveAlongPath() {
+      if (currentPath.length === 0) return false;
+      
+      const pathTarget = currentPath[currentPathIndex];
+      const dx = pathTarget.x - dot.x;
+      const dy = pathTarget.y - dot.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      // Move towards the current path point
+      if (distance > 2) {
+        dot.x += (dx / distance) * dot.speed;
+        dot.y += (dy / distance) * dot.speed;
+        return false;
+      }
+      
+      // Move to next path point
+      currentPathIndex++;
+      
+      // Path completed
+      if (currentPathIndex >= currentPath.length) {
+        return true;
+      }
+      
+      return false;
+    }
+    
+    // Draw the dot
+    function drawDot() {
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#f00';
+      ctx.fill();
+      ctx.closePath();
+    }
+    
+    // Main animation loop
+    function animate() {
+      drawContinents();
+      
+      // Find new target if needed
+      if (!target) {
+        target = findNearestContinent();
+        
+        // Find path to the target
+        if (target) {
+          currentPath = findPath(
+            { x: dot.x, y: dot.y }, 
+            target.target
+          ) || [];
+          currentPathIndex = 0;
+        }
+      }
+      
+      // Move along the path
+      if (target) {
+        if (moveAlongPath()) {
+          // Reached the continent
+          discoveredContinents.add(target.index);
+          target = null;
+          currentPath = [];
+        }
+      }
+      
+      drawDot();
+      requestAnimationFrame(animate);
+    }
+    
+    // Initialize and start
+    generateContinents(5, 8);
+    animate();
+  </script>
+</body>
+</html>

@@ -64,14 +64,17 @@
 	}
 </script>
 
-<a href="/travel" class="absolute top-20 sm:top-24 left-4 sm:left-8 py-2 px-4 bg-white hover:bg-slate-100 border rounded-md shadow-md z-50">
+<!-- <a href="/travel" class="absolute top-20 sm:top-24 left-4 sm:left-8 py-2 px-4 bg-white hover:bg-slate-100 border rounded-md shadow-md z-50">
 	<i class='bx bx-arrow-back inline mr-2'></i>
 	<span class="inline">Back</span>
-</a>
+</a> -->
+<hr>
 
-<div class="border-b pt-12 pb-12">
-	<h1 class="text-5xl font-bold px-2 sm:px-0 text-center mt-6">West Coast Trip 2024</h1>
-	<p class="italic mt-6 text-center text-lg">Last updated {formatDate(mostRecentModifiedDate)}</p>
+
+
+<div class="pt-12 pb-12">
+	<h1 class="text-6xl font-bold px-2 sm:px-0 text-center mt-6 uppercase">Pacific <br>West<br> Coast</h1>
+	<p class="italic mt-6 text-center text-lg text-gray-400">Last updated {formatDate(mostRecentModifiedDate)}</p>
 </div>
 
 <div class="max-w-5xl mx-auto pt-8 py-12 px-4 sm:px-8">
@@ -88,14 +91,15 @@
 		</div>
 	</div>
  -->
-  <div class="space-y-1">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
 		{#each Array(totalMdFiles).reverse() as _, i}
-			<a href="/travel/west-coast-2024/w{totalMdFiles - i}" class="block overflow-hidden group relative h-64">
+			<a href="/travel/west-coast-2024/w{totalMdFiles - i}" class="block overflow-hidden group relative h-80 no-color static-link">
 				<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({weekCover(totalMdFiles - i)});">
 					<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
 				</div>
 				<div class="relative h-full flex flex-col justify-center items-center text-white">
-					<p style="font-family: Marker;" class="text-3xl text-center line-clamp-3 text-shadow">{weekTitle(totalMdFiles - i)}</p>
+					<p class="text-3xl text-center line-clamp-3 text-shadow">{weekTitle(totalMdFiles - i)}</p>
+					<!-- <p style="font-family: Marker;" class="text-3xl text-center line-clamp-3 text-shadow">{weekTitle(totalMdFiles - i)}</p> -->
 					<p class="text-2xl absolute bottom-2 left-4 font-bold mb-2 text-shadow italic text-gray-200">Week {totalMdFiles - i}</p>
 				</div>
 			</a>
