@@ -72,12 +72,13 @@
 
 
 
-<div class="pt-12 pb-12">
+<div class="pt-12 pb-6">
 	<h1 class="text-6xl font-bold px-2 sm:px-0 text-center mt-6 uppercase">Pacific <br>West<br> Coast</h1>
-	<p class="italic mt-6 text-center text-lg text-gray-400">Last updated {formatDate(mostRecentModifiedDate)}</p>
+	<p class="max-w-xl px-8 text-2xl sm:max-w-7xl sm:my-24 text-center m-auto my-8">4 months spent traveling the west coast in a camper van. From Arizona I made my way through places such as L.A, San Francisco, Yosemite, and Seattle, until I reached my turn-around point in Banff, Canada.</p>    
 </div>
 
-<div class="max-w-5xl mx-auto pt-8 py-12 px-4 sm:px-8">
+<div class="max-w-5xl mx-auto pt-0 py-12 px-4 sm:px-8">
+	<p class="uppercase mt-6 text-right border-b border-dotted mb-2 text-gray-300">updated {formatDate(mostRecentModifiedDate)}</p>
 	<!-- <div class="p-6 border my-4 rounded relative mt-4" role="alert">
 		<strong class="font-bold"></strong>
 		<span class="block sm:inline">Want to stay updated? Get emailed when I make a new post.</span>

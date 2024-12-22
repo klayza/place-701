@@ -1,11 +1,13 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { trips, trip_data, books } from '$lib/data.js';
-
+	let containerHeight = 500;
 	const dob = new Date('11/26/2003');
 	let age_years;
-	let selected_photo;
-	let selected_location;
+	let selected_photo = trip_data['west-coast-2024'][0].cover;
+	let selected_location = trip_data['west-coast-2024'][0].id;
+	let selected_title = trip_data['west-coast-2024'][0].title;
+	let intervalId;
 
 	let places = [
 		{ name: 'travel', description: "See where I've been." },
@@ -34,8 +36,53 @@
 		return age;
 	}
 
+	function calculateLineCoordinates(index, totalItems, containerHeight) {
+		// Convergence point is at 50% width, 10px below container
+		const convergenceX = 370; // percent from left
+		const convergenceY = containerHeight - 10; // pixels from top
+
+		// Starting point of angled section (25% width)
+		const startX = 1; // percent from left
+		const startY = (index + 0.5) * (containerHeight / totalItems); // Vertically centered in row
+
+		// Calculate angle and length
+		const deltaX = convergenceX - startX;
+		const deltaY = convergenceY - startY;
+		const angleRad = Math.atan2(deltaY, deltaX);
+		const angleDeg = angleRad * (180 / Math.PI);
+		const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+		return {
+			startX,
+			startY,
+			length,
+			angle: angleDeg
+		};
+	}
+
+	function cycleLocations() {
+		// Clear any existing interval
+		if (intervalId) {
+			clearInterval(intervalId);
+		}
+
+		// Click random location every 5 seconds
+		intervalId = setInterval(() => {
+			const randomIndex = Math.floor(Math.random() * trip_data['west-coast-2024'].length);
+			document.getElementById('location-' + randomIndex).click();
+		}, 5000);
+	}
+
 	onMount(() => {
 		age_years = calculateAge(dob);
+		cycleLocations();
+	});
+
+	onDestroy(() => {
+		// Clear the interval when the component is destroyed
+		if (intervalId) {
+			clearInterval(intervalId);
+		}
 	});
 </script>
 
@@ -66,21 +113,24 @@
 	<div class=" p-4 max-w-2xl mx-auto">
 		<h2 class="uppercase mb-4 mt-2 text-center">Who are you?</h2>
 		<p class="mb-4 text-xl">I'm a software engineer, independent student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class="no-color hover:underline">Read more</a></p>
-		<ul class="mt-24">
-			{#each places.filter((place) => place.type != 'link') as place}
-				<li class="mb-12">
-					<h2 title={place.description} class="uppercase text-3xl mb-4 mt-2"><a href="/{place.name}" class=" no-color">{place.name}</a></h2>
-					<hr />
-					<div>
-						{#if place.name == 'travel'}
-							<div class="flex items-center justify-between mb-4">
-								<span class="text-2xl hover:cursor-pointer">&lt;</span>
-								<h2 class="uppercase mb-4 mt-2 text-center pt-3">
-									<a href="/travel/west-coast-2024" class="no-color">Pacific West Coast</a> <span class="text-gray-400"> (1/3)</span>
-								</h2>
-								<span class="text-2xl hover:cursor-pointer">&gt;</span>
-							</div>
-							<div class="flex flex-wrap">
+	</div>
+	<ul class="mt-18">
+		{#each places.filter((place) => place.type != 'link') as place}
+			<li class="mb-12">
+				<h2 title={place.description} class="uppercase text-3xl mb-4 mt-2"><a href="/{place.name}" class=" no-color">{place.name}</a></h2>
+				<hr />
+				<div>
+					{#if place.name == 'travel'}
+						<div class="flex items-center justify-between mb-4 font-mono uppercase ">
+							<span class="text-2xl hover:cursor-pointer">&lt;</span>
+							<h2 class="uppercase mb-4 mt-2 text-center pt-3">
+								<a href="/travel/west-coast-2024" class="no-color text-lg ">Pacific West Coast</a> <span class="text-gray-700 "> (1/3)</span>
+							</h2>
+							<span class="text-2xl hover:cursor-pointer">&gt;</span>
+						</div>
+						<!-- Mobile view -->
+						<div class="block md:hidden">
+							<div class="flex flex-wrap shrink ">
 								{#each trip_data['west-coast-2024'] as location, index}
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -88,10 +138,11 @@
 									<a
 										id="location-{index + 1}"
 										ref="/travel/west-coast-2024/w{index + 1}"
-										class="no-color p-2 border m-1 rounded-sm hover:cursor-pointer {selected_location == location.id ? '' : 'border-dotted '}"
+										class="no-color  flex-grow p-2 border m-1 rounded-sm hover:cursor-pointer {selected_location == location.id ? '' : 'border-dotted '}"
 										on:click={() => {
 											selected_photo = location.cover;
 											selected_location = location.id;
+											selected_title = location.title;
 										}}
 									>
 										{location.title}
@@ -102,14 +153,123 @@
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<!-- svelte-ignore a11y-no-static-element-interactions -->
-								<div class="relative p-4 border border-dotted m-1 rounded-sm hover:cursor-pointer group" on:click={() => (window.location.href = `/travel/west-coast-2024/w${selected_location}`)}>
+								<div class="relative p-4 border border-dotted border-[ #ffa500] m-1 rounded-sm hover:cursor-pointer group" on:click={() => (window.location.href = `/travel/west-coast-2024/w${selected_location}`)}>
 									<img src={selected_photo} alt="preview" class="w-full h-64 object-cover" />
 									<span class="absolute top-8 right-8 text-lg text-white shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"> ↗ </span>
 								</div>
 							{/if}
-						{/if}
-						{#if place.name == 'books'}
-							<!-- <div class="flex items-center space-x-4">
+						</div>
+						<!-- Desktop view -->
+						<div class="hidden md:block">
+							<div class="flex flex-row">
+								<div class="line-menu-container" bind:clientHeight={containerHeight}>
+									<div class="flex flex-col relative">
+										{#each trip_data['west-coast-2024'] as location, index}
+											{@const coords = calculateLineCoordinates(index, trip_data['west-coast-2024'].length, containerHeight)}
+											<div
+												class="line-item-wrapper {selected_location == location.id ? 'selected' : ''}"
+												style="
+									  --start-y: {coords.startY}px;
+									  --angle: {coords.angle}deg;
+									  --length: {coords.length}px;
+									"
+											>
+												<!-- svelte-ignore a11y-click-events-have-key-events -->
+												<!-- svelte-ignore a11y-click-events-have-key-events -->
+												<!-- svelte-ignore a11y-no-static-element-interactions -->
+												<a
+													id="location-{index + 1}"
+													ref="/travel/west-coast-2024/w{index + 1}"
+													class="font-mono italic uppercase line-item-content no-color pl-12 p-2 mb-4 hover:cursor-pointer {selected_location == location.id ? 'selected' : ''}"
+													on:click={() => {
+														selected_photo = location.cover;
+														selected_location = location.id;
+													}}
+												>
+													{location.title}
+												</a>
+											</div>
+										{/each}
+										<div class="convergence-point"></div>
+									</div>
+								</div>
+
+								<style>
+									.line-menu-container {
+										position: relative;
+										width: 100%;
+									}
+
+									.line-item-wrapper {
+										position: relative;
+										display: flex;
+										align-items: center;
+										height: 40px; /* Fixed height for consistent spacing */
+									}
+
+									/* Straight section */
+									.line-item-wrapper::before {
+										content: '';
+										position: absolute;
+										top: 73%;
+										left: 0;
+										width: 50%;
+										height: 2px;
+										background: #ff8533;
+										transform-origin: right;
+									}
+
+									/* Angled section using calculated coordinates */
+									.line-item-wrapper::after {
+										content: '';
+										position: absolute;
+										top: 73%;
+										left: 50%;
+										width: var(--length);
+										height: 2px;
+										background: #ff8533;
+										transform-origin: left;
+										transform: translateY(-50%) rotate(var(--angle));
+									}
+
+									/* Hover effects */
+									.line-item-wrapper:hover::before,
+									.line-item-wrapper:hover::after {
+										/* background-color: #ff8500; */
+										transition: background-color 0.3s ease;
+									}
+
+									.convergence-point {
+										position: absolute;
+										right: 100%;
+										bottom: -10px;
+										width: 4px;
+										height: 4px;
+										/* background: #ffa500; */
+										border-radius: 50%;
+									}
+
+									.line-item-content {
+										position: relative;
+										z-index: 2;
+									}
+								</style>
+
+								{#if selected_photo}
+									<div class="relative w-1/2 h-[640px] flex-shrink-0">
+										<img id="desktop-photo" src={selected_photo} alt="preview" class="object-cover  border-b p-2 border-[#ff8533] w-full h-full" />
+										<div class="absolute bottom-2 right-2 left-2 bg-gradient-to-t from-black to-transparent from-70% to-100% text-white text-center py-6 pb-2 px-4 flex gap-8 lowercase font-mono">
+											<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color uppercase flex-shrink-0">{selected_title}</a>
+											<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color bg-purple-500 text-black px-2">View album</a>
+											<span class="text-right line-clamp-1 text-gray-700 ml-auto">{selected_photo.split('/')[4]}</span>
+										</div>
+									</div>
+								{/if}
+							</div>
+						</div>
+					{/if}
+					{#if place.name == 'books'}
+						<!-- <div class="flex items-center space-x-4">
 										<div class="w-8 text-right text-gray-500">
 											<p>{index + 1}</p>
 										</div>
@@ -117,39 +277,37 @@
 											{location.title}
 										</a>
 									</div> -->
-							{#each books as book}
-								<div class="flex items-center space-x-4">
-									<div class="w-16 text-right text-gray-400">
-										<p>{book.start.split('/')[0] + '/' + book.start.split('/')[2]}</p>
-									</div>
-									<a href="/books/{book.id}" class="no-color">
-										{book.name}
-									</a>
-									<div class=" text-right text-gray-400 line-clamp-1">
-										<p>{book.author}</p>
-									</div>
+						{#each books as book}
+							<div class="flex items-center space-x-4">
+								<div class="w-16 text-right text-gray-400">
+									<p>{book.start.split('/')[0] + '/' + book.start.split('/')[2]}</p>
 								</div>
-							{/each}
-						{/if}
-					</div>
-				</li>
-			{/each}
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
-				{#each places.filter((place) => place.type == 'link') as place}
-					<a href="/{place.name}" class=" relative no-color static-link">
-						<div class="relative border border-dotted mb-12 p-4 hover:cursor-pointer group">
-							<h2 title={place.description} class="uppercase text-xl mb-4 mt-2"><a href="/{place.name}" class=" no-color">{place.name}</a></h2>
-							<div>
-								<p class="mb-4">{place.description}</p>
+								<a href="/books/{book.id}" class="no-color line-clamp-1">
+									{book.name}
+								</a>
+								<div class=" text-right text-gray-400 line-clamp-1">
+									<p>{book.author}</p>
+								</div>
 							</div>
-							<span class="absolute top-3 right-3 text-white shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"> ↗ </span>
+						{/each}
+					{/if}
+				</div>
+			</li>
+		{/each}
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
+			{#each places.filter((place) => place.type == 'link') as place}
+				<a href="/{place.name}" class=" relative no-color static-link">
+					<div class="relative border border-dotted mb-12 p-4 hover:cursor-pointer group">
+						<h2 title={place.description} class="uppercase text-xl mb-4 mt-2"><a href="/{place.name}" class=" no-color">{place.name}</a></h2>
+						<div>
+							<p class="mb-4">{place.description}</p>
 						</div>
-					</a>
-				{/each}
-			</div>
-		</ul>
-	</div>
-	<!-- <a href="/about" class="btn-primary">Read More →</a> -->
+						<span class="absolute top-3 right-3 text-white shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"> ↗ </span>
+					</div>
+				</a>
+			{/each}
+		</div>
+	</ul>
 </div>
 
 <style>
@@ -213,10 +371,30 @@
 		font-weight: bold;
 	}
 
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 0;
+		}
+	}
+
+	.line-item-wrapper.selected::before,
+	.line-item-wrapper.selected::after {
+		animation: blink 0.5s infinite !important;
+	}
+
 	@media (max-width: 640px) {
 		.place-card .overlay {
 			transform: translateY(0);
 			background-color: rgba(0, 0, 0, 0.6);
 		}
+	}
+
+	#desktop-photo {
+		height: 100%;
+		object-fit: cover;
 	}
 </style>
