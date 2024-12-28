@@ -3,17 +3,14 @@
 	import { links } from '$lib/data.js';
 </script>
 
-<!-- <main class="border-x w-full m-auto 2xl:w-9/12 h-screen"> -->
-<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 255), white, white);">
-	<h2 class="uppercase text-3xl inline-block mr-8">links</h2>
-</div>
 
 
-<div class="p-8 gap-8 sm:p-4m-2 pt-12 pb-20 sm:pt-24 text-xl sm:max-w-4xl ">
+
+<div class="p-8 gap-8 pt-2 pb-20 sm:p-4 sm:pt-24 sm:pb-12 text-xl sm:max-w-screen-lg sm:m-auto">
 	<ul class="">
 		{#each links as link}
-			<li class="border-b border-black mt-12">
-				<a class="text-gray-600 hover:text-gray-900 transition duration-300 ease-in-out list-none text-xl sm:text-2xl flex" href={link.url}><div>{link.name} →</div></a>
+			<li class="border-b pb-2 mb-2 mt-12">
+				<a class="list-none text-xl sm:text-2xl flex" href={link.url}><div>{link.name} →</div></a>
 				<!-- {@html link.description ? `<i class="ml-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out bg-white"> ` + link.description + `</i>` : ''} -->
 			</li>
 			<p class="text-sm sm:text-lg">{link.description}</p>

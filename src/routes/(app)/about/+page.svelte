@@ -14,7 +14,7 @@
 	];
 </script>
 
-<div class="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-white py-4">
+<div class="fixed bottom-0 left-0 w-full border-t border-dotted border-gray-200  py-4">
 	<div class="flex justify-center items-center space-x-8">
 		{#each socialMediaAccounts as account}
 			<a href={account.url} target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
@@ -28,7 +28,7 @@
 
 <div class="sm:p-4 p-2 m-2 pt-12 pb-20 sm:pt-24 text-xl sm:max-w-screen-lg sm:m-auto">
 	<p>
-		<span class="first-letter">M</span>y name is Clayton Wieberg, I am a software enginner, aspiring entrepreneur, and an independent student. In the {age} years I've been around, I achieved the Eagle Scout rank at age 16, became scuba certified at 17, got my dream job as a software developer at 19, flew solo to Japan for a rave (<a href="https://www.tano-c.net/">Tano*C</a>), and converted a van to travel the pacific west coast of the United States at 20.
+		My name is Clayton Wieberg, I am a software enginner, aspiring entrepreneur, and an independent student. In the {age} years I've been around, I achieved the Eagle Scout rank at age 16, became scuba certified at 17, got my dream job as a software developer at 19, flew solo to Japan for a rave (<a href="https://www.tano-c.net/">Tano*C</a>), and converted a van to travel the pacific west coast of the United States at 20.
 	</p>
 	<br />
 	<p>

@@ -174,7 +174,7 @@ export const books = [
 		img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1311705051i/10483171.jpg'
 	},
 	{
-		name: 'Think : An Introduction to Philosophy',
+		name: 'Think: An Introduction to Philosophy',
 		author: 'Simon Blackburn',
 		start: '6/26/2024',
 		end: '8/31/2024',
@@ -306,7 +306,7 @@ export const books = [
 	},
 	{
 		name: 'The Quantum and the Lotus',
-		author: 'Cixin Liu',
+		author: 'Matthieu Ricard',
 		start: '10/15/2024',
 		end: '11/16/2024',
 		comment: '',
@@ -333,7 +333,7 @@ export const projects = [
 	{
 		id: 'indie-students',
 		title: 'Indie Students',
-		url: 'https://github.com/klayza/indiestudent',
+		url: 'https://indie-student-landing.vercel.app/',
 		image: '/img/projects/indiestudent.png',
 		category: 'current'
 	},
@@ -365,13 +365,13 @@ export const projects = [
 		image: '/img/projects/simple-instagram.png',
 		category: 'past'
 	},
-	{
-		id: 'asteroids',
-		title: 'Asteroids',
-		url: 'https://klayza.github.io/weekly-projects/37%20-%20Asteroids/',
-		image: '/img/projects/asteroids.png',
-		category: 'weekly'
-	}
+	// {
+	// 	id: 'asteroids',
+	// 	title: 'Asteroids',
+	// 	url: 'https://klayza.github.io/weekly-projects/37%20-%20Asteroids/',
+	// 	image: '/img/projects/asteroids.png',
+	// 	category: 'weekly'
+	// }
 ];
 
 export const links = [

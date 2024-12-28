@@ -168,9 +168,19 @@ hr {
 	/* line-height: 10em; */
 }
 
+.subtle {
+	color: rgb(70, 70, 70);
+	font-weight: italic;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
 ::selection {
 	background: var(--accent-color);
 }
+
 
 /* ========== MARKDOWN ========== */
 

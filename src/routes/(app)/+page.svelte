@@ -84,6 +84,12 @@
 			clearInterval(intervalId);
 		}
 	});
+
+	$: sortedBooks = [...books].sort((a, b) => {
+		const dateA = new Date(a.start);
+		const dateB = new Date(b.start);
+		return dateB - dateA; // Most recent first
+	});
 </script>
 
 <!-- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,28 +115,28 @@
 	</section>
 </div> -->
 
-<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="container mx-auto px-1 sm:px-6 lg:px-8">
 	<div class=" p-4 max-w-2xl mx-auto">
 		<h2 class="uppercase mb-4 mt-2 text-center">Who are you?</h2>
 		<p class="mb-4 text-xl">I'm a software engineer, independent student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class="no-color hover:underline">Read more</a></p>
 	</div>
-	<ul class="mt-18">
+	<div class="mt-18 grid grid-cols-1 sm:grid-cols-2 gap-2">
 		{#each places.filter((place) => place.type != 'link') as place}
-			<li class="mb-12">
+			<div class="mb-12 {place.name == 'travel' ? 'col-span-1 sm:col-span-2' : 'col-span-1'} p-4">
 				<h2 title={place.description} class="uppercase text-3xl mb-4 mt-2"><a href="/{place.name}" class=" no-color">{place.name}</a></h2>
 				<hr />
 				<div>
 					{#if place.name == 'travel'}
-						<div class="flex items-center justify-between mb-4 font-mono uppercase ">
+						<div class="flex items-center justify-between mb-4 font-mono uppercase">
 							<span class="text-2xl hover:cursor-pointer">&lt;</span>
 							<h2 class="uppercase mb-4 mt-2 text-center pt-3">
-								<a href="/travel/west-coast-2024" class="no-color text-lg ">Pacific West Coast</a> <span class="text-gray-700 "> (1/3)</span>
+								<a href="/travel/west-coast-2024" class="no-color text-lg">Pacific West Coast</a> <span class="subtle"> (1/3)</span>
 							</h2>
 							<span class="text-2xl hover:cursor-pointer">&gt;</span>
 						</div>
 						<!-- Mobile view -->
-						<div class="block md:hidden">
-							<div class="flex flex-wrap shrink ">
+						<div class="block 2xl:hidden">
+							<div class="flex flex-wrap shrink">
 								{#each trip_data['west-coast-2024'] as location, index}
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -138,7 +144,7 @@
 									<a
 										id="location-{index + 1}"
 										ref="/travel/west-coast-2024/w{index + 1}"
-										class="no-color  flex-grow p-2 border m-1 rounded-sm hover:cursor-pointer {selected_location == location.id ? '' : 'border-dotted '}"
+										class="no-color flex-grow p-2 border m-1 rounded-sm hover:cursor-pointer {selected_location == location.id ? '' : 'border-dotted '}"
 										on:click={() => {
 											selected_photo = location.cover;
 											selected_location = location.id;
@@ -160,7 +166,7 @@
 							{/if}
 						</div>
 						<!-- Desktop view -->
-						<div class="hidden md:block">
+						<div class="hidden 2xl:block">
 							<div class="flex flex-row">
 								<div class="line-menu-container" bind:clientHeight={containerHeight}>
 									<div class="flex flex-col relative">
@@ -180,10 +186,11 @@
 												<a
 													id="location-{index + 1}"
 													ref="/travel/west-coast-2024/w{index + 1}"
-													class="font-mono italic uppercase line-item-content no-color pl-12 p-2 mb-4 hover:cursor-pointer {selected_location == location.id ? 'selected' : ''}"
+													class="font-mono uppercase line-item-content no-color pl-12 p-2 mb-4 hover:cursor-pointer {selected_location == location.id ? 'selected' : ''}"
 													on:click={() => {
 														selected_photo = location.cover;
 														selected_location = location.id;
+														selected_title = location.title;
 													}}
 												>
 													{location.title}
@@ -257,11 +264,11 @@
 
 								{#if selected_photo}
 									<div class="relative w-1/2 h-[640px] flex-shrink-0">
-										<img id="desktop-photo" src={selected_photo} alt="preview" class="object-cover  border-b p-2 border-[#ff8533] w-full h-full" />
+										<img id="desktop-photo" src={selected_photo} alt="preview" class="object-cover border-b p-2 border-[#ff8533] w-full h-full" />
 										<div class="absolute bottom-2 right-2 left-2 bg-gradient-to-t from-black to-transparent from-70% to-100% text-white text-center py-6 pb-2 px-4 flex gap-8 lowercase font-mono">
 											<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color uppercase flex-shrink-0">{selected_title}</a>
 											<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color bg-purple-500 text-black px-2">View album</a>
-											<span class="text-right line-clamp-1 text-gray-700 ml-auto">{selected_photo.split('/')[4]}</span>
+											<span class="text-right line-clamp-1 subtle ml-auto">{selected_photo.split('/')[4]}</span>
 										</div>
 									</div>
 								{/if}
@@ -269,31 +276,34 @@
 						</div>
 					{/if}
 					{#if place.name == 'books'}
-						<!-- <div class="flex items-center space-x-4">
-										<div class="w-8 text-right text-gray-500">
-											<p>{index + 1}</p>
+						<div class="relative">
+							<div class="max-h-96 overflow-y-auto no-scrollbar">
+								<div class="flex flex-col space-y-2">
+									{#each sortedBooks as book}
+										<div class="flex items-center gap-3 pr-2 py-2">
+											<div class="w-24 text-right subtle font-mono shrink-0">
+												{book.start.split('/')[0] + '.' + book.start.split('/')[2]}
+											</div>
+
+											<div class="flex-1 truncate font-mono" title={book.name}>
+												{book.name}
+											</div>
+
+											<div class="hidden sm:block w-48 text-right subtle font-mono truncate shrink-0">
+												{book.author}
+											</div>
 										</div>
-										<a href="/travel/west-coast-2024/w{index + 1}" class="no-color">
-											{location.title}
-										</a>
-									</div> -->
-						{#each books as book}
-							<div class="flex items-center space-x-4">
-								<div class="w-16 text-right text-gray-400">
-									<p>{book.start.split('/')[0] + '/' + book.start.split('/')[2]}</p>
-								</div>
-								<a href="/books/{book.id}" class="no-color line-clamp-1">
-									{book.name}
-								</a>
-								<div class=" text-right text-gray-400 line-clamp-1">
-									<p>{book.author}</p>
+									{/each}
 								</div>
 							</div>
-						{/each}
+
+							<div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+						</div>
 					{/if}
 				</div>
-			</li>
+			</div>
 		{/each}
+		<!-- Misc links -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2">
 			{#each places.filter((place) => place.type == 'link') as place}
 				<a href="/{place.name}" class=" relative no-color static-link">
@@ -307,7 +317,7 @@
 				</a>
 			{/each}
 		</div>
-	</ul>
+	</div>
 </div>
 
 <style>
