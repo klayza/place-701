@@ -64,6 +64,7 @@
 	function preProcessText(mdText) {
 		let html = insertFragments(mdText);
 		html = addExpandButtons(html);
+		html = addLazyLoading(html);
 		return html;
 	}
 
@@ -93,6 +94,21 @@
 			blockquote.appendChild(button);
 		});
 
+		return doc.body.innerHTML;
+	}
+
+	function addLazyLoading(html) {
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(html, 'text/html');
+		doc.querySelectorAll('img').forEach(img => {
+			img.setAttribute('loading', 'lazy');
+		});
+		doc.querySelectorAll('iframe').forEach(iframe => {
+			iframe.setAttribute('loading', 'lazy');
+		});
+		doc.querySelectorAll('video').forEach(iframe => {
+			iframe.setAttribute('loading', 'lazy');
+		});
 		return doc.body.innerHTML;
 	}
 
