@@ -122,7 +122,7 @@
 	<h2 class="text-3xl sm:text-5xl font-bold mb-8">Trips</h2>
 	<div class="space-y-8">
 		{#each trips as trip}
-			<a href="/travel/{trip.id}" class="block overflow-hidden group relative h-80">
+			<a href="/travel/{trip.id}" class="block overflow-hidden group relative h-80 no-color">
 				<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({trip.img});">
 					<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
 				</div>

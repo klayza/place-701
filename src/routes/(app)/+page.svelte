@@ -10,16 +10,16 @@
 	let intervalId;
 
 	let places = [
-		{ name: 'travel', description: "See where I've been." },
-		{ name: 'books', description: 'Some of my recommended reads.' },
-		// { name: 'music', description: 'Listen to some bangers.' },
-		// { name: 'chill', description: 'A chill splash screen with music.' },
-		{ name: 'projects', description: 'Work and play.' },
-		{ name: 'thoughts', description: 'My opinions on the world.' },
-		{ name: 'links', description: 'My favorite sites around the net.' },
-		{ name: 'manifesto', description: 'Get a glimpse of the vision.', img: '/img/think.jpg', type: 'link' },
-		{ name: 'todo', description: 'Things I must do before I die.', type: 'link' },
-		{ name: 'recipes', description: 'Meals I make often.', type: 'link' }
+		{ name: 'projects', description: 'Work and play' },
+		{ name: 'links', description: 'My favorite sites around the net' },
+		{ name: 'books', description: 'Some of my recommended reads' },
+		{ name: 'travel', description: "See where I've been" },
+		// { name: 'music', description: 'Listen to some bangers' },
+		// { name: 'chill', description: 'A chill splash screen with music' },
+		{ name: 'thoughts', description: 'My opinions on the world' },
+		{ name: 'manifesto', description: 'Get a glimpse of the vision', img: '/img/think.jpg', type: 'link' },
+		{ name: 'todo', description: 'Things I must do before I die', type: 'link' },
+		{ name: 'recipes', description: 'Meals I make often', type: 'link' }
 	];
 
 	function capitalizeFirstLetter(string) {
@@ -123,17 +123,21 @@
 	<div class="mt-18 grid grid-cols-1 sm:grid-cols-2 gap-2">
 		{#each places.filter((place) => place.type != 'link') as place}
 			<div class="mb-12 {place.name == 'travel' ? 'col-span-1 sm:col-span-2' : 'col-span-1'} p-4">
-				<h2 title={place.description} class="uppercase text-3xl mb-4 mt-2"><a href="/{place.name}" class=" no-color">{place.name}</a></h2>
-				<hr />
+				<div class="flex items-center justify-between">
+					<h2 title={place.description} class="flex-shrink-0 uppercase text-3xl mb-4 mt-2 inline font-mono"><a href="/{place.name}" class=" no-color"># {place.name} </a></h2>
+					<p class="font-mono inline mx-4 text-sm sm:text-lg shink-0 italic subtle"><span class="text-orange-400">// </span>{place.description}</p>
+				</div>
+				<!-- <p class="mb-4 font-mono inline mx-4 line-clamp-1 "><span class="text-orange-400 ">[</span><span class="mx-1 italic text-orange-400 ">{place.description}</span><span class="text-orange-400">]</span></p> -->
+				<hr class="my-4" />
 				<div>
 					{#if place.name == 'travel'}
-						<div class="flex items-center justify-between mb-4 font-mono uppercase">
+						<!-- <div class="flex items-center justify-between mb-4 font-mono uppercase">
 							<span class="text-2xl hover:cursor-pointer">&lt;</span>
 							<h2 class="uppercase mb-4 mt-2 text-center pt-3">
 								<a href="/travel/west-coast-2024" class="no-color text-lg">Pacific West Coast</a> <span class="subtle"> (1/3)</span>
 							</h2>
 							<span class="text-2xl hover:cursor-pointer">&gt;</span>
-						</div>
+						</div> -->
 						<!-- Mobile view -->
 						<div class="block 2xl:hidden">
 							<div class="flex flex-wrap shrink">
@@ -160,8 +164,13 @@
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<!-- svelte-ignore a11y-no-static-element-interactions -->
 								<div class="relative p-4 border border-dotted border-[ #ffa500] m-1 rounded-sm hover:cursor-pointer group" on:click={() => (window.location.href = `/travel/west-coast-2024/w${selected_location}`)}>
+										<div class="absolute top-1 right-2 left-2 bg-gradient-to-b from-black to-transparent from-70% to-100% text-white text-center pt-1 pb-4 px-4 flex gap-4 lowercase font-mono">
+											<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color uppercase flex-shrink-0">{selected_title}</a>
+											<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color bg-purple-500 text-black px-1 sm:px-2 line-clamp-1 ml-auto">View album</a>
+											<!-- <span class="text-right line-clamp-1 subtle ml-auto">{selected_photo.split('/')[4]}</span> -->
+										</div>
 									<img src={selected_photo} alt="preview" class="w-full h-64 object-cover" />
-									<span class="absolute top-8 right-8 text-lg text-white shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"> ↗ </span>
+									<span class="absolute top-12 right-8 text-lg text-white shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"> ↗ </span>
 								</div>
 							{/if}
 						</div>
@@ -277,7 +286,7 @@
 					{/if}
 					{#if place.name == 'books'}
 						<div class="relative">
-							<div class="max-h-96 overflow-y-auto no-scrollbar">
+							<div class="max-h-96 overflow-y-auto no-scrollbar pb-10">
 								<div class="flex flex-col space-y-2">
 									{#each sortedBooks as book}
 										<div class="flex items-center gap-3 pr-2 py-2">

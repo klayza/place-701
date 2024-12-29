@@ -55,7 +55,7 @@
 			const headerTitle = number + (text ? ' - ' + text : '');
 
 			console.log(headerText.split(' '));
-			navHTML += `<a href="#${id}"><li class="mb-2 text-center sm:text-left border-b border-dashed hover:bg-slate-100 p-3"><span class="text-blue-600 hover:text-blue-800">${headerTitle}</span></li></a>`;
+			navHTML += `<a class="no-color" href="#${id}"><li class="mb-2  text-center sm:text-left border-b border-dotted  p-3"><span class=" ">${headerTitle}</span></li></a>`;
 		});
 		document.querySelector('.article-navigation ul').innerHTML = navHTML;
 		return doc.body.innerHTML;
@@ -111,7 +111,7 @@
 {/if}
 
 {#if showScrollToTop}
-	<button on:click={scrollToTop} class="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 py-2 px-4 bg-white hover:bg-slate-100 border rounded-md shadow-md z-50">
+	<button on:click={scrollToTop} class="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 py-2 px-4 bg-black  border  shadow-md z-50">
 		<i class="bx bx-up-arrow-alt text-xl"></i>
 	</button>
 {/if}

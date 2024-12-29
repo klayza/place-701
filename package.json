@@ -10,7 +10,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"generate-previews": "node src/tools/generatePreviews.js"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -36,6 +37,7 @@
 		"lucide-svelte": "^0.424.0",
 		"marked": "^12.0.1",
 		"market": "^1.0.0",
+		"puppeteer": "^23.11.1",
 		"sqlite3": "^5.1.7"
 	}
 }
