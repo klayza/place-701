@@ -23,14 +23,14 @@
 	const categories = ['current', 'past', 'weekly'];
 </script>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 text-xl gap-12 mx-8 w-full h-[calc(100vh-242px)] font-mono">
+<div class="grid grid-cols-1 sm:grid-cols-2 text-xl  font-medium gap-12 mx-8 w-full h-[calc(100vh-242px)] ">
 	<!-- Left Column (lc) -->
-	<div class="lc p-16 hidden sm:block border rounded-3xl w-full h-full overflow-y-auto scrollable">
+	<div class="lc p-16 hidden sm:block border border-zinc-700 rounded-3xl w-full h-full overflow-y-auto scrollable">
 		<!-- <div class="flex flex-col gap-8"> -->
 			<div class="flex flex-col xl:grid xl:grid-cols-2 xl:grid-rows-2 gap-8">
 			{#each categories as category}
 				<div>
-					<p class="bg-yellow-200 px-3 ml-1 my-2 mb-4 w-fit text-black">
+					<p class="bg-yellow-200 px-3 ml-1 my-2 mb-4 w-fit text-black text-2xl">
 						{#if category === 'weekly'}
 							<a class="no-color" href="https://klayza.github.io/weekly-projects/">Weekly</a>
 						{:else}
@@ -39,8 +39,8 @@
 					</p>
 					<ol class="ml-10 pl-4" style="list-style-type: decimal-leading-zero;">
 						{#each projects.filter((p) => p.category == category) as project}
-							<li class="project-link relative">
-								<a href="#{project.id}" class=" no-color text-white flex items-center w-fit">
+							<li class="project-link relative text-xl">
+								<a href="#{project.id}" class=" no-color text-white  flex items-center w-fit">
 									<span class="mr-2">{project.title}</span>
 								</a>
 								<a href={project.url} target="_blank" rel="noopener noreferrer" class="arrow-link absolute right-0 top-0 bottom-0 flex items-center group z-10">
@@ -62,7 +62,7 @@
 			{#each projects as project}
 				<div id={project.id} class="block">
 					<a href={project.url} target="_blank" rel="noopener noreferrer" class="block">
-						<div class="p-4 border rounded-3xl w-full">
+						<div class="p-4 border border-zinc-700 rounded-3xl w-full">
 							<img src={project.image} class="w-full h-auto rounded-2xl object-contain" alt="{project.title} Project Image" />
 						</div>
 					</a>
@@ -74,11 +74,11 @@
 
 <style>
 	li::marker {
-		color: rgb(52, 52, 52);
+		color: rgb(91, 91, 91);
 		margin-right: 10px;
 	}
 	li {
-		line-height: 35px;
+		line-height: 50px;
 		color: black;
 	}
 	.scrollable {

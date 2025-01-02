@@ -1,6 +1,6 @@
 <script>
 	import { books } from '$lib/data.js';
-
+	import { ArrowUpRight } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	const monthly_book_goal = 2;
@@ -12,7 +12,6 @@
 	let books_read_this_month_list = getBooksReadThisMonth();
 	let books_read_last_month = calculateBooksReadLastMonth();
 	let message_color = calculateMessageColor();
-
 
 	function calculateMessageColor() {
 		if (books_left_to_read == 0) {
@@ -54,39 +53,39 @@
 	}
 
 	function getUniqueYears(books) {
-    return [...new Set(
-      books
-        .filter(book => book.end) // Filter out books without end dates
-        .map(book => {
-          try {
-            const endDate = new Date(book.end);
-            if (isNaN(endDate.getTime())) return null;
-            return endDate.getFullYear();
-          } catch {
-            return null;
-          }
-        })
-        .filter(year => year !== null) // Remove any null values
-    )]
-    .sort((a, b) => b - a); // Sort years in descending order
-  }
+		return [
+			...new Set(
+				books
+					.filter((book) => book.end) // Filter out books without end dates
+					.map((book) => {
+						try {
+							const endDate = new Date(book.end);
+							if (isNaN(endDate.getTime())) return null;
+							return endDate.getFullYear();
+						} catch {
+							return null;
+						}
+					})
+					.filter((year) => year !== null) // Remove any null values
+			)
+		].sort((a, b) => b - a); // Sort years in descending order
+	}
 
-  function sortBooksByFinishDate(books) {
-    return [...books]
-      .filter(book => book.end) // Only include books with end dates
-      .sort((a, b) => {
-        try {
-          const dateA = new Date(a.end);
-          const dateB = new Date(b.end);
-          // Check if either date is invalid
-          if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) return 0;
-          return dateB - dateA;
-        } catch {
-          return 0;
-        }
-      });
-  }
-
+	function sortBooksByFinishDate(books) {
+		return [...books]
+			.filter((book) => book.end) // Only include books with end dates
+			.sort((a, b) => {
+				try {
+					const dateA = new Date(a.end);
+					const dateB = new Date(b.end);
+					// Check if either date is invalid
+					if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) return 0;
+					return dateB - dateA;
+				} catch {
+					return 0;
+				}
+			});
+	}
 
 	function updateReadingStatus() {
 		const booksReadLastMonth = calculateBooksReadLastMonth();
@@ -148,26 +147,26 @@
 
 	<div class="all-initial mt-20">
 		{#each getUniqueYears(books) as year}
-		<div class="mb-12">
-		  <h2 class=" font-bold mb-6 text-4xl text-center sm:text-left sm:text-7xl">{year}</h2>
-		  <hr>
-		  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
-			{#each sortBooksByFinishDate(books).filter(book => book.end.includes(year)) as book}
-			  <div class="flex  border border-zinc-900 border-b-8 p-4 h-full">
-				<img 
-				  src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} 
-				  alt={`${book.name} cover`} 
-				  class="h-80  object-contain " 
-				/>
-				<div class="text-center my-auto w-full px-2">
-				  <div class="font-medium">{book.name}</div>
-				  <div class="text-sm font-medium text-gray-600">{book.author}</div>
+			<div class="mb-12">
+				<h2 class=" mb-6 text-4xl text-center sm:text-left sm:text-7xl">{year}</h2>
+				<hr />
+				<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
+					{#each sortBooksByFinishDate(books).filter((book) => book.end.includes(year)) as book}
+						<div class="flex border border-zinc-900 border-b-8 p-4 h-full relative group">
+							<a href="https://annas-archive.org/search?q={book.isbn}" target="_blank" rel="noopener" class=" absolute top-2 right-2 no-color p-2 z-50" title="Read this for free! No scam bro trust me">
+								<ArrowUpRight class="text-zinc-800 group-hover:text-white transition duration-300" />
+							</a>
+
+							<img src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} alt={`${book.name} cover`} class="h-80 object-contain group-hover:bg-gradient-to-br from-black to-white transition" loading="lazy" />
+							<div class="text-center my-auto w-full px-2">
+								<div class="font-medium">{book.name}</div>
+								<div class="text-sm font-medium text-orange-300">{book.author}</div>
+							</div>
+						</div>
+					{/each}
 				</div>
-			  </div>
-			{/each}
-		  </div>
-		</div>
-	  {/each}
+			</div>
+		{/each}
 		<!-- <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 			{#each sortBooksByFinishDate(books) as book}
 				<div class="group h-64 flex flex-col items-center justify-center p-4">

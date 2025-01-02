@@ -54,11 +54,20 @@
 		});
 	}
 
+	function generateDescription() {
+		let places = []
+		trips.forEach(trip => {
+			places.push(trip.name)
+		});
+		console.log(places.join(', '))
+		return places.join(', ')
+	}
+
 
 	// Example usage:
 </script>
 
-<SEO title="Travel &mdash; Clayton Wieberg" />
+<SEO title="Travel &mdash; Clayton Wieberg" description="Solo adventures from around the world. Van life, backpacking, and exploring cities." keywords="van life, photos, photo log, photography, vanlife, camping, backpacking, blog, travel, adventure, exploration, solo, solo adventure, {generateDescription()}" />
 
 <!-- <header class="w-full bg-black text-white text-2xl p-4 sticky top-0">Travel</header> -->
 
@@ -109,31 +118,32 @@
 	{/each}
 </ul> -->
 
-<div class="max-w-5xl mx-auto py-12 pt-0 px-4 sm:px-8 my-12">
+<div class="max-w-[90%] mx-auto my-12 sm:my-36  pt-0  sm:px-8 mb-6">
 	
 	
-	<canvas id="continents"></canvas>
+	<!-- <canvas id="continents"></canvas> -->
 
 
 	
 	<!-- <p class="text-lg my-24">Check out some of the places I've been to! I like going to new places and trying different ways of life. From living out of a van along the pacific west coast to enjoying ramen in Tokyo, I hope to try a little piece of everything. There are dozens of photos in each entry as well as some commentary, so give it a read.</p> -->
 	 
 
-	<h2 class="text-3xl sm:text-5xl  mb-8">Trips</h2>
-	<div class="space-y-8">
+	<h2 class="text-6xl sm:text-8xl text-center  mb-8">Travel</h2>
+	<p class="text-center font-medium text-2xl mb-8">Solo adventures from <span class="gay-text">around the world</span>. Van life, backpacking, and exploring cities. I hope to visit one new country every year.</p>
+	<div class="space-y-4">
 		{#each trips as trip}
-			<a href="/travel/{trip.id}" class="block overflow-hidden group relative h-80 no-color">
+			<a href="/travel/{trip.id}" class="block overflow-hidden group relative w-full m-auto h-[500px] no-color static-link rounded-xl md:rounded-full ">
 				<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({trip.img});">
 					<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
 				</div>
-				<div class="relative h-full flex flex-col justify-center items-center text-white">
-					<p style="font-family: Marker;" class="text-3xl sm:text-4xl text-center line-clamp-3 text-shadow">
+				<div class="relative h-full flex flex-col justify-center items-center font-medium text-white">
+					<h1  class="text-3xl sm:text-6xl text-center line-clamp-3 text-shadow">
 						{trip.name}
-					</p>
+					</h1>
 
-					<div class="text-lg sm:text-2xl flex-row flex gap-4 absolute bottom-2 left-4  mb-2 text-shadow italic text-gray-200">
+					<div class="text-lg sm:text-2xl flex-row flex gap-4 absolute bottom-2 m-auto  mb-2 text-shadow ">
 						<p>{daysDifference(trip.start, trip.end, trip.id)} days</p>
-						<p>/</p>
+						<p class=""> ▪ </p>
 						<p>{getYear(trip.start)}</p>
 						<!-- <p class="before:content-['•'] before:mr-3 text-green-300">ongoing</p>
 						<p class="before:content-['•'] before:mr-3">2024</p> -->
@@ -148,3 +158,15 @@
 		{/each}
 	</div>
 </div>
+
+
+<!-- 
+<a href="/travel/west-coast-2024/w{totalMdFiles - i}" class="block overflow-hidden group relative h-80 no-color static-link">
+	<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({weekCover(totalMdFiles - i)});">
+		<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
+	</div>
+	<div class="relative h-full flex flex-col justify-center items-center text-white">
+		<h2 class="text-3xl text-center line-clamp-3 text-shadow">{weekTitle(totalMdFiles - i)}</h2>
+		<p class="text-2xl absolute bottom-2 left-4 font-medium  mb-2  bg-white text-black px-4 rounded-full  ">Week {totalMdFiles - i}</p>
+	</div>
+</a> -->

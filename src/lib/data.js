@@ -56,15 +56,15 @@ export const trips = [
 	// 	color: 'red-200',
 	// 	img: '/img/travel.png'
 	// },
-	{
-		name: 'Hawaii',
-		id: 'hawaii-2021',
-		start: 'June 2, 2021',
-		end: 'June 9, 2021',
-		pictures: 8,
-		color: 'yellow-200',
-		img: '/img/trips/hawaii-2021/hawaii.jpg'
-	}
+	// {
+	// 	name: 'Hawaii',
+	// 	id: 'hawaii-2021',
+	// 	start: 'June 2, 2021',
+	// 	end: 'June 9, 2021',
+	// 	pictures: 8,
+	// 	color: 'yellow-200',
+	// 	img: '/img/trips/hawaii-2021/hawaii.jpg'
+	// }
 ];
 
 export const trip_data = {
