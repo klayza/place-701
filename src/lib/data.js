@@ -45,7 +45,7 @@ export const trips = [
 		end: 'September 7, 2024',
 		pictures: 119,
 		color: 'blue-200',
-		img: '/img/trips/west-coast-2024/0521-2.jpg'
+		img: '/img/trips/west-coast-2024/0812-7.jpg'
 	},
 	// {
 	// 	name: 'Japan',
@@ -304,22 +304,22 @@ export const books = [
 		comment: 'Existential dread.',
 		isbn: '9780765377104'
 	},
-	{
-		name: 'The Quantum and the Lotus',
-		author: 'Matthieu Ricard',
-		start: '10/15/2024',
-		end: '11/16/2024',
-		comment: '',
-		isbn: '9780307566126'
-	},
-	{
-		name: 'Zen in the Art of Writing',
-		author: 'Ray Bradbury',
-		start: '10/15/2024',
-		end: '11/16/2024',
-		comment: '',
-		isbn: '0553296345'
-	}
+	// {
+	// 	name: 'The Quantum and the Lotus',
+	// 	author: 'Matthieu Ricard',
+	// 	start: '10/15/2024',
+	// 	end: '11/16/2024',
+	// 	comment: '',
+	// 	isbn: '9780307566126'
+	// },
+	// {
+	// 	name: 'Zen in the Art of Writing',
+	// 	author: 'Ray Bradbury',
+	// 	start: '10/15/2024',
+	// 	end: '11/16/2024',
+	// 	comment: '',
+	// 	isbn: '0553296345'
+	// }
 ];
 
 export const projects = [

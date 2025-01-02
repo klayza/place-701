@@ -37,7 +37,7 @@
 </script>
 
 <ArticleBody showNavigation={false}>
-	<h1 class="text-2xl mt-0 sm:text-5xl font-bold">Beastars Season 3 Finale</h1>
+	<h1 class="text-2xl mt-0 sm:text-5xl ">Beastars Season 3 Finale</h1>
 	<p class="text-xl sm:text-4xl font-normal text-center text-red-600">{timeLeft.days} days : {timeLeft.hours} hours : {timeLeft.minutes} min : {timeLeft.seconds} sec</p>
 	<img src="https://a.storyblok.com/f/178900/1500x2222/096f63177c/beastars-final-season-teaser-visual-english.jpeg/m/filters:quality(95)format(webp)" />
 </ArticleBody>

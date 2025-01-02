@@ -29,15 +29,15 @@
   <div class="flex flex-wrap justify-around mb-4">
     {#each legendItems as item}
       <div class="flex items-center m-1">
-        <div class={`w-4 h-4 border border-gray-300 ${item.color} mr-2`}></div>
+        <div class={`w-4 h-4 border  ${item.color} mr-2`}></div>
         <span>{item.label}</span>
       </div>
     {/each}
   </div>
 
-  <div class="grid grid-cols-52 gap-0.5">
+  <div class="grid grid-cols-52 gap-0.5 sm:gap-2">
     {#each grid as cellClass}
-      <div class={`w-2 h-2 border border-gray-300 ${cellClass}`}></div>
+      <div class={`w-1 h-1 sm:w-2 sm:h-2  ${cellClass}`}></div>
     {/each}
   </div>
 </div>

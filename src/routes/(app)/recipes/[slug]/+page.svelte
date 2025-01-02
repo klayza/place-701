@@ -104,7 +104,7 @@
 
 <!-- <div class="cover-img border-b w-full h-96 bg-center bg-no-repeat bg-cover" style="background-image: url('/{data.img}');"></div> -->
 <div class="border-b pt-12 pb-12">
-	<h1 class="text-5xl font-bold px-2 sm:px-0 text-center mt-6">{data.name}</h1>
+	<h1 class="text-5xl  px-2 sm:px-0 text-center mt-6">{data.name}</h1>
 	<!-- <h1 class="text-xl font-semibold text-center m-auto mt-12 max-w-4xl mb-4">{data.snippet}</h1> -->
 </div>
 

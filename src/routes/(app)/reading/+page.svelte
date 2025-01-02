@@ -14,14 +14,6 @@
 	let message_color = calculateMessageColor();
 
 
-	function sortBooksByFinishDate(books) {
-		return books.sort((a, b) => {
-			const dateA = new Date(a.end);
-			const dateB = new Date(b.end);
-			return dateB - dateA; // Sort in descending order (most recent first)
-		});
-	}
-
 	function calculateMessageColor() {
 		if (books_left_to_read == 0) {
 			return 'green';
@@ -61,6 +53,41 @@
 		return getBooksReadThisMonth().length;
 	}
 
+	function getUniqueYears(books) {
+    return [...new Set(
+      books
+        .filter(book => book.end) // Filter out books without end dates
+        .map(book => {
+          try {
+            const endDate = new Date(book.end);
+            if (isNaN(endDate.getTime())) return null;
+            return endDate.getFullYear();
+          } catch {
+            return null;
+          }
+        })
+        .filter(year => year !== null) // Remove any null values
+    )]
+    .sort((a, b) => b - a); // Sort years in descending order
+  }
+
+  function sortBooksByFinishDate(books) {
+    return [...books]
+      .filter(book => book.end) // Only include books with end dates
+      .sort((a, b) => {
+        try {
+          const dateA = new Date(a.end);
+          const dateB = new Date(b.end);
+          // Check if either date is invalid
+          if (isNaN(dateA.getTime()) || isNaN(dateB.getTime())) return 0;
+          return dateB - dateA;
+        } catch {
+          return 0;
+        }
+      });
+  }
+
+
 	function updateReadingStatus() {
 		const booksReadLastMonth = calculateBooksReadLastMonth();
 		books_read_this_month = calculateBooksReadThisMonth();
@@ -81,24 +108,20 @@
 	});
 </script>
 
-<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 230, 230), white, white);">
-	<h2 class="uppercase text-3xl inline-block mr-8">reading list</h2>
-</div>
-
-<div class="max-w-screen-lg m-auto text-lg p-2 py-12 sm:py-16 sm:p-8">
-	<div>
-		<p class="text-md sm:text-xl">I love to read, and have just begun to read regularly. My goal is to read two books a month. I have setup a deal with family to pay them $100 for every book I fail to complete. If I do fail, a message will appear here and whoever sees it will get to steal my cash.</p>
+<div class="max-w-screen-2xl m-auto text-lg p-4 py-12 sm:py-16 sm:p-8">
+	<div class="font-medium">
+		<p class="text-md sm:text-xl">My goal is to read two books a month. I have setup a deal with family to pay them $100 for every book I fail to complete. If I do fail, a message will appear here and whoever sees it will get to steal my cash.</p>
 		<p></p>
 
 		{#if show_penalty_message}
 			<div class="bg-{calculateMessageColor()}-100 border border-{calculateMessageColor()}-400 text-{calculateMessageColor()}-700 px-4 py-3 rounded relative mt-8" role="alert">
-				<strong class="font-bold"></strong>
+				<strong class=""></strong>
 				<span class="block sm:inline">If you are seeing this then I failed to meet my reading goal last month. 😢 Claim ${penalty_amount} by texting me before the end of the month.</span>
 			</div>
 		{/if}
 		{#if !show_penalty_message}
 			<div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mt-8" role="alert">
-				<strong class="font-bold"></strong>
+				<strong class=""></strong>
 				{#if books_read_this_month == 0}
 					<span class="block sm:inline"
 						>I read {books_read_last_month}
@@ -123,8 +146,29 @@
 		{/if}
 	</div>
 
-	<div class="md-output all-initial text-md sm:text-xl mt-20">
-		<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="all-initial mt-20">
+		{#each getUniqueYears(books) as year}
+		<div class="mb-12">
+		  <h2 class=" font-bold mb-6 text-4xl text-center sm:text-left sm:text-7xl">{year}</h2>
+		  <hr>
+		  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
+			{#each sortBooksByFinishDate(books).filter(book => book.end.includes(year)) as book}
+			  <div class="flex  border border-zinc-900 border-b-8 p-4 h-full">
+				<img 
+				  src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} 
+				  alt={`${book.name} cover`} 
+				  class="h-80  object-contain " 
+				/>
+				<div class="text-center my-auto w-full px-2">
+				  <div class="font-medium">{book.name}</div>
+				  <div class="text-sm font-medium text-gray-600">{book.author}</div>
+				</div>
+			  </div>
+			{/each}
+		  </div>
+		</div>
+	  {/each}
+		<!-- <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 			{#each sortBooksByFinishDate(books) as book}
 				<div class="group h-64 flex flex-col items-center justify-center p-4">
 					<img src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} alt={`${book.name} cover`} class="h-40 mb-4 object-contain" />
@@ -134,6 +178,6 @@
 					</div>
 				</div>
 			{/each}
-		</div>
+		</div> -->
 	</div>
 </div>

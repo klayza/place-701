@@ -71,7 +71,7 @@
 		<li class="list-none">
 			<div class="border-2 border-black overflow-hidden h-full flex flex-col">
 				<div class="bg-white p-6 flex-grow flex flex-col">
-					<h2 class="text-3xl font-bold mb-2 border-b-black">{trip.name}</h2>
+					<h2 class="text-3xl  mb-2 border-b-black">{trip.name}</h2>
 					{#if trip.isOngoing}
 						<span class="bg-green-300 rounded-full px-2 w-fit">ONGOING</span>
 					{/if}
@@ -119,7 +119,7 @@
 	<!-- <p class="text-lg my-24">Check out some of the places I've been to! I like going to new places and trying different ways of life. From living out of a van along the pacific west coast to enjoying ramen in Tokyo, I hope to try a little piece of everything. There are dozens of photos in each entry as well as some commentary, so give it a read.</p> -->
 	 
 
-	<h2 class="text-3xl sm:text-5xl font-bold mb-8">Trips</h2>
+	<h2 class="text-3xl sm:text-5xl  mb-8">Trips</h2>
 	<div class="space-y-8">
 		{#each trips as trip}
 			<a href="/travel/{trip.id}" class="block overflow-hidden group relative h-80 no-color">
@@ -131,7 +131,7 @@
 						{trip.name}
 					</p>
 
-					<div class="text-lg sm:text-2xl flex-row flex gap-4 absolute bottom-2 left-4 font-bold mb-2 text-shadow italic text-gray-200">
+					<div class="text-lg sm:text-2xl flex-row flex gap-4 absolute bottom-2 left-4  mb-2 text-shadow italic text-gray-200">
 						<p>{daysDifference(trip.start, trip.end, trip.id)} days</p>
 						<p>/</p>
 						<p>{getYear(trip.start)}</p>

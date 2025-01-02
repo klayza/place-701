@@ -37,12 +37,12 @@
 <div class="flex flex-wrap gap-2 mb-8">
 	<div class="flex items-center">
 		<label for="age" class="mr-2">I am</label>
-		<input id="age" type="number" bind:value={age} min="0" max="70" class="w-16 p-1 border rounded" />
+		<input id="age" type="number" bind:value={age} min="0" max="70" class="w-16 p-1 border " />
 		<span class="ml-2">years old and</span>
 	</div>
 	<div class="flex items-center">
 		<label for="social-media-hours" class="mr-2">I use social media</label>
-		<input id="social-media-hours" type="number" bind:value={socialMediaHours} min="0" max="24" class="w-16 p-1 border rounded" />
+		<input id="social-media-hours" type="number" bind:value={socialMediaHours} min="0" max="24" class="w-16 p-1 border " />
 		<span class="ml-2">hours a day</span>
 	</div>
 </div>
@@ -59,17 +59,17 @@
 <div class="flex flex-wrap gap-2 mb-8">
 	<div class="flex items-center">
 		<label for="sleep" class="mr-2">I sleep</label>
-		<input id="sleep" type="number" bind:value={sleep} min="0" max="12" class="w-16 p-1 border rounded" />
+		<input id="sleep" type="number" bind:value={sleep} min="0" max="12" class="w-16 p-1 border " />
 		<span class="ml-2">hours a night.</span>
 	</div>
 	<div class="flex items-center">
 		<label for="work" class="mr-2">I work </label>
-		<input id="work" type="number" bind:value={work} min="0" max="12" class="w-16 p-1 border rounded" />
+		<input id="work" type="number" bind:value={work} min="0" max="12" class="w-16 p-1 border " />
 		<span class="ml-2">hours a day.</span>
 	</div>
 	<div class="flex items-center">
 		<label for="chores" class="mr-2">I spend </label>
-		<input id="chores" type="number" bind:value={chores} min="0" max="12" class="w-16 p-1 border rounded" />
+		<input id="chores" type="number" bind:value={chores} min="0" max="12" class="w-16 p-1 border " />
 		<span class="ml-2">hours doing chores like cleaning, commuting, or cooking.</span>
 	</div>
 </div>
@@ -84,8 +84,3 @@
 
 <p class="mt-12">It's slightly unsettling watching the percent tick up</p>
 
-<style>
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-</style>

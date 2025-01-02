@@ -4,6 +4,7 @@ export default {
   theme: {
     fontFamily: {
       mono: ['Space Mono', 'mono'],
+      medium: ['PixelfySans', 'mono'],
     },
     extend: {},
   },

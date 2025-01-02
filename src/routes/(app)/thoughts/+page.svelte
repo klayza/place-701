@@ -80,10 +80,7 @@
 	}
 </script>
 
-<main class="border-x w-full m-auto 2xl:w-9/12 h-screen">
-	<div class="w-full p-12 pl-8 border-b tracking-widest" style="background-image: linear-gradient(to right, rgb(255, 255, 230), white, white);">
-		<h2 class="uppercase text-3xl inline-block mr-8">thoughts</h2>
-	</div>
+<main class="w-full m-auto 2xl:w-9/12 h-screen">
 	<!-- <div class="w-full p-4 pl-8 text-2xl  bg-gray-200 uppercase tracking-widest"><p>/ thoughts / recent</p></div> -->
 	<!-- <div class="latest border-b flex flex-row">
 			<div class="flex w-full flex-col">
@@ -105,14 +102,14 @@
 
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 gap-8">
 		{#each posts as post}
-			<a href="/thoughts/{post.id}" class="border pb-4" on:hover={console.log('here')}>
+			<a href="/thoughts/{post.id}" class="border border-zinc-900 border-b-8 pb-4 no-color" on:hover={console.log('here')}>
 				<!-- svelte-ignore a11y-img-redundant-alt -->
 				<div class="p-4 flex flex-col">
 					<!-- <p class="text-left inline">[{posts.indexOf(post) + 1}]</p> -->
 					<img src={post.img ? post.img : 'img/clouds.png'} alt="Post Image" class="w-300 h-300 object-cover mb-2 m-4 rounded-lg " />
 					<div class="px-6">
 						<p class="text-xl my-6 font-semibold">{post.title}</p>
-						<p class=" text-left">{prettyDate(post.date)}</p>
+						<p class="text-left">{prettyDate(post.date)}</p>
 						<p class="mt-6">{post.snippet}</p>
 					</div>
 				</div>
@@ -165,32 +162,4 @@
  -->
 
 <style>
-	.light-mode-light {
-		background-color: white;
-		color: black;
-	}
-
-	.light-mode-dark {
-		background-color: black;
-		color: white;
-	}
-
-	.thought-post:hover {
-		/* box-shadow: 0px 2px 0px 0px; */
-		/* transition: box-shadow 0.5s ease; */
-	}
-
-	.thought-post h1:hover {
-		cursor: pointer;
-		text-decoration: underline;
-	}
-
-	.latest-posts li:hover {
-		/* transition: border-bottom 0.5s ease; */
-		/* border-bottom: 1px solid; */
-		box-shadow: 0 0 0 1px black;
-	}
-	a {
-		color: black !important;
-	}
 </style>

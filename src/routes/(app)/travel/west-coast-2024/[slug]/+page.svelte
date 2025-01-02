@@ -105,7 +105,7 @@
 </a>
 
 <div class="border-b pt-12 pb-12">
-	<h1 class="text-5xl font-bold px-2 sm:px-0 text-center mt-6">West Coast Trip 2024</h1>
+	<h1 class="text-5xl  px-2 sm:px-0 text-center mt-6">West Coast Trip 2024</h1>
 </div>
 
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
