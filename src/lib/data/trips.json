@@ -1,40 +1,5 @@
 [
   {
-    "name": "North Coast",
-    "id": "north-coast-2024",
-    "type": "collection",
-    "description": "Surfin with the polar bears brahh 🏄‍♀️🏄‍♀️❄🥶",
-    "start": "January 28, 2025",
-    "end": "",
-    "pictures": 4,
-    "cover": "/data/trips/north-coast-2024/attachments/original.jpg",
-    "hidden": false,
-    "entries": [
-      {
-        "title": "San Francisco",
-        "id": "1",
-        "date": "January 19, 2025",
-        "pictures": 5,
-        "cover": "/data/trips/north-coast-2024/attachments/original.jpg",
-        "tags": [
-          "camping",
-          "oregon"
-        ]
-      },
-      {
-        "title": "San Franciscoccc",
-        "id": "2",
-        "date": "January 19, 2025",
-        "pictures": 5,
-        "cover": "/data/trips/north-coast-2024/attachments/original.jpg",
-        "tags": [
-          "camping",
-          "oregon"
-        ]
-      }
-    ]
-  },
-  {
     "name": "Japan",
     "id": "japan-2023",
     "type": "single",
