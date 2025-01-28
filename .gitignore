@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
 /build
+/.temp-place-701-data
+/archive
+/.vscode
 /.svelte-kit
 /package
 .env

@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"prebuild": "npm run generate-previews && npm run generate-trip-data",
+		"prebuild": "npm run generate-previews && npm run generate-trip-data && npm run fetch-data",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"lint": "prettier --check . && eslint .",
@@ -13,7 +13,8 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"generate-previews": "node src/tools/generatePreviews.js",
-		"generate-trip-data": "node src/tools/generateTripData.js"
+		"generate-trip-data": "node src/tools/generateTripData.js",
+		"fetch-data": "node src/tools/fetchData.js"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
