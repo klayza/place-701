@@ -1,7 +1,7 @@
 <script>
 	const pages = [
 		{ name: 'projects', url: '/projects', color: 'text-blue-400' },
-		{ name: 'thoughts', url: '/thoughts', color: 'text-green-400' },
+		// { name: 'thoughts', url: '/thoughts', color: 'text-green-400' },
 		{ name: 'links', url: '/links', color: 'text-red-400' },
 		{ name: 'about', url: '/about', color: 'text-yellow-400' },
 		{ name: 'travel', url: '/travel', color: 'text-purple-400' },
@@ -26,10 +26,10 @@
 	<div class="relative z-10">
 		<div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
 			<h1 class="text-3xl sm:text-4xl  text-white text-center">
-				<a href="/" class="no-color text-white "> CLAYTON WIEBERG </a>
+				<a href="/" class="no-color text-white "> Clayton Wieberg </a>
 			</h1>
 
-			<nav class="flex flex-wrap gap-2 lg:gap-4">
+			<nav class="flex flex-wrap justify-center gap-2 lg:gap-4">
 				{#each pages as page}
 					<a
 						key={page.name}

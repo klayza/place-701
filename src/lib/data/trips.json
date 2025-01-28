@@ -1,0 +1,198 @@
+[
+  {
+    "name": "North Coast",
+    "id": "north-coast-2024",
+    "type": "collection",
+    "description": "Surfin with the polar bears brahh 🏄‍♀️🏄‍♀️❄🥶",
+    "start": "January 28, 2025",
+    "end": "",
+    "pictures": 4,
+    "cover": "/data/trips/north-coast-2024/attachments/original.jpg",
+    "hidden": false,
+    "entries": [
+      {
+        "title": "San Francisco",
+        "id": "1",
+        "date": "January 19, 2025",
+        "pictures": 5,
+        "cover": "/data/trips/north-coast-2024/attachments/original.jpg",
+        "tags": [
+          "camping",
+          "oregon"
+        ]
+      },
+      {
+        "title": "San Franciscoccc",
+        "id": "2",
+        "date": "January 19, 2025",
+        "pictures": 5,
+        "cover": "/data/trips/north-coast-2024/attachments/original.jpg",
+        "tags": [
+          "camping",
+          "oregon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Japan",
+    "id": "japan-2023",
+    "type": "single",
+    "description": "Woohoo! Japan!",
+    "start": "January 19, 2025",
+    "end": "January 28, 2025",
+    "pictures": 42,
+    "cover": "/img/travel.png",
+    "hidden": true,
+    "entries": [
+      {
+        "id": "1",
+        "date": "",
+        "pictures": 50,
+        "cover": "",
+        "tags": []
+      }
+    ]
+  },
+  {
+    "name": "Pacific West Coast",
+    "id": "west-coast-2024",
+    "type": "collection",
+    "description": "4 months spent traveling the west coast in a camper van. From Arizona to L.A, <span class=\"text-red-200\">San Francisco</span>, <span class=\"text-orange-100\">Yosemite Park</span>, Seattle, until <span class=\"text-blue-100\">Banff, Canada</span>.",
+    "start": "April 28, 2024",
+    "end": "September 6, 2024",
+    "pictures": 656,
+    "cover": "/data/trips/west-coast-2024/attachments/0508-4.jpg",
+    "hidden": false,
+    "entries": [
+      {
+        "title": "Yosemite National Park",
+        "id": "2",
+        "date": "May 5, 2024",
+        "pictures": 54,
+        "cover": "/data/trips/west-coast-2024/attachments/0508-4.jpg",
+        "tags": []
+      },
+      {
+        "title": "San Francisco",
+        "id": "3",
+        "date": "May 12, 2024",
+        "pictures": 34,
+        "cover": "/data/trips/west-coast-2024/attachments/0513-6.jpg",
+        "tags": []
+      },
+      {
+        "title": "Redwood Forest",
+        "id": "4",
+        "date": "May 19, 2024",
+        "pictures": 46,
+        "cover": "/data/trips/west-coast-2024/attachments/0522-5.jpg",
+        "tags": []
+      },
+      {
+        "title": "Los Angeles",
+        "id": "1",
+        "date": "May 23, 2024",
+        "pictures": 49,
+        "cover": "/data/trips/west-coast-2024/attachments/0430-la.jpg",
+        "tags": []
+      },
+      {
+        "title": "Crater Lake",
+        "id": "5",
+        "date": "May 28, 2024",
+        "pictures": 40,
+        "cover": "/data/trips/west-coast-2024/attachments/0529-2.jpg",
+        "tags": []
+      },
+      {
+        "title": "Portland",
+        "id": "6",
+        "date": "June 3, 2024",
+        "pictures": 31,
+        "cover": "/data/trips/west-coast-2024/attachments/0607-1.jpg",
+        "tags": []
+      },
+      {
+        "title": "Ape Cave",
+        "id": "7",
+        "date": "June 10, 2024",
+        "pictures": 45,
+        "cover": "/data/trips/west-coast-2024/attachments/0613-2.jpg",
+        "tags": []
+      },
+      {
+        "title": "Rainier National Park",
+        "id": "8",
+        "date": "June 17, 2024",
+        "pictures": 36,
+        "cover": "/data/trips/west-coast-2024/attachments/0620-4.jpg",
+        "tags": []
+      },
+      {
+        "title": "Seattle",
+        "id": "9",
+        "date": "June 24, 2024",
+        "pictures": 41,
+        "cover": "/data/trips/west-coast-2024/attachments/0624-3.jpg",
+        "tags": []
+      },
+      {
+        "title": "Northwest Peninsula",
+        "id": "10",
+        "date": "July 24, 2024",
+        "pictures": 71,
+        "cover": "/data/trips/west-coast-2024/attachments/0727-8.jpg",
+        "tags": []
+      },
+      {
+        "title": "Vancouver",
+        "id": "11",
+        "date": "July 31, 2024",
+        "pictures": 29,
+        "cover": "/data/trips/west-coast-2024/attachments/0804-8.jpg",
+        "tags": []
+      },
+      {
+        "title": "Banff National Park",
+        "id": "12",
+        "date": "August 7, 2024",
+        "pictures": 47,
+        "cover": "/data/trips/west-coast-2024/attachments/0809-7.jpg",
+        "tags": []
+      },
+      {
+        "title": "Glacier National Park",
+        "id": "13",
+        "date": "August 12, 2024",
+        "pictures": 33,
+        "cover": "/data/trips/west-coast-2024/attachments/0814-7.jpg",
+        "tags": []
+      },
+      {
+        "title": "Yellowstone National Park",
+        "id": "14",
+        "date": "August 19, 2024",
+        "pictures": 42,
+        "cover": "/data/trips/west-coast-2024/attachments/0821-8.jpg",
+        "tags": []
+      },
+      {
+        "title": "Salt Lake City",
+        "id": "15",
+        "date": "August 26, 2024",
+        "pictures": 16,
+        "cover": "/data/trips/west-coast-2024/attachments/0828-4.jpg",
+        "tags": []
+      },
+      {
+        "title": "Arches National Park",
+        "id": "16",
+        "date": "September 1, 2024",
+        "pictures": 42,
+        "cover": "/data/trips/west-coast-2024/attachments/0903-7.jpg",
+        "tags": []
+      }
+    ]
+  }
+]

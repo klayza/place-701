@@ -18,13 +18,19 @@ if (!fs.existsSync(outputDir)) {
 }
 
 (async () => {
+
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     for (const { url } of links) {
         try {
             const filename = `${new URL(url).hostname}.png`; // Use the hostname for filenames
-            console.log(`Generating preview for ${url}`);
+
+            // Before doing anything check if we already have a screenshow
+            if (fs.existsSync(path.join(outputDir, filename))) {
+                console.log(`Preview already exists for ${url}, skipping...`);
+                continue;
+            }
 
             // Go to the URL and take a screenshot
             await page.goto(url, { waitUntil: 'networkidle2' });

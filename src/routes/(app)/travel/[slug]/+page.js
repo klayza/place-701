@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { trips } from '$lib/data.js';
+import trips from '/src/lib/data/trips.json';
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
@@ -8,8 +8,7 @@ export function load({ params }) {
 
     if (trip) {
         return trip;
-    }
-    else {
-        error(404);
+    } else {
+        throw error(404);
     }
 }

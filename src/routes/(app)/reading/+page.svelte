@@ -3,7 +3,7 @@
 	import { ArrowUpRight } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
-	const monthly_book_goal = 2;
+	const monthly_book_goal = 1;
 	let books_left_to_read = 0;
 	let days_until_next_month = 0;
 	let show_penalty_message = false;
@@ -113,13 +113,13 @@
 		<p></p>
 
 		{#if show_penalty_message}
-			<div class="bg-{calculateMessageColor()}-100 border border-{calculateMessageColor()}-400 text-{calculateMessageColor()}-700 px-4 py-3 rounded relative mt-8" role="alert">
+			<div class="bg-{calculateMessageColor()}-950 border border-{calculateMessageColor()}-400 text-{calculateMessageColor()}-700 px-4 py-3 rounded relative mt-8" role="alert">
 				<strong class=""></strong>
 				<span class="block sm:inline">If you are seeing this then I failed to meet my reading goal last month. 😢 Claim ${penalty_amount} by texting me before the end of the month.</span>
 			</div>
 		{/if}
 		{#if !show_penalty_message}
-			<div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mt-8" role="alert">
+			<div class="bg-blue-950/25 border border-blue-950 text-blue-400 px-4 py-3 rounded relative mt-8" role="alert">
 				<strong class=""></strong>
 				{#if books_read_this_month == 0}
 					<span class="block sm:inline"
@@ -147,14 +147,14 @@
 
 	<div class="all-initial mt-20">
 		{#each getUniqueYears(books) as year}
-			<div class="mb-12">
-				<h2 class=" mb-6 text-4xl text-center sm:text-left sm:text-7xl">{year}</h2>
+			<div class="my-24">
+				<h2 class=" mb-6 text-5xl text-center sm:text-left sm:text-7xl">{year}</h2>
 				<hr />
 				<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
 					{#each sortBooksByFinishDate(books).filter((book) => book.end.includes(year)) as book}
 						<div class="flex border border-zinc-900 border-b-8 p-4 h-full relative group">
-							<a href="https://annas-archive.org/search?q={book.isbn}" target="_blank" rel="noopener" class=" absolute top-2 right-2 no-color p-2 z-50" title="Read this for free! No scam bro trust me">
-								<ArrowUpRight class="text-zinc-800 group-hover:text-white transition duration-300" />
+							<a href="https://annas-archive.org/search?q={book.isbn}" target="_blank" rel="noopener" class=" absolute top-2 right-2 no-color p-2 z-50 " title="Read this for free! No scam bro trust me">
+								<ArrowUpRight class=" group-hover:text-white transition duration-300 text-white sm:text-zinc-800 " />
 							</a>
 
 							<img src={book.img ? book.img : `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`} alt={`${book.name} cover`} class="h-80 object-contain group-hover:bg-gradient-to-br from-black to-white transition" loading="lazy" />

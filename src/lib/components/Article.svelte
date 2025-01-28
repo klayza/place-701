@@ -7,9 +7,10 @@
 	export let description;
 	export let backPath;
 	export let mdPath;
+	export let relativeImgDir
 </script>
 
 <ArticleHead {backPath} {title} {description}></ArticleHead>
 <ArticleBody>
-	<MDoutput url={mdPath} backPath={backPath}></MDoutput>
+	<MDoutput url={mdPath} backPath={backPath} relativeImgDir={relativeImgDir}></MDoutput>
 </ArticleBody>

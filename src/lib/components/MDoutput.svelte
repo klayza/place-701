@@ -7,6 +7,7 @@
 	let showScrollToTop = false;
 	export let url;
 	export let backPath;
+	export let relativeImgDir; // New prop for relative image directory
 	let text = ``;
 
 	function handleScroll() {
@@ -62,6 +63,23 @@
 	}
 
 	function preProcessText(mdText) {
+		// Remove YAML-style frontmatter
+		mdText = mdText.replace(/^---[\r\n]+([\s\S]*?)[\r\n]+---[\r\n]+/, '');
+
+		// Process ![[file]] syntax for images and videos
+		mdText = mdText.replace(/!\[\[(.*?)\]\]/g, (match, filename) => {
+			const ext = filename.split('.').pop().toLowerCase();
+			const filepath = relativeImgDir ? `${relativeImgDir}/${filename}`.replace("//", "/") : filename;
+			const encodedPath = encodeURI(filepath);
+			
+			if (['mp4', 'webm', 'ogg'].includes(ext)) {
+				return `<video type="video/mp4" autoplay="" loop="" muted="" playsinline="" loading="lazy" src="${encodedPath}" type="video/${ext}"></video>`;
+			} else if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+				return `![image](${encodedPath})`;
+			}
+			return match;
+		});
+
 		let html = insertFragments(mdText);
 		html = addExpandButtons(html);
 		html = addLazyLoading(html);

@@ -45,26 +45,35 @@ export const trips = [
 		end: 'September 7, 2024',
 		pictures: 119,
 		color: 'blue-200',
-		img: '/img/trips/west-coast-2024/0812-7.jpg'
+		img: '/data/trips/west-coast-2024/attachments/0812-7.jpg'
 	},
-	// {
-	// 	name: 'Japan',
-	// 	id: 'japan-2023',
-	// 	start: 'May 24, 2023',
-	// 	end: 'June 2, 2023',
-	// 	pictures: 30,
-	// 	color: 'red-200',
-	// 	img: '/img/travel.png'
-	// },
-	// {
-	// 	name: 'Hawaii',
-	// 	id: 'hawaii-2021',
-	// 	start: 'June 2, 2021',
-	// 	end: 'June 9, 2021',
-	// 	pictures: 8,
-	// 	color: 'yellow-200',
-	// 	img: '/img/trips/hawaii-2021/hawaii.jpg'
-	// }
+	{
+		name: 'Pacific West Coast',
+		id: 'north-coast-2024',
+		start: 'April 29, 2024',
+		end: 'September 7, 2024',
+		pictures: 119,
+		color: 'blue-200',
+		img: '/data/trips/west-coast-2024/attachments/0812-7.jpg'
+	},
+	{
+		name: 'Japan',
+		id: 'japan-2023',
+		start: 'May 24, 2023',
+		end: 'June 2, 2023',
+		pictures: 30,
+		color: 'red-200',
+		img: '/img/travel.png'
+	},
+	{
+		name: 'Hawaii',
+		id: 'hawaii-2021',
+		start: 'June 2, 2021',
+		end: 'June 9, 2021',
+		pictures: 8,
+		color: 'yellow-200',
+		img: '/img/trips/hawaii-2021/hawaii.jpg'
+	}
 ];
 
 export const trip_data = {
@@ -72,93 +81,93 @@ export const trip_data = {
 		{
 			id: 1,
 			title: 'Los Angeles',
-			cover: '/img/trips/west-coast-2024/0430-la.jpg'
+			cover: '/data/trips/west-coast-2024/attachments/0430-la.jpg'
 		},
 		{
 			id: 2,
 			title: 'Yosemite National Park',
-			cover: '/img/trips/west-coast-2024/0508-4.jpg'
+			cover: '/data/trips/west-coast-2024/attachments/0508-4.jpg'
 		},
 		{
 			id: 3,
 			title: 'San Francisco',
-			cover: '/img/trips/west-coast-2024/0513-6.jpg'
+			cover: '/data/trips/west-coast-2024/attachments/0513-6.jpg'
 		},
 		{
 			id: 4,
 			title: 'Redwood Forest',
-			cover: '/img/trips/west-coast-2024/0522-5.jpg'
+			cover: '/data/trips/west-coast-2024/attachments/0522-5.jpg'
 		},
 		{
 			id: 5,
 			title: 'Crater Lake',
-			cover: '/img/trips/west-coast-2024/0529-2.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0529-2.jpg',
 			updated: '7/10/2024'
 		},
 		{
 			id: 6,
 			title: 'Portland',
-			cover: '/img/trips/west-coast-2024/0607-1.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0607-1.jpg',
 			updated: '8/1/2024'
 		},
 		{
 			id: 7,
 			title: 'Ape Cave',
-			cover: '/img/trips/west-coast-2024/0613-2.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0613-2.jpg',
 			updated: '8/7/2024'
 		},
 		{
 			id: 8,
 			title: 'Rainier National Park',
-			cover: '/img/trips/west-coast-2024/0620-4.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0620-4.jpg',
 			updated: '8/16/2024'
 		},
 		{
 			id: 9,
 			title: 'Seattle',
-			cover: '/img/trips/west-coast-2024/0624-3.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0624-3.jpg',
 			updated: '8/20/2024'
 		},
 		{
 			id: 10,
 			title: 'Northwest Peninsula',
-			cover: '/img/trips/west-coast-2024/0727-8.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0727-8.jpg',
 			updated: '8/23/2024'
 		},
 		{
 			id: 11,
 			title: 'Vancouver',
-			cover: '/img/trips/west-coast-2024/0804-8.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0804-8.jpg',
 			updated: '8/27/2024'
 		},
 		{
 			id: 12,
 			title: 'Banff National Park',
-			cover: '/img/trips/west-coast-2024/0809-7.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0809-7.jpg',
 			updated: '9/1/2024'
 		},
 		{
 			id: 13,
 			title: 'Glacier National Park',
-			cover: '/img/trips/west-coast-2024/0814-7.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0814-7.jpg',
 			updated: '9/18/2024'
 		},
 		{
 			id: 14,
 			title: 'Yellowstone National Park',
-			cover: '/img/trips/west-coast-2024/0821-8.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0821-8.jpg',
 			updated: '10/15/2024'
 		},
 		{
 			id: 15,
 			title: 'Salt Lake City',
-			cover: '/img/trips/west-coast-2024/0828-4.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0828-4.jpg',
 			updated: '10/17/2024'
 		},
 		{
 			id: 16,
 			title: 'Arches National Park',
-			cover: '/img/trips/west-coast-2024/0903-7.jpg',
+			cover: '/data/trips/west-coast-2024/attachments/0903-7.jpg',
 			updated: '11/30/2024'
 		}
 	]
@@ -172,6 +181,13 @@ export const books = [
 		comment: 'Incredibly moving last page. Reading pg. 459 for motivation.',
 		isbn: '9781101549827',
 		img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1311705051i/10483171.jpg'
+	},
+	{
+		name: 'Tao Te Ching',
+		author: 'Lao Tzu',
+		start: '1/1/2025',
+		end: '1/27/2025',
+		isbn: '9780060812454',
 	},
 	{
 		name: 'Think: An Introduction to Philosophy',
@@ -375,15 +391,35 @@ export const projects = [
 ];
 
 export const links = [
+	// {
+	// 	url: '',
+	// 	name: '',
+	// 	description: ''
+	// },
+	{
+		url: 'https://daftpunk.cafe/radio',
+		name: 'Daft Punk Cafe',
+		description: 'Listen to all of Daft Punk\'s music'
+	},
+	{
+		url: 'https://www.daniel.pizza/',
+		name: "Daniel's Pizza",
+		description: 'A personal website and blog of Daniel, a developer and designer'
+	},
+	{
+		url: 'https://www.bookmarked.club/',
+		name: 'Bookmarked Club',
+		description: 'A clean and minimal site to find the best books reccomended by well known people'
+	},
+	{
+		url: 'https://musicforprogramming.net',
+		name: 'Music for Programming',
+		description: '[Web Player] Scientifically optimized music for programming'
+	},
 	{
 		url: 'https://folkert.cargo.site/',
 		name: 'Folkert Gorter',
 		description: "A designer's portfolio, with many beautiful and unique designs"
-	},
-	{
-		url: 'https://www.siteinspire.com/',
-		name: 'Siteinspire',
-		description: 'Awesome designer sites many unique ideas'
 	},
 	{
 		url: 'https://shiflett.org/',
@@ -409,11 +445,6 @@ export const links = [
 		url: 'https://monogram.io/',
 		name: 'Monogram',
 		description: 'A design and development studio creating digital products'
-	},
-	{
-		url: 'https://www.daniel.pizza/',
-		name: "Daniel's Pizza",
-		description: 'A personal website and blog of Daniel, a developer and designer'
 	},
 	{
 		url: 'https://www.lesswrong.com/',
@@ -466,11 +497,6 @@ export const links = [
 		description: "A taleted writer and experienced hiker' collection of best spots to hike in the redwood forest"
 	},
 	{
-		url: 'https://www.bookmarked.club/',
-		name: 'Bookmarked Club',
-		description: 'A clean and minimal site to find the best books reccomended by well known people'
-	},
-	{
 		url: 'https://annas-archive.org/',
 		name: "Anna's Archive",
 		description: 'The largest free e-book sharing website. Open-source :)'
@@ -484,7 +510,13 @@ export const links = [
 		url: 'https://immieats.com',
 		name: 'Immieats',
 		description: 'An instant-ramen delivery service with good design'
-	}
+	},
+	{
+		url: 'https://www.siteinspire.com/',
+		name: 'Siteinspire',
+		description: 'Awesome designer sites many unique ideas'
+	},
+
 ];
 
 export const recipes = [
