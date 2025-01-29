@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"prebuild": "npm run generate-previews && npm run generate-trip-data",
+		"prebuild": "npm run generate-previews && npm run generate-trip-data && npm run fetch-data",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"lint": "prettier --check . && eslint .",
