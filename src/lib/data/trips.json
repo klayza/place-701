@@ -1,5 +1,34 @@
 [
   {
+    "name": "Cycling Across Japan",
+    "id": "japan-2025",
+    "type": "collection",
+    "description": "A two month, 2700km journey across the entire country of Japan",
+    "start": "February 28, 2025",
+    "end": "",
+    "pictures": 2,
+    "cover": "/data/trips/japan-2025/attachments/Pasted%20image%2020250121231824.png",
+    "hidden": false,
+    "entries": [
+      {
+        "title": "Kagoshima",
+        "id": "1",
+        "date": "March 1, 2025",
+        "pictures": 3,
+        "cover": "/data/trips/japan-2025/attachments/Pasted%20image%2020250121231824.png",
+        "tags": []
+      },
+      {
+        "title": "Tokyo",
+        "id": "2",
+        "date": "March 19, 2025",
+        "pictures": 2,
+        "cover": "/data/trips/japan-2025/attachments/1044366310.gif",
+        "tags": []
+      }
+    ]
+  },
+  {
     "name": "Japan",
     "id": "japan-2023",
     "type": "single",
@@ -106,7 +135,7 @@
         "title": "Northwest Peninsula",
         "id": "10",
         "date": "July 24, 2024",
-        "pictures": 71,
+        "pictures": 70,
         "cover": "/data/trips/west-coast-2024/attachments/0727-8.jpg",
         "tags": []
       },
@@ -122,7 +151,7 @@
         "title": "Banff National Park",
         "id": "12",
         "date": "August 7, 2024",
-        "pictures": 47,
+        "pictures": 46,
         "cover": "/data/trips/west-coast-2024/attachments/0809-7.jpg",
         "tags": []
       },

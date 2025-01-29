@@ -66,8 +66,11 @@
 		// Remove YAML-style frontmatter
 		mdText = mdText.replace(/^---[\r\n]+([\s\S]*?)[\r\n]+---[\r\n]+/, '');
 
-		// Process ![[file]] syntax for images and videos
-		mdText = mdText.replace(/!\[\[(.*?)\]\]/g, (match, filename) => {
+		// Process ![[file]] and ![text](file) syntax for images and videos
+		mdText = mdText.replace(/!\[\[(.*?)\]\]|\!\[(.*?)\]\((.*?)\)/g, (match, doubleFile, altText, singleFile) => {
+			const filename = doubleFile || singleFile;
+			if (!filename) return match;
+
 			const ext = filename.split('.').pop().toLowerCase();
 			const filepath = relativeImgDir ? `${relativeImgDir}/${filename}`.replace("//", "/") : filename;
 			const encodedPath = encodeURI(filepath);
@@ -75,7 +78,7 @@
 			if (['mp4', 'webm', 'ogg'].includes(ext)) {
 				return `<video type="video/mp4" autoplay="" loop="" muted="" playsinline="" loading="lazy" src="${encodedPath}" type="video/${ext}"></video>`;
 			} else if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
-				return `![image](${encodedPath})`;
+				return `![${altText || 'image'}](${encodedPath})`;
 			}
 			return match;
 		});

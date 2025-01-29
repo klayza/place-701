@@ -1,59 +1,34 @@
-// This script fetches data from a remote GitHub repository and stores it locally
-// The data is used for the place-701 project
+import { execSync } from 'child_process';
+import fs from 'fs-extra';
+import path from 'path';
 
-import { execSync } from 'child_process'; // Used to execute git commands
-import fs from 'fs'; // File system operations
-import path from 'path'; // Path manipulation utilities
-
-// Configuration constants
-const DATA_REPO = 'https://github.com/klayza/place-701-data'; // Source repository URL
-const TARGET_DIR = path.resolve('./static/data'); // Destination directory for the data
-
-// Create the target directory if it doesn't exist
-// This ensures we have a valid location to copy the data to
-if (!fs.existsSync(TARGET_DIR)) {
-    fs.mkdirSync(TARGET_DIR, { recursive: true });
-}
-
-// Set up temporary directory for git operations
+const DATA_REPO = 'https://github.com/klayza/place-701-data';
+const TARGET_DIR = path.resolve('./static/data');
 const TEMP_DIR = path.resolve('./.temp-place-701-data');
 
-// Check if we already have the repository cloned
-if (fs.existsSync(TEMP_DIR)) {
-    // If repository exists, update it with latest changes
-    console.log('Updating existing data repository...');
-    execSync(`git -C ${TEMP_DIR} pull`, { stdio: 'inherit' });
-} else {
-    // If repository doesn't exist, clone it fresh
-    console.log('Cloning data repository...');
-    execSync(`git clone ${DATA_REPO} ${TEMP_DIR}`, { stdio: 'inherit' });
-}
-// Sync the data to the static folder
-console.log('Copying data to /static/data...');
-// Remove existing data in target directory to ensure clean state
-fs.rmSync(TARGET_DIR, { recursive: true, force: true });
-
-// Copy all contents from temporary directory to target directory except for .git
-const copyDirectory = (src, dest) => {
-    if (!fs.existsSync(dest)) {
-        fs.mkdirSync(dest, { recursive: true });
-    }
-    fs.readdirSync(src).forEach((item) => {
-        const srcPath = path.join(src, item);
-        const destPath = path.join(dest, item);
-
-        if (item === '.git') {
-            return; // Skip .git directory
-        }
-
-        if (fs.lstatSync(srcPath).isDirectory()) {
-            copyDirectory(srcPath, destPath);
+const syncData = async () => {
+    try {
+        // Git operations
+        if (fs.existsSync(TEMP_DIR)) {
+            console.log('Updating existing data repository...');
+            execSync(`git -C ${TEMP_DIR} pull`, { stdio: 'inherit' });
         } else {
-            fs.copyFileSync(srcPath, destPath);
+            console.log('Cloning data repository...');
+            execSync(`git clone ${DATA_REPO} ${TEMP_DIR}`, { stdio: 'inherit' });
         }
-    });
+
+        // Simple remove and copy
+        console.log('Syncing data...');
+        await fs.emptyDir(TARGET_DIR);
+        await fs.copy(TEMP_DIR, TARGET_DIR, {
+            filter: (src) => !src.includes('.git')
+        });
+
+        console.log('Data sync complete.');
+    } catch (error) {
+        console.error('Data sync failed:', error);
+        process.exit(1);
+    }
 };
 
-copyDirectory(TEMP_DIR, TARGET_DIR);
-
-console.log('Data sync complete.');
+syncData();

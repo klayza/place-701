@@ -3,7 +3,7 @@ import trips from '/src/lib/data/trips.json';
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
-    let tripID = params.slug;
+    let tripID = params.trip;
     let trip = trips.find(trip => trip.id === tripID);
 
     if (trip) {

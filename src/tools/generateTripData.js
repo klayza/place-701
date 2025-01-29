@@ -143,7 +143,7 @@ async function getTripData() {
             start: meta.start ? format(new Date(meta.start), 'MMMM d, yyyy') : '',
             end: meta.end ? format(new Date(meta.end), 'MMMM d, yyyy') : '',
             pictures: pictureCount,
-            cover: meta.cover ? (meta.cover.startsWith('/') ? meta.cover : `/data/trips/${dirName}/attachments/${meta.cover}`) : '',
+            cover: meta.cover ? (meta.cover.startsWith('/') ? meta.cover : encodeURI(`/data/trips/${dirName}/attachments/${meta.cover}`)) : '',
             hidden: meta.hidden || false
         };
 
@@ -166,7 +166,7 @@ async function getTripData() {
                 id: path.basename(file, '.md').replace('w', ''),
                 date: frontmatter.date ? format(new Date(frontmatter.date), 'MMMM d, yyyy') : '',
                 pictures: referencedPictures,
-                cover: frontmatter.cover ? `/data/trips/${dirName}/attachments/${frontmatter.cover}` : '',
+                cover: frontmatter.cover ? encodeURI(`/data/trips/${dirName}/attachments/${frontmatter.cover}`) : '',
                 tags: frontmatter.tags || []
             });
         }

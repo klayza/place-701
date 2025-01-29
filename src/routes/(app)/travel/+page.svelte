@@ -1,11 +1,9 @@
 <script>
 	// import { trips, trip_data } from '$lib/data.js';
 	// import trip json
-	
+
 	import trips from '/src/lib/data/trips.json';
 	console.log(trips);
-
-
 
 	import SEO from '$lib/components/SEO.svelte';
 
@@ -59,7 +57,7 @@
 	<h2 class="text-6xl sm:text-8xl text-center mb-8">Travel</h2>
 	<p class="text-center font-medium text-2xl mb-8">Solo adventures from <span class="gay-text">around the world</span>. Van life, backpacking, and exploring cities. I hope to visit one new country every year.</p>
 	<div class="space-y-4">
-		{#each trips.filter(trip => !trip.hidden) as trip}
+		{#each trips.filter((trip) => !trip.hidden) as trip}
 			<a href="/travel/{trip.id}" class="block overflow-hidden group relative w-full m-auto h-[500px] no-color static-link rounded-xl lg:rounded-full">
 				<div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300" style="background-image: url({trip.cover});">
 					<div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-300"></div>
@@ -70,15 +68,22 @@
 					</h1>
 
 					<div class="text-lg sm:text-2xl flex-row flex gap-4 absolute bottom-2 m-auto mb-2 text-shadow">
+						{#if daysDifference(trip.start, trip.end, trip.id) < 0}
+							<p class="text-blue-300">In {Math.abs(daysDifference(trip.start, trip.end, trip.id))} days</p>
+						{:else}
 						<p>{daysDifference(trip.start, trip.end, trip.id)} days</p>
+						{/if}
+
 						<p class="">▪</p>
 						<p>{getYear(trip.start)}</p>
 						<p class="">▪</p>
 						<p>{trip.pictures} photos</p>
-						{#if trip.end === ''}
-							<p>/</p>
+						{#if trip.end === '' && new Date(trip.start) <= new Date()}
+							<p class="">▪</p>
 							<p class="text-green-300">Ongoing</p>
-							<!-- <p class="bg-green-300 mt-2 rounded-full px-2 w-fit m-auto text-sm" style="font-family: ''">ONGOING</p> -->
+						{:else if trip.end === '' && new Date(trip.start) > new Date()}
+							<p class="">▪</p>
+							<p class="text-blue-300">Upcoming</p>
 						{/if}
 					</div>
 				</div>
@@ -86,4 +91,3 @@
 		{/each}
 	</div>
 </div>
-
