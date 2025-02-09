@@ -18,5 +18,5 @@
 <div class="container px-12 py-12">
 	<h1 class="text-8xl">{$page.status}</h1>
 	<h2 class="text-3xl">{$page.error.message}</h2>
-    <p class="text-3xl  my-12">Shit happens. <a href="{getLastPage()}">Go back</a> to the last page</p>
+    <p class="text-2xl  my-12">Shit happens. <a href="{getLastPage()}">Go back</a> to the last page</p>
 </div>

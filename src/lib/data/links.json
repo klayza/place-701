@@ -1,0 +1,230 @@
+[
+  {
+    "title": "Daft Punk Cafe",
+    "url": "https://daftpunk.cafe/radio",
+    "description": "Listen to all of Daft Punk's music",
+    "category": "music"
+  },
+  {
+    "title": "Daniel's Pizza",
+    "url": "https://www.daniel.pizza/",
+    "description": "A personal website and blog of Daniel, a developer and designer",
+    "category": "blog"
+  },
+  {
+    "title": "Bookmarked Club",
+    "url": "https://www.bookmarked.club/",
+    "description": "A clean and minimal site to find the best books recommended by well known people",
+    "category": "tools"
+  },
+  {
+    "title": "Music for Programming",
+    "url": "https://musicforprogramming.net",
+    "description": "[Web Player] Scientifically optimized music for programming",
+    "category": "music"
+  },
+  {
+    "title": "Folkert Gorter",
+    "url": "https://folkert.cargo.site/",
+    "description": "A designer's portfolio, with many beautiful and unique designs",
+    "category": "blog"
+  },
+  {
+    "title": "Chris Shiflett",
+    "url": "https://shiflett.org/",
+    "description": "An entrepreneur and web dev with high quality bookmarks + lots to read",
+    "category": "blog"
+  },
+  {
+    "title": "Internet is Fun",
+    "url": "https://projects.kwon.nyc/internet-is-fun/",
+    "description": "A directory of fun websites",
+    "category": "tools"
+  },
+  {
+    "title": "Brian Lovin Bookmarks",
+    "url": "https://brianlovin.com/bookmarks/",
+    "description": "A collection of curated bookmarks and resources",
+    "category": "blog"
+  },
+  {
+    "title": "Susan Rigetti",
+    "url": "https://www.susanrigetti.com/",
+    "description": "Personal website of Susan Rigetti, a writer and entrepreneur",
+    "category": "blog"
+  },
+  {
+    "title": "Monogram",
+    "url": "https://monogram.io/",
+    "description": "A design and development studio creating digital products",
+    "category": "css"
+  },
+  {
+    "title": "LessWrong",
+    "url": "https://www.lesswrong.com/",
+    "description": "A community-driven wiki and forum focused on rational thinking and decision-making",
+    "category": "tools"
+  },
+  {
+    "title": "Jonway Studio",
+    "url": "https://www.jonway.studio/",
+    "description": "A design studio creating interactive experiences and digital products",
+    "category": "css"
+  },
+  {
+    "title": "Sissons+Rowe",
+    "url": "https://sissonsrowe.com/",
+    "description": "Good design",
+    "category": "css"
+  },
+  {
+    "title": "Andy Matuschak",
+    "url": "https://andymatuschak.org/",
+    "description": "Personal website of Andy Matuschak, a researcher and writer on topics like education and technology",
+    "category": "blog"
+  },
+  {
+    "title": "Gracekind",
+    "url": "https://gracekind.net/",
+    "description": "A personal site of an AI researcher that has a substantial repository on Ideonomy",
+    "category": "blog"
+  },
+  {
+    "title": "Extropic",
+    "url": "https://www.extropic.ai/",
+    "description": "Futuristic + Minimal themed website",
+    "category": "css"
+  },
+  {
+    "title": "100r",
+    "url": "https://100r.co/",
+    "description": "A detailed blog by a passionate couple who live on a sailboat",
+    "category": "blog"
+  },
+  {
+    "title": "Local Adventurer",
+    "url": "https://localadventurer.com/",
+    "description": "Well documented and thoughtful guides of sites to see",
+    "category": "tools"
+  },
+  {
+    "title": "David Redwood Hikes",
+    "url": "https://redwoodhikes.com/",
+    "description": "A talented writer and experienced hiker's collection of best spots to hike in the redwood forest",
+    "category": "tools"
+  },
+  {
+    "title": "Anna's Archive",
+    "url": "https://annas-archive.org/",
+    "description": "The largest free e-book sharing website. Open-source :)",
+    "category": "tools"
+  },
+  {
+    "title": "Audiobook Bay",
+    "url": "https://audiobookbay.lu",
+    "description": "Download almost any audiobook for free",
+    "category": "tools"
+  },
+  {
+    "title": "Immieats",
+    "url": "https://immieats.com",
+    "description": "An instant-ramen delivery service with good design",
+    "category": "css"
+  },
+  {
+    "title": "Siteinspire",
+    "url": "https://www.siteinspire.com/",
+    "description": "Awesome designer sites with many unique ideas",
+    "category": "tools"
+  },
+  {
+    "title": "Moon Jump",
+    "url": "https://moonjump.app",
+    "description": "Like a time machine for all the best sites around the web",
+    "category": "tools"
+  },
+  {
+    "title": "This Is Colossal",
+    "url": "https://www.thisiscolossal.com/",
+    "description": "Just another art website but with god-tier css",
+    "category": "css"
+  },
+  {
+    "title": "PlasticList Report",
+    "url": "https://www.plasticlist.org/report",
+    "description": "A report on microplastics in common food. (fire css)",
+    "category": "css"
+  },
+  {
+    "title": "Every Noise at Once",
+    "url": "https://everynoise.com/",
+    "description": "A map of the musical genre space with links to audio samples",
+    "category": "music"
+  },
+  {
+    "title": "24HourHomepage",
+    "url": "https://24hourhomepage.com/",
+    "description": "Like TikTok for finding cool websites",
+    "category": "tools"
+  },
+  {
+    "title": "BLOGSCROLL",
+    "url": "https://blogscroll.com/",
+    "description": "A curated directory of interesting blogs",
+    "category": "blog"
+  },
+  {
+    "title": "Tom MacWright",
+    "url": "https://macwright.com/",
+    "description": "Personal blog with good photography",
+    "category": "blog"
+  },
+  {
+    "title": "Ethan M. Clark",
+    "url": "https://www.ethanmclark.com/",
+    "description": "An AI researcher's personal blog",
+    "category": "blog"
+  },
+  {
+    "title": "Nat Friedman",
+    "url": "https://nat.org/",
+    "description": "Nat Friedman's blog",
+    "category": "blog"
+  },
+  {
+    "title": "27bslash6",
+    "url": "https://27bslash6.com/",
+    "description": "Humor and satirical blog with quirky content",
+    "category": "blog"
+  },
+  {
+    "title": "Woff2Base",
+    "url": "https://hellogreg.github.io/woff2base/",
+    "description": "Convert woff2 fonts to Base64 for CSS",
+    "category": "tools"
+  },
+  {
+    "title": "Sci-Hub",
+    "url": "https://sci-hub.se/",
+    "description": "Free access to scientific papers and research articles",
+    "category": "tools"
+  },
+  {
+    "title": "Listen Notes",
+    "url": "https://www.listennotes.com/",
+    "description": "Search engine for podcasts",
+    "category": "tools"
+  },
+  {
+    "title": "Ritual Dust",
+    "url": "https://ritualdust.com/",
+    "description": "Like the dark ages in a website.",
+    "category": "css"
+  },
+  {
+    "title": "nullpt.rs",
+    "url": "https://www.nullpt.rs/",
+    "description": "Software engineering blog with great visuals",
+    "category": "blog"
+  }
+]

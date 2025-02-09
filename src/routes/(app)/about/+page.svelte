@@ -1,28 +1,11 @@
 <script>
 	/** @type {import('./$types').PageData} */
+	import Footer from '$lib/components/Footer.svelte';
+
 	const age = 20;
 
-	import { Github, Instagram, Twitter } from 'lucide-svelte';
-
-	const iconSize = 35;
-	const iconColor = '#808080'; // Gray color
-
-	const socialMediaAccounts = [
-		{ name: 'GitHub', icon: Github, url: 'https://github.com/klayza' },
-		{ name: 'Instagram', icon: Instagram, url: 'https://instagram.com/clay.e621' },
-		{ name: 'X', icon: Twitter, url: 'https://x.com/LegoshiNet' }
-	];
 </script>
 
-<div class="fixed bottom-0 left-0 w-full border-t border-dotted bg-black border-gray-200  py-4">
-	<div class="flex justify-center items-center space-x-8">
-		{#each socialMediaAccounts as account}
-			<a href={account.url} target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity">
-				<svelte:component this={account.icon} size={iconSize} color={iconColor} />
-			</a>
-		{/each}
-	</div>
-</div>
 
 <!-- <div class="flex h-screen justify-center items-center"><p class="text-5xl text-center">UNDER CONSTRUCTION</p></div> -->
 
@@ -39,3 +22,5 @@
 		Outside of work I like to tinker with fun <a href="/projects">projects</a> such as web development, simluation, cellular automata, web scrapers, AI assistants, and user design. I like to read about scifi and philosophy late at night. My favorite movies are Tron, Dune, Her, and Bladerunner 2077. Occasionally I play games like Satisfactory, Factorio, Minecraft (modded), Stellaris, and Terraria. Rhythm games are somewhat an addiction for me... I play Beat Saber, Osu!, and Sound Voltex.
 	</p>
 </div>
+
+<Footer />

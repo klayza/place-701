@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { links } from '../lib/data.js'; // Ensure this file contains an array of links with `url` properties
+import links from '../lib/data/links.json' with { type: "json" };
 
 // Get the current directory
 const __filename = fileURLToPath(import.meta.url);

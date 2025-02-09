@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "done": false,
+    "text": "Be fluent in Japanese"
+  },
+  {
+    "id": 2,
+    "done": false,
+    "text": "Go cave diving"
+  },
+  {
+    "id": 3,
+    "done": false,
+    "text": "Spearfish a lobster for dinner"
+  },
+  {
+    "id": 4,
+    "done": false,
+    "text": "Hike Mount Fuji"
+  },
+  {
+    "id": 5,
+    "done": true,
+    "text": "Travel abroad in a van",
+    "url": "/travel/west-coast-2024"
+  },
+  {
+    "id": 6,
+    "done": false,
+    "text": "Send my parents on a cruise"
+  },
+  {
+    "id": 7,
+    "done": false,
+    "text": "Visit the North or South Pole"
+  },
+  {
+    "id": 8,
+    "done": true,
+    "text": "Become an Eagle Scout"
+  },
+  {
+    "id": 9,
+    "done": false,
+    "text": "Beat all the FNAF games"
+  },
+  {
+    "id": 10,
+    "done": false,
+    "text": "Start a successful business"
+  },
+  {
+    "id": 11,
+    "done": false,
+    "text": "Swim with whales"
+  },
+  {
+    "id": 12,
+    "done": false,
+    "text": "See the northern lights"
+  },
+  {
+    "id": 13,
+    "done": false,
+    "text": "Snowboard in Hokkaido"
+  },
+  {
+    "id": 14,
+    "done": false,
+    "text": "Learn to dance"
+  },
+  {
+    "id": 15,
+    "done": false,
+    "text": "Make a song"
+  },
+  {
+    "id": 16,
+    "done": false,
+    "text": "Get a bachelor's degree"
+  },
+  {
+    "id": 17,
+    "done": false,
+    "text": "Hike John Muir trail"
+  },
+  {
+    "id": 18,
+    "done": false,
+    "text": "See Havasu falls"
+  },
+  {
+    "id": 19,
+    "done": false,
+    "text": "Rave in Ireland"
+  },
+  {
+    "id": 20,
+    "done": false,
+    "text": "Build a house"
+  },
+  {
+    "id": 21,
+    "done": false,
+    "text": "Learn to surf"
+  }
+]

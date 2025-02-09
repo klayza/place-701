@@ -1,5 +1,5 @@
 ## Description
-This is essentially a sweet and salty pizza with a fruity base. Despite the weird combination of ingredients it's bomb af.
+This is essentially a sweet and salty pizza with a fruity base. Despite the weird combination of ingredients it's bomb af!
 
 ## Ingredients
 - Flatbread

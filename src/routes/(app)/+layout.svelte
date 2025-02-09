@@ -16,4 +16,7 @@
 </svelte:head>
 
 <Navbar />
-<slot />
+
+<div class="" style="scrollbar-width: thin;">
+	<slot />
+</div>

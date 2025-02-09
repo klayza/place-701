@@ -107,11 +107,10 @@
 	});
 </script>
 
-<div class="max-w-screen-2xl m-auto text-lg p-4 py-12 sm:py-16 sm:p-8">
-	<div class="font-medium">
-		<p class="text-md sm:text-xl">My goal is to read two books a month. I have setup a deal with family to pay them $100 for every book I fail to complete. If I do fail, a message will appear here and whoever sees it will get to steal my cash.</p>
-		<p></p>
-
+<div class="px-4 pt-4 sm:p-4 sm:pt-24 sm:max-w-screen-lg sm:m-auto">
+	<h2 class="mt-8 mb-4 text-6xl">Reading</h2>
+	<p class="font-medium text-xl sm:text-2xl">My goal is to read one book every month. I have setup a deal with family to pay them $100 for every book I fail to complete. If I do fail, a message will appear here and whoever sees it will get to steal my cash.</p>
+	<div class="font-medium text-xl sm:text-2xl">
 		{#if show_penalty_message}
 			<div class="bg-{calculateMessageColor()}-950 border border-{calculateMessageColor()}-400 text-{calculateMessageColor()}-700 px-4 py-3 rounded relative mt-8" role="alert">
 				<strong class=""></strong>
@@ -144,7 +143,9 @@
 			</div>
 		{/if}
 	</div>
+</div>
 
+<div class="max-w-screen-2xl m-auto text-lg p-4 py-12 sm:py-16 sm:p-8">
 	<div class="all-initial mt-20">
 		{#each getUniqueYears(books) as year}
 			<div class="my-24">
@@ -153,7 +154,7 @@
 				<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
 					{#each sortBooksByFinishDate(books).filter((book) => book.end.includes(year)) as book}
 						<div class="flex border border-zinc-900 border-b-8 p-4 h-full relative group">
-							<a href="https://annas-archive.org/search?q={book.isbn}" target="_blank" rel="noopener" class=" absolute top-2 right-2 no-color p-2 z-50 " title="Read this for free! No scam bro trust me">
+							<a href="https://annas-archive.org/search?q={book.isbn}" target="_blank" rel="noopener" class=" absolute top-2 right-2 no-color p-2 z-50" title="Read this for free! No scam bro trust me">
 								<ArrowUpRight class=" group-hover:text-white transition duration-300 text-white sm:text-zinc-800 " />
 							</a>
 

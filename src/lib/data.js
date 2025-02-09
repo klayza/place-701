@@ -190,6 +190,13 @@ export const books = [
 		isbn: '9780060812454',
 	},
 	{
+		name: 'Snow Crash',
+		author: 'Neal Stephenson',
+		start: '1/1/2025',
+		end: '1/29/2025',
+		isbn: '0553380958',
+	},
+	{
 		name: 'Think: An Introduction to Philosophy',
 		author: 'Simon Blackburn',
 		start: '6/26/2024',
