@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import links from '../lib/data/links.json' with { type: "json" };
+const links = JSON.parse(fs.readFileSync('./src/lib/data/links.json', 'utf-8'));
 
 // Get the current directory
 const __filename = fileURLToPath(import.meta.url);
