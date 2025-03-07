@@ -19,3 +19,6 @@
 19. [ ] Rave in Ireland
 20. [ ] Build a house
 21. [ ] Learn to surf
+22. [ ] See the pyramids
+23. [ ] Swim in the Dead Sea
+24. [ ] Cycle across Japan

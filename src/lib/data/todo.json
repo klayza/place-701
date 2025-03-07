@@ -104,5 +104,20 @@
     "id": 21,
     "done": false,
     "text": "Learn to surf"
+  },
+  {
+    "id": 22,
+    "done": false,
+    "text": "See the pyramids"
+  },
+  {
+    "id": 23,
+    "done": false,
+    "text": "Swim in the Dead Sea"
+  },
+  {
+    "id": 24,
+    "done": false,
+    "text": "Cycle across Japan"
   }
 ]

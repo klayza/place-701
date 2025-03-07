@@ -1,4 +1,7 @@
 /** @type {import('./$types').PageLoad} */
 export async function load() {
-    return {};
+    const books = (await import('$lib/data/books.json')).default;
+    return {
+        books
+    };
 };

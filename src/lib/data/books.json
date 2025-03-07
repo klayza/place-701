@@ -1,0 +1,182 @@
+[
+  {
+    "name": "The Beginning of Infinity",
+    "author": "David Deutsch",
+    "start": "12/21/2023",
+    "end": "5/19/2024",
+    "comment": "Incredibly moving last page. Reading pg. 459 for motivation.",
+    "isbn": "9781101549827",
+    "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1311705051i/10483171.jpg"
+  },
+  {
+    "name": "Tao Te Ching",
+    "author": "Lao Tzu",
+    "start": "1/1/2025",
+    "end": "1/27/2025",
+    "comment": "",
+    "isbn": "9780060812454",
+    "img": ""
+  },
+  {
+    "name": "Snow Crash",
+    "author": "Neal Stephenson",
+    "start": "1/1/2025",
+    "end": "1/29/2025",
+    "comment": "",
+    "isbn": "0553380958",
+    "img": ""
+  },
+  {
+    "name": "Think: An Introduction to Philosophy",
+    "author": "Simon Blackburn",
+    "start": "6/26/2024",
+    "end": "8/31/2024",
+    "comment": "This shit is an introduction? wtf. I thought I was reading another language!",
+    "isbn": "9780192854254",
+    "img": ""
+  },
+  {
+    "name": "The Three-Body Problem",
+    "author": "Cixin Liu",
+    "start": "11/8/2023",
+    "end": "2/1/2024",
+    "comment": "",
+    "isbn": "9781466853447",
+    "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415428227i/20518872.jpg"
+  },
+  {
+    "name": "Atomic Habits",
+    "author": "James Clear",
+    "start": "4/17/2024",
+    "end": "6/17/2024",
+    "comment": "",
+    "isbn": "9780735211292",
+    "img": ""
+  },
+  {
+    "name": "Meditations",
+    "author": "Marcus Aurelius",
+    "start": "5/16/2024",
+    "end": "6/23/2024",
+    "comment": "",
+    "isbn": "9780140449334",
+    "img": ""
+  },
+  {
+    "name": "On The Shortness of Life",
+    "author": "Seneca",
+    "start": "6/8/2024",
+    "end": "6/24/2024",
+    "comment": "Insights on human nature, contrasting poor habits with better life choices.",
+    "isbn": "9781365110467",
+    "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1619107079i/97412.jpg"
+  },
+  {
+    "name": "Read Write Own",
+    "author": "Chris Dixon",
+    "start": "6/1/2024",
+    "end": "7/16/2024",
+    "comment": "Introduction to networks and blockchain benefits. Further research needed.",
+    "isbn": "9780593731406",
+    "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1687141213i/178628338.jpg"
+  },
+  {
+    "name": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "start": "8/6/2024",
+    "end": "9/30/2024",
+    "comment": "",
+    "isbn": "9781451648539",
+    "img": ""
+  },
+  {
+    "name": "Astrophysics for People in a Hurry",
+    "author": "Neil DeGrasse Tyson",
+    "start": "9/28/2024",
+    "end": "9/30/2024",
+    "comment": "",
+    "isbn": "0393609391",
+    "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562761669i/32191710.jpg"
+  },
+  {
+    "name": "Superintelligence",
+    "author": "Nick Bostrom",
+    "start": "5/20/2024",
+    "end": "5/31/2024",
+    "comment": "",
+    "isbn": "9780198739838",
+    "img": ""
+  },
+  {
+    "name": "The Character of Physical Law",
+    "author": "Richard Feynman",
+    "start": "6/4/2024",
+    "end": "6/24/2024",
+    "comment": "Challenging but rewarding.",
+    "isbn": "9780262560030",
+    "img": ""
+  },
+  {
+    "name": "The Dark Forest",
+    "author": "Cixin Liu",
+    "start": "6/19/2024",
+    "end": "7/7/2024",
+    "comment": "Explores concepts like living manifestations, wallfacer strategies, and the dark forest theory.",
+    "isbn": "9780765386694",
+    "img": ""
+  },
+  {
+    "name": "The First Three Minutes",
+    "author": "Steven Weinberg",
+    "start": "5/14/2024",
+    "end": "6/3/2024",
+    "comment": "Technically challenging, but once you wrap your head around it your world seems to grow a little bit.",
+    "isbn": "9780465024377",
+    "img": ""
+  },
+  {
+    "name": "The Lean Startup",
+    "author": "Eric Ries",
+    "start": "4/10/2024",
+    "end": "5/16/2024",
+    "comment": "",
+    "isbn": "9780307887894",
+    "img": ""
+  },
+  {
+    "name": "University Physics with Modern Physics",
+    "author": "",
+    "start": "8/16/2024",
+    "end": null,
+    "comment": "",
+    "isbn": "9780135159552",
+    "img": ""
+  },
+  {
+    "name": "Death's End",
+    "author": "Cixin Liu",
+    "start": "7/8/2024",
+    "end": "8/23/2024",
+    "comment": "Existential dread.",
+    "isbn": "9780765377104",
+    "img": ""
+  },
+  {
+    "name": "Children of Time",
+    "author": "Adrian Tchaikovsky",
+    "start": "2/1/2025",
+    "end": "2/28/2025",
+    "comment": "Bugs so cool.",
+    "isbn": "0316452505",
+    "img": ""
+  },
+  {
+    "name": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "start": "12/15/2024",
+    "end": null,
+    "comment": "",
+    "isbn": "9780671027032",
+    "img": ""
+  }
+]

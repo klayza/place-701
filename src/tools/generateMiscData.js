@@ -48,6 +48,38 @@ function parseLinksTable(content) {
     });
 }
 
+function parseBooksTable(content) {
+    const lines = content.split('\n')
+        .filter(line => line.trim() && 
+                !line.includes('---') && 
+                !line.includes('| Name') &&
+                !line.startsWith('cssclasses:'));
+
+    return lines.map(line => {
+        const [name, author, start, end, comment, isbn, img] = line
+            .split('|')
+            .slice(1, -1)
+            .map(cell => cell.trim());
+
+        // Only create entry if we have at least a name
+        if (!name) return null;
+
+        // Extract image URL from markdown image syntax if present
+        const imgUrlMatch = img && img.match(/\[.*?\]\((.*?)\)/);
+        const imageUrl = imgUrlMatch ? imgUrlMatch[1] : '';
+
+        return {
+            name,
+            author,
+            start: start || null,
+            end: end || null,
+            comment,
+            isbn,
+            img: imageUrl
+        };
+    }).filter(Boolean); // Remove any null entries
+}
+
 async function main() {
     const todoContent = await fs.promises.readFile(
         path.join(process.cwd(), 'static/data/todo.md'),
@@ -57,9 +89,14 @@ async function main() {
         path.join(process.cwd(), 'static/data/links.md'),
         'utf-8'
     );
+    const booksContent = await fs.promises.readFile(
+        path.join(process.cwd(), 'static/data/books.md'),
+        'utf-8'
+    );
 
     const todoJson = parseTodoMd(todoContent);
     const linksJson = parseLinksTable(linksContent);
+    const booksJson = parseBooksTable(booksContent);
 
     await fs.promises.writeFile(
         path.join(process.cwd(), 'src/lib/data/todo.json'),
@@ -68,6 +105,10 @@ async function main() {
     await fs.promises.writeFile(
         path.join(process.cwd(), 'src/lib/data/links.json'),
         JSON.stringify(linksJson, null, 2)
+    );
+    await fs.promises.writeFile(
+        path.join(process.cwd(), 'src/lib/data/books.json'),
+        JSON.stringify(booksJson, null, 2)
     );
 }
 

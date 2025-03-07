@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -92,12 +93,14 @@
 :root {
 	--accent-color: rgb(125, 125, 255);
 	--border-color-light: #e2e8f0;
-	--border-color-dark: #2c2f33;
+	--border-color-dark: rgb(31, 41, 55);
+	/* --border-color-dark: #2c2f33; */
 	--background-color-light: #ffffff;
 	--background-color-dark: #000000;
 	--color-primary-light: #000000;
 	--color-primary-dark: #ffffff;
-	--font: 'Asul', serif;
+	--font: 'Open Sans', serif;
+	/* --font: 'Asul', serif; */
 	/* --font: 'Ultra', monospace; */
 	/* --font: 'Space Mono'; */
 }
@@ -123,6 +126,7 @@ body {
 body.dark {
 	background-color: black;
 	color: white;
+	border-color: var(--border-color-dark);
 }
 
 body.light {
@@ -171,7 +175,7 @@ a.static-link {
 
 hr {
 	border: none;
-	border-bottom: 1px dotted;
+	border-bottom: 1px dotted var(--border-color-dark);
 	margin: 0 0 1rem 0;
 }
 
@@ -186,7 +190,7 @@ input {
 }
 
 .subtle {
-	color: rgb(100, 100, 100);
+	color: rgb(180, 180, 180);
 	font-weight: italic;
 }
 

@@ -14,18 +14,14 @@
 		// { name: 'projects', description: 'Work and play' },
 		// { name: 'links', description: 'My favorite sites around the net' },
 		{ name: 'travel', description: "See where I've been" },
-		{ name: 'reading', description: 'Some of my favorite books' },
+		// { name: 'reading', description: 'Some of my favorite books' },
 		// { name: 'music', description: 'Listen to some bangers' },
 		// { name: 'thoughts', description: 'My opinions on the world' },
 		{ name: 'manifesto', description: 'Get a glimpse of the vision', img: '/img/think.jpg', type: 'link' },
-		{ name: 'todo', description: 'Things I must do before I die', type: 'link' },
+		{ name: 'todo', description: 'Things I must do before I die', type: 'link', img: '' },
 		// { name: 'recipes', description: 'Meals I make often', type: 'link' },
-		{ name: 'chill', description: 'A chill splash screen with music', type: 'link' }
+		{ name: 'chill', description: 'A chill splash screen with music', type: 'link', img: '/img/chill.png' }
 	];
-
-	function capitalizeFirstLetter(string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	}
 
 	function calculateAge(birthDate) {
 		const today = new Date();
@@ -117,19 +113,26 @@
 </div> -->
 
 <div class="container mx-auto px-1 pb-12">
-	<div class="p-4 max-w-2xl mx-auto my-12 sm:my-32">
-		<h1 class="mb-4 mt-2 text-center text-3xl">Who are you?</h1>
-		<p class="mb-4 text-xl font-medium">I'm a software engineer, independent student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p>
+	<div class="p-4 max-w-5xl mx-auto my-12 sm:my-32">
+		<h1 class="mb-4 mt-2 text-center text-4xl">Who are you?</h1>
+		<p class="mb-4 text-2xl sm:text-3xl font-medium">I'm a developer, student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p>
+		<!-- <p class="mb-4 text-2xl sm:text-3xl font-medium">I'm a software engineer, independent student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p> -->
 	</div>
 	<div class="mt-18 grid grid-cols-1 gap-2">
 		{#each places.filter((place) => place.type != 'link') as place}
 			<div class="mb-12 {place.name == 'travel' ? 'col-span-1 xl:col-span-2' : 'col-span-1'} p-4">
-				<div class="flex items-center justify-between">
-					<h2 title={place.description} class="flex-shrink-0 capitalize text-3xl mb-4 mt-2 inline"><a href="/{place.name}" class=" no-color">{place.name} </a></h2>
+				<div class="flex items-center justify-between border-b border-dotted	 my-8">
+					<h2
+						title={place.description}
+						class="flex-shrink-0 capitalize  mb-4 mt-2 inline px-3 py-2 text-4xl rounded-md transition-colors
+							hover:bg-white/10 text-white no-color
+							focus:outline-none focus:ring-2 focus:ring-white/20"
+					>
+						<a href="/{place.name}" class=" no-color"> {place.name} </a>
+					</h2>
 					<p class="font-medium inline mx-4 text-lg sm:text-xl shrink-0 subtle uppercase"><span class="text-white">// </span>{place.description}</p>
 				</div>
 				<!-- <p class="mb-4 font-medium inline mx-4 line-clamp-1 "><span class="text-orange-400 ">[</span><span class="mx-1 italic text-orange-400 ">{place.description}</span><span class="text-orange-400">]</span></p> -->
-				<hr class="" />
 				<div>
 					{#if place.name == 'travel'}
 						<!-- <div class="flex items-center justify-between mb-4 font-medium uppercase">
@@ -142,7 +145,7 @@
 						<!-- Mobile view -->
 						<div class="block 2xl:hidden">
 							<div class="flex flex-wrap shrink">
-								{#each trip_data['west-coast-2024'] as location, index}
+								{#each trip_data['west-coast-2024'].slice(0, 5) as location, index}
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<!-- svelte-ignore a11y-no-static-element-interactions -->
 									<!-- svelte-ignore a11y-missing-attribute -->
@@ -313,19 +316,49 @@
 				</div>
 			</div>
 		{/each}
+
 		<!-- Misc links -->
-		<div class="grid grid-cols-1 px-6 gap-2">
-			{#each places.filter((place) => place.type == 'link') as place}
-				<a href="/{place.name}" class=" relative no-color static-link">
-					<div class="relative border-b border-dotted p-4 hover:cursor-pointer group">
-						<h2 title={place.description} class="capitalize text-xl mb-4 mt-2"><a href="/{place.name}" class="no-color">{place.name}</a></h2>
-						<div>
-							<p class="mb-4 font-medium">{place.description}</p>
+		<div class="container mx-auto px-4 py-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+				{#each places.filter((place) => place.type == 'link') as place}
+					<a href="/{place.name}" class="no-color block h-full">
+						<div
+							class="relative h-full p-6 transition-all duration-300 group overflow-hidden
+					  bg-gradient-to-b from-transparent to-transparent
+					  hover:shadow-sm"
+						>
+							<!-- Neon tunnel effect layers -->
+							<div class="absolute inset-0 border-b-zinc-900 border-b-8 border-t border-l border-r border-zinc-900 opacity-100"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-80 m-4"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-60 m-8"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-45 m-12"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-30 m-16"></div>
+
+							<!-- Content container with proper spacing -->
+							<div class="relative z-10">
+								<div class="flex justify-between items-start p-8">
+									<div class="flex-1 pr-4">
+										<h2 title={place.description} class="capitalize text-2xl font-medium mb-2">
+											{place.name}
+										</h2>
+										<p class="font-medium text-lg leading-relaxed subtle">{place.description}</p>
+									</div>
+
+									{#if place.img}
+										<div class="flex-shrink-0">
+											<img src={place.img} alt={place.name} class="hidden md:block md:w-32 md:h-32 rounded-md object-cover" />
+										</div>
+									{/if}
+								</div>
+							</div>
+
+							<div class="absolute bottom-5 right-12 transform translate-y-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200">
+								<span class="text-2xl">↗</span>
+							</div>
 						</div>
-						<span class="absolute top-3 right-3 text-white shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity"> ↗ </span>
-					</div>
-				</a>
-			{/each}
+					</a>
+				{/each}
+			</div>
 		</div>
 	</div>
 </div>
@@ -335,7 +368,6 @@
 <style>
 	h1,
 	h2 {
-		font-weight: 900;
 		letter-spacing: 0.05em;
 	}
 

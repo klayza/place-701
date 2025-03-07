@@ -13,7 +13,7 @@
 <ArticleBody showNavigation="false">
 	<!-- <h2 class="text-center mt-8 mb-0 text-4xl">Things I must do before I die.</h2> -->
 	<p class="text-2xl text-center font-medium"></p>
-	<ol class="px-8 font-medium" style="margin: auto !important;">
+	<ol class="px-8 font-sans" style="margin: auto !important;">
 		{#each todo as item}
 			<li class="text-lg sm:text-xl"><span class={item.done ? 'text-green-400' : ''}>{item.done ? '✓' : '✗'} {item.text}</span></li>
 		{/each}

@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       mono: ['Space Mono', 'mono'],
       medium: ['PixelfySans', 'mono'],
+      sans: ['Open Sans', 'serif']
     },
     extend: {},
   },
