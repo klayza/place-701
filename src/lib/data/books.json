@@ -24,7 +24,7 @@
     "end": "1/29/2025",
     "comment": "",
     "isbn": "0553380958",
-    "img": ""
+    "img": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1656932283i/61240297.jpg"
   },
   {
     "name": "Think: An Introduction to Philosophy",
@@ -177,6 +177,15 @@
     "end": null,
     "comment": "",
     "isbn": "9780671027032",
+    "img": ""
+  },
+  {
+    "name": "In a Flight of Starlings: The Wonders of Complex Systems",
+    "author": "Giorgio Parisi",
+    "start": "3/28/2025",
+    "end": "3/31/2025",
+    "comment": "",
+    "isbn": "9780593493151",
     "img": ""
   }
 ]

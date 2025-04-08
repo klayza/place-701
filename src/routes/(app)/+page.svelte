@@ -39,7 +39,7 @@
 		const convergenceY = containerHeight - 10; // pixels from top
 
 		// Starting point of angled section (25% width)
-		const startX = 1; // percent from left
+		const startX = 50; // percent from left
 		const startY = (index + 0.5) * (containerHeight / totalItems); // Vertically centered in row
 
 		// Calculate angle and length
@@ -115,16 +115,16 @@
 <div class="container mx-auto px-1 pb-12">
 	<div class="p-4 max-w-5xl mx-auto my-12 sm:my-32">
 		<h1 class="mb-4 mt-2 text-center text-4xl">Who are you?</h1>
-		<p class="mb-4 text-2xl sm:text-3xl font-medium">I'm a developer, student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p>
+		<p class="mb-4 text-xl sm:text-2xl font-medium">I'm a developer, student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p>
 		<!-- <p class="mb-4 text-2xl sm:text-3xl font-medium">I'm a software engineer, independent student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p> -->
 	</div>
 	<div class="mt-18 grid grid-cols-1 gap-2">
 		{#each places.filter((place) => place.type != 'link') as place}
 			<div class="mb-12 {place.name == 'travel' ? 'col-span-1 xl:col-span-2' : 'col-span-1'} p-4">
-				<div class="flex items-center justify-between border-b border-dotted	 my-8">
+				<div class="flex items-center justify-between border-b my-8">
 					<h2
 						title={place.description}
-						class="flex-shrink-0 capitalize  mb-4 mt-2 inline px-3 py-2 text-4xl rounded-md transition-colors
+						class="flex-shrink-0 capitalize mb-4 mt-2 inline px-3 py-2 text-4xl rounded-md transition-colors
 							hover:bg-white/10 text-white no-color
 							focus:outline-none focus:ring-2 focus:ring-white/20"
 					>
@@ -143,16 +143,16 @@
 							<span class="text-2xl hover:cursor-pointer">&gt;</span>
 						</div> -->
 						<!-- Mobile view -->
-						<div class="block 2xl:hidden">
+						<div class="block xl:hidden">
 							<div class="flex flex-wrap shrink">
-								{#each trip_data['west-coast-2024'].slice(0, 5) as location, index}
+								{#each trip_data['west-coast-2024'].slice(0, 10) as location, index}
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<!-- svelte-ignore a11y-no-static-element-interactions -->
 									<!-- svelte-ignore a11y-missing-attribute -->
 									<a
 										id="location-{index + 1}"
 										ref="/travel/west-coast-2024/w{index + 1}"
-										class="no-color flex-grow p-2 font-medium border m-1 rounded-sm hover:cursor-pointer {selected_location == location.id ? '' : 'border-dotted '}"
+										class="no-color flex-grow p-2 font-medium border-2 border-zinc-700 m-1 rounded-xl hover:cursor-pointer {selected_location == location.id ? 'bg-zinc-900' : 'border-dashed border-zinc-700 '}"
 										on:click={() => {
 											selected_photo = location.cover;
 											selected_location = location.id;
@@ -167,7 +167,7 @@
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<!-- svelte-ignore a11y-click-events-have-key-events -->
 								<!-- svelte-ignore a11y-no-static-element-interactions -->
-								<div class="relative p-4 border border-dotted border-[ #ffa500] m-1 rounded-sm hover:cursor-pointer group" on:click={() => (window.location.href = `/travel/west-coast-2024/w${selected_location}`)}>
+								<div class="relative p-4 m-1 rounded-2xl hover:cursor-pointer group" on:click={() => (window.location.href = `/travel/west-coast-2024/w${selected_location}`)}>
 									<div class="absolute top-1 right-2 left-2 bg-gradient-to-b from-black to-transparent from-70% to-100% text-white text-center pt-1 pb-4 px-4 flex gap-4 lowercase font-medium">
 										<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color uppercase flex-shrink-0">{selected_title}</a>
 										<a href={`/travel/west-coast-2024/w${selected_location}`} class="no-color bg-purple-500 text-black px-1 sm:px-2 line-clamp-1 ml-auto">View album</a>
@@ -179,7 +179,7 @@
 							{/if}
 						</div>
 						<!-- Desktop view -->
-						<div class="hidden 2xl:block">
+						<div class="hidden xl:block">
 							<div class="flex flex-row">
 								<div class="line-menu-container" bind:clientHeight={containerHeight}>
 									<div class="flex flex-col relative">

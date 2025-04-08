@@ -35,15 +35,16 @@
     "description": "Woohoo! Japan!",
     "start": "January 19, 2025",
     "end": "January 28, 2025",
-    "pictures": 42,
-    "cover": "/img/travel.png",
+    "pictures": 43,
+    "cover": "/data/trips/japan-2023/attachments/0524-1.jpg",
     "hidden": true,
     "entries": [
       {
+        "title": "Japan 2023",
         "id": "1",
-        "date": "",
-        "pictures": 50,
-        "cover": "",
+        "date": "May 23, 2023",
+        "pictures": 51,
+        "cover": "/data/trips/japan-2023/attachments/0524-1.jpg",
         "tags": []
       }
     ]
