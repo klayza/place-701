@@ -100,15 +100,15 @@
 		<p class="text-center text-3xl m-16">{thoughts.length === 0 ? 'Nothing here yet' : ''}</p>
 	{/if}
 
-	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 gap-8">
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 sm:p-8 gap-8">
 		{#each posts as post}
 			<a href="/thoughts/{post.id}" class="border border-zinc-900 border-b-8 pb-4 no-color" on:hover={console.log('here')}>
 				<!-- svelte-ignore a11y-img-redundant-alt -->
-				<div class="p-4 flex flex-col">
+				<div class="p-2 sm:p-4 flex flex-col">
 					<!-- <p class="text-left inline">[{posts.indexOf(post) + 1}]</p> -->
-					<img src={post.img ? post.img : 'img/clouds.png'} alt="Post Image" class="w-300 h-300 object-cover mb-2 m-4 rounded-lg " />
+					<img src={post.img ? post.img : 'img/clouds.png'} alt="Post Image" class="w-300 h-300 object-cover mb-2 m-4 rounded-lg" />
 					<div class="px-6">
-						<p class="text-xl my-6 font-semibold">{post.title}</p>
+						<p class="text-2xl my-6 font-medium uppercase font-semibold">{post.title}</p>
 						<p class="text-left">{prettyDate(post.date)}</p>
 						<p class="mt-6">{post.snippet}</p>
 					</div>

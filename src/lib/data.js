@@ -1,22 +1,22 @@
 export const thoughts = [
 	// {
-	//     id: 'sm',
-	//     source: 'html',
-	//     title: 'The Cost of Social Media',
-	//     snippet: 'An interactive visual for seeing just how dangerous social media is.',
-	//     date: '9/12/2024',
-	//     tags: ['thought experiment', 'existentialism', 'fundamentalism'],
-	//     img: 'https://cdn.pixabay.com/photo/2017/01/27/18/50/male-2013929_960_720.jpg'
+	// 	id: 'sm',
+	// 	source: 'html',
+	// 	title: 'The Cost of Social Media',
+	// 	snippet: 'An interactive visual for seeing just how dangerous social media is.',
+	// 	date: '9/12/2024',
+	// 	tags: ['thought experiment', 'existentialism', 'fundamentalism'],
+	// 	img: 'https://cdn.pixabay.com/photo/2017/01/27/18/50/male-2013929_960_720.jpg'
 	// },
 	// {
-	//     id: 'the-state-of-education',
-	//     source: 'md',
-	//     title: 'The State of Education',
-	//     snippet: 'For the first time in history, anyone can become an expert in anything for free. We carry with us all of the information in the world right in our pockets, yet college tuition is still climbing? Something must be done.',
-	//     date: '9/12/2024',
-	//     tags: ['thought experiment', 'existentialism', 'fundamentalism'],
-	//     img: 'https://w.wallhaven.cc/full/01/wallhaven-01qmv9.jpg'
-	// },
+	// 	id: 'the-state-of-education',
+	// 	source: 'md',
+	// 	title: 'The State of Education',
+	// 	snippet: 'For the first time in history, anyone can become an expert in anything for free. We carry with us all of the information in the world right in our pockets, yet college tuition is still climbing? Something must be done.',
+	// 	date: '9/12/2024',
+	// 	tags: ['thought experiment', 'existentialism', 'fundamentalism'],
+	// 	img: 'https://w.wallhaven.cc/full/01/wallhaven-01qmv9.jpg'
+	// }
 	// {
 	//     id: 'cars-politics',
 	//     title: 'Cars Politics',
@@ -187,14 +187,14 @@ export const books = [
 		author: 'Lao Tzu',
 		start: '1/1/2025',
 		end: '1/27/2025',
-		isbn: '9780060812454',
+		isbn: '9780060812454'
 	},
 	{
 		name: 'Snow Crash',
 		author: 'Neal Stephenson',
 		start: '1/1/2025',
 		end: '1/29/2025',
-		isbn: '0553380958',
+		isbn: '0553380958'
 	},
 	{
 		name: 'Think: An Introduction to Philosophy',
@@ -326,7 +326,7 @@ export const books = [
 		end: '8/23/2024',
 		comment: 'Existential dread.',
 		isbn: '9780765377104'
-	},
+	}
 	// {
 	// 	name: 'The Quantum and the Lotus',
 	// 	author: 'Matthieu Ricard',
@@ -387,7 +387,7 @@ export const projects = [
 		url: 'https://github.com/klayza/simple-instagram',
 		image: '/img/projects/simple-instagram.png',
 		category: 'past'
-	},
+	}
 	// {
 	// 	id: 'asteroids',
 	// 	title: 'Asteroids',
@@ -406,7 +406,7 @@ export const links = [
 	{
 		url: 'https://daftpunk.cafe/radio',
 		name: 'Daft Punk Cafe',
-		description: 'Listen to all of Daft Punk\'s music'
+		description: "Listen to all of Daft Punk's music"
 	},
 	{
 		url: 'https://www.daniel.pizza/',
@@ -522,8 +522,7 @@ export const links = [
 		url: 'https://www.siteinspire.com/',
 		name: 'Siteinspire',
 		description: 'Awesome designer sites many unique ideas'
-	},
-
+	}
 ];
 
 export const recipes = [

@@ -119,5 +119,10 @@
     "id": 24,
     "done": false,
     "text": "Cycle across Japan"
+  },
+  {
+    "id": 25,
+    "done": false,
+    "text": "See the Large Hadron Collider"
   }
 ]

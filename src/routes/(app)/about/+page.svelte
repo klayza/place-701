@@ -26,7 +26,7 @@
 			<li>Make pretty websites (inspiried by cyberpunk!)</li>
 			<li>Code video games</li>
 			<li><a href="/travel">Explore the world</a>! <i>and beyond</i></li>
-			<li><a href="/reading">Read scifi</a> (metaphysics is so interesting)</li>
+			<li><a href="/reading">Read scifi</a> (metaphysics is fascinating)</li>
 			<li>Make robots</li>
 			<li>Skating</li>
 			<li>Play video games</li>
