@@ -22,4 +22,4 @@
 22. [ ] See the pyramids
 23. [ ] Swim in the Dead Sea
 24. [ ] Cycle across Japan
-25. [ ] See the Large Hadron Collider
+25. [ ] Survive on a remote island

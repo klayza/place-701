@@ -196,5 +196,23 @@
     "comment": "",
     "isbn": "1616559217",
     "img": ""
+  },
+  {
+    "name": "Before I Die",
+    "author": "Candy Chang",
+    "start": "5/7/2025",
+    "end": "5/7/2025",
+    "comment": "",
+    "isbn": "",
+    "img": ""
+  },
+  {
+    "name": "Bored and Brilliant",
+    "author": "George Musser",
+    "start": "5/14/2025",
+    "end": "5/22/2025",
+    "comment": "Being bored is a prize, it's also known as our default state that brings us creativity and clarity.",
+    "isbn": "9781761680168",
+    "img": ""
   }
 ]

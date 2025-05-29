@@ -1,4 +1,6 @@
 [
+  {},
+  {},
   {
     "title": "Daft Punk Cafe",
     "url": "https://daftpunk.cafe/radio",
@@ -225,6 +227,24 @@
     "title": "nullpt.rs",
     "url": "https://www.nullpt.rs/",
     "description": "Software engineering blog with great visuals",
+    "category": "blog"
+  },
+  {
+    "title": "Dustin Brett",
+    "url": "https://dustinbrett.com/",
+    "description": "A Virtual OS. Plus great travel tips",
+    "category": "tools"
+  },
+  {
+    "title": "This Week in Science",
+    "url": "https://bit.ly/m/Science-Sphere",
+    "description": "A list of exciting developments in science this week",
+    "category": "blog"
+  },
+  {
+    "title": "Geoffrey Litt",
+    "url": "https://www.geoffreylitt.com/",
+    "description": "Very cool projects and interesting thoughts on social life",
     "category": "blog"
   }
 ]

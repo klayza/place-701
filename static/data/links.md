@@ -1,3 +1,8 @@
+---
+cssclasses:
+  - wide-page
+---
+
 
 | Title                 | Url                                        | Description                                                                                         | Category |
 | --------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- | -------- |
@@ -39,3 +44,6 @@
 | Listen Notes          | https://www.listennotes.com/               | Search engine for podcasts                                                                          | tools    |
 | Ritual Dust           | https://ritualdust.com/                    | Like the dark ages in a website.                                                                    | css      |
 | nullpt.rs             | https://www.nullpt.rs/                     | Software engineering blog with great visuals                                                        | blog     |
+| Dustin Brett          | https://dustinbrett.com/                   | A Virtual OS. Plus great travel tips                                                                | tools    |
+| This Week in Science  | https://bit.ly/m/Science-Sphere            | A list of exciting developments in science this week                                                | blog     |
+| Geoffrey Litt         | https://www.geoffreylitt.com/              | Very cool projects and interesting thoughts on social life                                          | blog     |

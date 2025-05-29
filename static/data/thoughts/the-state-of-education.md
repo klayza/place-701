@@ -16,21 +16,6 @@ One of the key pieces to a quality education is a teacher. Now, for the very fir
 * validity,affordability,portability*
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 It's about time society reevaluates what learning means in today's world. High school graduates are expected to enter high school immediately after graduation despite that “only 13 percent of students feel fully prepared to choose their path after high school”[^1]. Education is being advertised as a way to escape poverty, when it is so much more than having a paper to prove you “know” something. A well-rooted education based not just on financial interest, but based on passion and curiosity will bring much more joy and quality to life that money cannot even begin to rival. Online resources are abundant and mostly free, however most of this information is scatted.  ~~~I talk about my experience in college vs, using pirating skills in free education,~~~
 
 
