@@ -2,6 +2,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount, onDestroy } from 'svelte';
 	import { trips, trip_data, books } from '$lib/data.js';
+	import SEO from '$lib/components/SEO.svelte';
+
 	let containerHeight = 500;
 	const dob = new Date('11/26/2003');
 	let age_years;
@@ -88,6 +90,8 @@
 		return dateB - dateA; // Most recent first
 	});
 </script>
+
+<SEO title="Clayton Wieberg" description="How did you find this link? Doesn't matter, click it. I dare you. I'm a programmer, entrepreneur, and writer." />
 
 <!-- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 	<section class="mb-16">
