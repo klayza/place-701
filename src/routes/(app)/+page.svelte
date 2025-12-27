@@ -15,14 +15,14 @@
 	let places = [
 		// { name: 'projects', description: 'Work and play' },
 		// { name: 'links', description: 'My favorite sites around the net' },
-		{ name: 'travel', description: "See where I've been" },
+		{ name: 'thoughts', description: 'My writing', type: 'link' },
 		// { name: 'reading', description: 'Some of my favorite books' },
-		// { name: 'music', description: 'Listen to some bangers' },
-		// { name: 'thoughts', description: 'My opinions on the world' },
-		{ name: 'manifesto', description: 'Get a glimpse of the vision', img: '/img/think.jpg', type: 'link' },
-		{ name: 'todo', description: 'Things I must do before I die', type: 'link', img: '' },
+		// { name: 'manifesto', description: 'Get a glimpse of the vision', img: '/img/think.jpg', type: 'link' },
+		// { name: 'chill', description: 'A chill splash screen with music', type: 'link', img: '/img/chill.png' }
 		// { name: 'recipes', description: 'Meals I make often', type: 'link' },
-		{ name: 'chill', description: 'A chill splash screen with music', type: 'link', img: '/img/chill.png' }
+		{ name: 'travel', description: "See where I've been" },
+		{ name: 'radio', description: 'Listen to some bangers', type: 'link', url: 'https://radio.claycode.net' },
+		{ name: 'todo', description: 'Things I must do before I die', type: 'link', img: '' },
 	];
 
 	function calculateAge(birthDate) {
@@ -98,7 +98,7 @@
 		<h2 class="text-3xl sm:text-5xl  mb-8">EXPLORE</h2>
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 			{#each places as place}
-				<a href="/{place.name}" class="place-card">
+				<a href="{place.url ? place.url : '/' + place.name}" class="place-card">
 					<img src={place.img ? place.img : 'img/' + place.name + '.png'} alt={place.name} class="w-full h-64 object-cover" />
 					<div class="overlay">
 						<h3 class="text-2xl  mb-2">{capitalizeFirstLetter(place.name)}</h3>
@@ -118,7 +118,7 @@
 
 <div class="container mx-auto px-1 pb-12">
 	<div class="p-4 max-w-5xl mx-auto my-12 sm:my-32">
-		<h1 class="mb-4 mt-2 text-center text-4xl">Who are you?</h1>
+		<h1 class="mb-4 mt-2 text-4xl">Who are you?</h1>
 		<p class="mb-4 text-xl sm:text-2xl font-medium">I'm a developer, student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p>
 		<!-- <p class="mb-4 text-2xl sm:text-3xl font-medium">I'm a software engineer, independent student, and entrepreneur. I live abroad and like making cool things on the internet. I write about AI, automation, philosophy, and improving life with software. <a href="/about" class=" ">Read more</a></p> -->
 	</div>
@@ -325,7 +325,7 @@
 		<div class="container mx-auto px-4 py-6">
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 				{#each places.filter((place) => place.type == 'link') as place}
-					<a href="/{place.name}" class="no-color block h-full">
+					<a href="{place.url ? place.url : '/' + place.name}" class="no-color block h-full">
 						<div
 							class="relative h-full p-6 transition-all duration-300 group overflow-hidden
 					  bg-gradient-to-b from-transparent to-transparent
@@ -333,19 +333,19 @@
 						>
 							<!-- Neon tunnel effect layers -->
 							<div class="absolute inset-0 border-b-zinc-900 border-b-8 border-t border-l border-r border-zinc-900 opacity-100"></div>
-							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-80 m-4"></div>
-							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-60 m-8"></div>
-							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-45 m-12"></div>
-							<div class="absolute inset-0 border-t border-l border-r border-zinc-800 opacity-30 m-16"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-400 opacity-80 m-4"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-400 opacity-60 m-8"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-400 opacity-45 m-12"></div>
+							<div class="absolute inset-0 border-t border-l border-r border-zinc-400 opacity-30 m-16"></div>
 
 							<!-- Content container with proper spacing -->
 							<div class="relative z-10">
 								<div class="flex justify-between items-start p-8">
 									<div class="flex-1 pr-4">
-										<h2 title={place.description} class="capitalize text-2xl font-medium mb-2">
+										<h2 title={place.description} class="capitalize text-center  text-2xl font-medium mb-2">
 											{place.name}
 										</h2>
-										<p class="font-medium text-lg leading-relaxed subtle">{place.description}</p>
+										<p class="font-medium text-center text-lg leading-relaxed subtle">{place.description}</p>
 									</div>
 
 									{#if place.img}

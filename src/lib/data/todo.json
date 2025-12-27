@@ -124,5 +124,20 @@
     "id": 25,
     "done": false,
     "text": "Survive on a remote island"
+  },
+  {
+    "id": 26,
+    "done": false,
+    "text": "Swim in Dubai's deepest pool"
+  },
+  {
+    "id": 27,
+    "done": false,
+    "text": "Canoe in the Amazon Rainforest"
+  },
+  {
+    "id": 28,
+    "done": false,
+    "text": "Find love"
   }
 ]

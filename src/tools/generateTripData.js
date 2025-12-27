@@ -116,7 +116,7 @@ async function getTripData() {
         const attachmentsPath = path.join(dirPath, 'attachments');
 
         // Read meta.md file
-        let meta = { title: '', description: '', start: '', end: '', hidden: false };
+        let meta = { title: '', description: '', start: '', end: '', hidden: false, durationType: 'week' };
         try {
             const metaContent = await fs.readFile(path.join(dirPath, 'meta.md'), 'utf-8');
             meta = matter(metaContent).data;
@@ -144,7 +144,8 @@ async function getTripData() {
             end: meta.end ? format(new Date(meta.end), 'MMMM d, yyyy') : '',
             pictures: pictureCount,
             cover: meta.cover ? (meta.cover.startsWith('/') ? meta.cover : encodeURI(`/data/trips/${dirName}/attachments/${meta.cover}`)) : '',
-            hidden: meta.hidden || false
+            hidden: meta.hidden || false,
+            durationType: meta.durationType || 'week'
         };
 
         const entries = [];

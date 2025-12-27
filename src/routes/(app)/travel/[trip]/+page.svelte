@@ -27,7 +27,7 @@
 					</div>
 					<div class="relative h-full flex flex-col justify-center items-center text-white">
 						<h2 class="text-4xl text-center line-clamp-3 text-shadow">{entry.title}</h2>
-						<p class="text-xl absolute bottom-2 mx-auto font-medium mb-2 shadow-md text-white px-4 rounded-full">Week {entry.id}</p>
+						<p class="text-xl absolute bottom-2 mx-auto font-medium mb-2 shadow-md text-white px-4 rounded-full">{data.durationType == 'week' ? 'Week' : 'Day'} {entry.id}</p>
 					</div>
 					<!-- <div class="text-lg font-medium sm:text-2xl flex-row flex gap-4 absolute bottom-2 m-auto  mb-2 text-shadow ">
 					<p class="">{weekTitle(totalMdFiles - i)}</p>

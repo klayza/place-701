@@ -1,5 +1,35 @@
 [
   {
+    "name": "Japan Winter Trip",
+    "id": "japan-2026",
+    "type": "collection",
+    "description": "Tokyo, Osaka, Kyoto, Sapporo",
+    "start": "December 29, 2025",
+    "end": "January 15, 2026",
+    "pictures": 0,
+    "cover": "/img/travel.png",
+    "hidden": false,
+    "durationType": "day",
+    "entries": [
+      {
+        "title": "Los Angeles",
+        "id": "1",
+        "date": "December 28, 2025",
+        "pictures": 0,
+        "cover": "",
+        "tags": []
+      },
+      {
+        "title": "Tokyo",
+        "id": "2",
+        "date": "December 29, 2025",
+        "pictures": 0,
+        "cover": "",
+        "tags": []
+      }
+    ]
+  },
+  {
     "name": "Cycling Across Japan",
     "id": "japan-2025",
     "type": "collection",
@@ -9,6 +39,7 @@
     "pictures": 2,
     "cover": "/data/trips/japan-2025/attachments/Pasted%20image%2020250121231824.png",
     "hidden": true,
+    "durationType": "week",
     "entries": [
       {
         "title": "Kagoshima",
@@ -38,6 +69,7 @@
     "pictures": 43,
     "cover": "/data/trips/japan-2023/attachments/0524-1.jpg",
     "hidden": true,
+    "durationType": "week",
     "entries": [
       {
         "title": "Japan 2023",
@@ -59,6 +91,7 @@
     "pictures": 656,
     "cover": "/data/trips/west-coast-2024/attachments/0508-4.jpg",
     "hidden": false,
+    "durationType": "week",
     "entries": [
       {
         "title": "Yosemite National Park",

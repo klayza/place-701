@@ -23,3 +23,6 @@
 23. [ ] Swim in the Dead Sea
 24. [ ] Cycle across Japan
 25. [ ] Survive on a remote island
+26. [ ] Swim in Dubai's deepest pool
+27. [ ] Canoe in the Amazon Rainforest
+28. [ ] Find love

@@ -244,5 +244,11 @@
     "url": "https://www.geoffreylitt.com/",
     "description": "Very cool projects and interesting thoughts on social life",
     "category": "blog"
+  },
+  {
+    "title": "taylor.town",
+    "url": "https://taylor.town",
+    "description": "A blog that feels special. About tech, art, humor, and software",
+    "category": "blog"
   }
 ]

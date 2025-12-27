@@ -3,7 +3,6 @@ cssclasses:
   - wide-page
 ---
 
-
 | Title                 | Url                                        | Description                                                                                         | Category |
 | --------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------- | -------- |
 | Daft Punk Cafe        | https://daftpunk.cafe/radio                | Listen to all of Daft Punk's music                                                                  | music    |
@@ -47,3 +46,4 @@ cssclasses:
 | Dustin Brett          | https://dustinbrett.com/                   | A Virtual OS. Plus great travel tips                                                                | tools    |
 | This Week in Science  | https://bit.ly/m/Science-Sphere            | A list of exciting developments in science this week                                                | blog     |
 | Geoffrey Litt         | https://www.geoffreylitt.com/              | Very cool projects and interesting thoughts on social life                                          | blog     |
+| taylor.town           | https://taylor.town                        | A blog that feels special. About tech, art, humor, and software                                     | blog     |
