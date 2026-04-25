@@ -1,0 +1,312 @@
+[
+  {
+    "title": "Tokyo",
+    "slug": "trips-japan-2025-w2",
+    "type": "trip",
+    "date": "2025-03-20",
+    "description": "",
+    "tags": [],
+    "path": "trips/japan-2025/w2.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-meta/7cd2633e263b.webp"
+  },
+  {
+    "title": "Kagoshima",
+    "slug": "trips-japan-2025-w1",
+    "type": "trip",
+    "date": "2025-03-02",
+    "description": "",
+    "tags": [],
+    "path": "trips/japan-2025/w1.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-w1/ffa212e8ab5f.webp"
+  },
+  {
+    "title": "Arches National Park",
+    "slug": "trips-west-coast-2024-w16",
+    "type": "trip",
+    "date": "2024-09-02",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w16.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w16/6593c8ca47a3.webp"
+  },
+  {
+    "title": "Salt Lake City",
+    "slug": "trips-west-coast-2024-w15",
+    "type": "trip",
+    "date": "2024-08-27",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w15.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w15/33caaa0f1ca8.webp"
+  },
+  {
+    "title": "Yellowstone National Park",
+    "slug": "trips-west-coast-2024-w14",
+    "type": "trip",
+    "date": "2024-08-20",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w14.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w14/c62f6fe1e730.webp"
+  },
+  {
+    "title": "Glacier National Park",
+    "slug": "trips-west-coast-2024-w13",
+    "type": "trip",
+    "date": "2024-08-13",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w13.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w13/8fd865cbea23.webp"
+  },
+  {
+    "title": "Banff National Park",
+    "slug": "trips-west-coast-2024-w12",
+    "type": "trip",
+    "date": "2024-08-08",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w12.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w12/fd2aa0d9435d.webp"
+  },
+  {
+    "title": "Vancouver",
+    "slug": "trips-west-coast-2024-w11",
+    "type": "trip",
+    "date": "2024-08-01",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w11.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w11/0e460dbdb2e7.webp"
+  },
+  {
+    "title": "Northwest Peninsula",
+    "slug": "trips-west-coast-2024-w10",
+    "type": "trip",
+    "date": "2024-07-25",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w10.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w10/ba28b80add92.webp"
+  },
+  {
+    "title": "Seattle",
+    "slug": "trips-west-coast-2024-w9",
+    "type": "trip",
+    "date": "2024-06-25",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w9.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w8/752185739462.webp"
+  },
+  {
+    "title": "Rainier National Park",
+    "slug": "trips-west-coast-2024-w8",
+    "type": "trip",
+    "date": "2024-06-18",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w8.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w8/303dcf42dfed.webp"
+  },
+  {
+    "title": "Ape Cave",
+    "slug": "trips-west-coast-2024-w7",
+    "type": "trip",
+    "date": "2024-06-11",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w7.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w7/2923f4ca7b10.webp"
+  },
+  {
+    "title": "Portland",
+    "slug": "trips-west-coast-2024-w6",
+    "type": "trip",
+    "date": "2024-06-04",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w6.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w6/993082613168.webp"
+  },
+  {
+    "title": "Crater Lake",
+    "slug": "trips-west-coast-2024-w5",
+    "type": "trip",
+    "date": "2024-05-29",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w5.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w5/f41341805e8d.webp"
+  },
+  {
+    "title": "Los Angeles",
+    "slug": "trips-west-coast-2024-w1",
+    "type": "trip",
+    "date": "2024-05-24",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w1.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w1/8373121272ab.webp"
+  },
+  {
+    "title": "Redwood Forest",
+    "slug": "trips-west-coast-2024-w4",
+    "type": "trip",
+    "date": "2024-05-20",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w4.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w4/e67348a4aeef.webp"
+  },
+  {
+    "title": "San Francisco",
+    "slug": "trips-west-coast-2024-w3",
+    "type": "trip",
+    "date": "2024-05-13",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w3.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w3/ae91f853faa5.webp"
+  },
+  {
+    "title": "Yosemite National Park",
+    "slug": "trips-west-coast-2024-w2",
+    "type": "trip",
+    "date": "2024-05-06",
+    "description": "",
+    "tags": [],
+    "path": "trips/west-coast-2024/w2.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w2/1a3670f38ec5.webp"
+  },
+  {
+    "title": "Japan 2023",
+    "slug": "trips-japan-2023-w1",
+    "type": "trip",
+    "date": "2023-05-24",
+    "description": "",
+    "tags": [],
+    "path": "trips/japan-2023/w1.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2023-w1/9f74d361a5ed.webp"
+  },
+  {
+    "title": "README",
+    "slug": "readme",
+    "type": "page",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "README.md",
+    "cover": null
+  },
+  {
+    "title": "Books",
+    "slug": "books",
+    "type": "page",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "books.md",
+    "cover": null
+  },
+  {
+    "title": "Links",
+    "slug": "links",
+    "type": "page",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "links.md",
+    "cover": null
+  },
+  {
+    "title": "Bibimbap",
+    "slug": "recipes-bibimbap",
+    "type": "recipe",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "recipes/bibimbap.md",
+    "cover": null
+  },
+  {
+    "title": "Canadian Pizza",
+    "slug": "recipes-canadian-pizza",
+    "type": "recipe",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "recipes/canadian-pizza.md",
+    "cover": null
+  },
+  {
+    "title": "Gbomb Salad",
+    "slug": "recipes-gbomb-salad",
+    "type": "recipe",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "recipes/gbomb-salad.md",
+    "cover": null
+  },
+  {
+    "title": "The State Of Education",
+    "slug": "thoughts-the-state-of-education",
+    "type": "thought",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "thoughts/the-state-of-education.md",
+    "cover": null
+  },
+  {
+    "title": "Todo",
+    "slug": "todo",
+    "type": "page",
+    "date": "",
+    "description": "",
+    "tags": [],
+    "path": "todo.md",
+    "cover": null
+  },
+  {
+    "title": "Japan",
+    "slug": "trips-japan-2023-meta",
+    "type": "trip",
+    "date": "",
+    "description": "Woohoo! Japan!",
+    "tags": [],
+    "path": "trips/japan-2023/meta.md",
+    "cover": "/img/travel.png"
+  },
+  {
+    "title": "Cycling Across Japan",
+    "slug": "trips-japan-2025-meta",
+    "type": "trip",
+    "date": "",
+    "description": "A two month, 2700km journey across the entire country of Japan",
+    "tags": [],
+    "path": "trips/japan-2025/meta.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-meta/7cd2633e263b.webp"
+  },
+  {
+    "title": "Japan 2026 Winter Trip",
+    "slug": "trips-japan-2026-meta",
+    "type": "trip",
+    "date": "",
+    "description": "Tokyo, Osaka, Kyoto, Sapporo",
+    "tags": [],
+    "path": "trips/japan-2026/meta.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-meta/7cd2633e263b.webp"
+  },
+  {
+    "title": "Pacific West Coast",
+    "slug": "trips-west-coast-2024-meta",
+    "type": "trip",
+    "date": "",
+    "description": "4 months spent traveling the west coast in a camper van. From Arizona to L.A, <span class=\"text-red-200\">San Francisco</span>, <span class=\"text-orange-100\">Yosemite Park</span>, Seattle, until <span class=\"text-blue-100\">Banff, Canada</span>.",
+    "tags": [],
+    "path": "trips/west-coast-2024/meta.md",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-meta/e95097febb3a.webp"
+  }
+]

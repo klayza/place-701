@@ -62,7 +62,7 @@
   },
   {
     "id": 13,
-    "done": false,
+    "done": true,
     "text": "Snowboard in Hokkaido"
   },
   {
@@ -113,31 +113,46 @@
   {
     "id": 23,
     "done": false,
-    "text": "Swim in the Dead Sea"
+    "text": "Find love"
   },
   {
     "id": 24,
     "done": false,
-    "text": "Cycle across Japan"
+    "text": "Swim in the Dead Sea"
   },
   {
     "id": 25,
     "done": false,
-    "text": "Survive on a remote island"
+    "text": "Cycle across Japan"
   },
   {
     "id": 26,
     "done": false,
-    "text": "Swim in Dubai's deepest pool"
+    "text": "Survive on a remote island"
   },
   {
     "id": 27,
     "done": false,
-    "text": "Canoe in the Amazon Rainforest"
+    "text": "Swim in Dubai's deepest pool"
   },
   {
     "id": 28,
     "done": false,
-    "text": "Find love"
+    "text": "Canoe in the Amazon Rainforest"
+  },
+  {
+    "id": 29,
+    "done": false,
+    "text": "Hike the Pacific Crest trail"
+  },
+  {
+    "id": 30,
+    "done": false,
+    "text": "Go hang gliding"
+  },
+  {
+    "id": 31,
+    "done": false,
+    "text": "Run a marathon"
   }
 ]

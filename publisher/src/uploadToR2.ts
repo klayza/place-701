@@ -98,6 +98,14 @@ async function objectExists(client: S3Client, config: PublisherConfig, key: stri
 }
 
 export async function uploadImageIfNeeded(config: PublisherConfig, manifest: Manifest, note: ParsedNote, sourcePath: string, stats?: PublishStats): Promise<{ uploaded: UploadedImage; reused: boolean; uploadedNow: boolean }> {
+	if (config.reuseMedia) {
+		return {
+			uploaded: reuseUploadedMedia(config, manifest, sourcePath),
+			reused: true,
+			uploadedNow: false
+		};
+	}
+
 	const optimized = await optimizeImage(config, sourcePath);
 	const hash = sha256(optimized.buffer);
 	const shortHash = hash.slice(0, 12);
@@ -148,6 +156,18 @@ export async function uploadImageIfNeeded(config: PublisherConfig, manifest: Man
 	}
 
 	return { uploaded, reused: false, uploadedNow: true };
+}
+
+function reuseUploadedMedia(config: PublisherConfig, manifest: Manifest, sourcePath: string): UploadedImage {
+	const matches = Object.values(manifest).filter((entry) => entry.sourcePath === sourcePath);
+	if (matches.length === 0) {
+		throw new Error(`No uploaded media manifest entry found for ${sourcePath}`);
+	}
+
+	const uploaded = { ...matches[0] };
+	uploaded.url = `${config.publicMediaUrl}/${uploaded.r2Key}`;
+	manifest[`sha256:${uploaded.hash}`] = uploaded;
+	return uploaded;
 }
 
 async function writePreview(config: PublisherConfig, note: ParsedNote, sourcePath: string, buffer: Buffer, ext: string): Promise<string> {

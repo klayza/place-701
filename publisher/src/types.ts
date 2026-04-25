@@ -2,6 +2,7 @@ export type CliOptions = {
 	dryRun: boolean;
 	check: boolean;
 	skipOptimize: boolean;
+	reuseMedia: boolean;
 	preview: boolean;
 	previewLimit: number;
 };
@@ -14,7 +15,7 @@ export type PublisherConfig = {
 	attachmentDir: string;
 	attachmentRoot: string;
 	attachmentRoots: string[];
-	dataRepo: string;
+	outputDir: string;
 	r2AccountId: string;
 	r2AccessKeyId: string;
 	r2SecretAccessKey: string;
@@ -23,10 +24,9 @@ export type PublisherConfig = {
 	outputImageFormat: 'webp';
 	outputImageQuality: number;
 	maxImageWidth: number;
-	autoCommit: boolean;
-	autoPush: boolean;
 	requirePublishedFlag: boolean;
 	skipOptimize: boolean;
+	reuseMedia: boolean;
 	preview: boolean;
 	previewLimit: number;
 	previewDir: string;

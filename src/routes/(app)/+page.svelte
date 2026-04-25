@@ -1,15 +1,22 @@
 <script>
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount, onDestroy } from 'svelte';
-	import { trips, trip_data, books } from '$lib/data.js';
+	import { books } from '$lib/data.js';
 	import SEO from '$lib/components/SEO.svelte';
+	import trips from '/src/lib/data/trips.json';
 
 	let containerHeight = 500;
 	const dob = new Date('11/26/2003');
 	let age_years;
-	let selected_photo = trip_data['west-coast-2024'][0].cover;
-	let selected_location = trip_data['west-coast-2024'][0].id;
-	let selected_title = trip_data['west-coast-2024'][0].title;
+	const westCoastEntries =
+		trips
+			.find((trip) => trip.id === 'west-coast-2024')
+			?.entries?.slice()
+			.sort((a, b) => Number(a.id) - Number(b.id)) ?? [];
+	let selectedIndex = 0;
+	let selected_photo = westCoastEntries[0]?.cover ?? '/img/travel.png';
+	let selected_location = westCoastEntries[0]?.id ?? '1';
+	let selected_title = westCoastEntries[0]?.title ?? 'Travel';
 	let intervalId;
 
 	let places = [
@@ -22,7 +29,7 @@
 		// { name: 'recipes', description: 'Meals I make often', type: 'link' },
 		{ name: 'travel', description: "See where I've been" },
 		{ name: 'radio', description: 'Listen to some bangers', type: 'link', url: 'https://radio.claycode.net' },
-		{ name: 'todo', description: 'Things I must do before I die', type: 'link', img: '' },
+		{ name: 'todo', description: 'Things I must do before I die', type: 'link', img: '' }
 	];
 
 	function calculateAge(birthDate) {
@@ -59,7 +66,16 @@
 		};
 	}
 
+	function selectLocation(location, index) {
+		selectedIndex = index;
+		selected_photo = location.cover;
+		selected_location = location.id;
+		selected_title = location.title;
+	}
+
 	function cycleLocations() {
+		if (westCoastEntries.length === 0) return;
+
 		// Clear any existing interval
 		if (intervalId) {
 			clearInterval(intervalId);
@@ -67,8 +83,8 @@
 
 		// Click random location every 5 seconds
 		intervalId = setInterval(() => {
-			const randomIndex = Math.floor(Math.random() * trip_data['west-coast-2024'].length);
-			document.getElementById('location-' + randomIndex).click();
+			const nextIndex = (selectedIndex + 1) % westCoastEntries.length;
+			selectLocation(westCoastEntries[nextIndex], nextIndex);
 		}, 5000);
 	}
 
@@ -149,7 +165,7 @@
 						<!-- Mobile view -->
 						<div class="block xl:hidden">
 							<div class="flex flex-wrap shrink">
-								{#each trip_data['west-coast-2024'].slice(0, 10) as location, index}
+								{#each westCoastEntries.slice(0, 10) as location, index}
 									<!-- svelte-ignore a11y-click-events-have-key-events -->
 									<!-- svelte-ignore a11y-no-static-element-interactions -->
 									<!-- svelte-ignore a11y-missing-attribute -->
@@ -158,9 +174,7 @@
 										ref="/travel/west-coast-2024/w{index + 1}"
 										class="no-color flex-grow p-2 font-medium border-2 border-zinc-700 m-1 rounded-xl hover:cursor-pointer {selected_location == location.id ? 'bg-zinc-900' : 'border-dashed border-zinc-700 '}"
 										on:click={() => {
-											selected_photo = location.cover;
-											selected_location = location.id;
-											selected_title = location.title;
+											selectLocation(location, index);
 										}}
 									>
 										{location.title}
@@ -187,8 +201,8 @@
 							<div class="flex flex-row">
 								<div class="line-menu-container" bind:clientHeight={containerHeight}>
 									<div class="flex flex-col relative">
-										{#each trip_data['west-coast-2024'] as location, index}
-											{@const coords = calculateLineCoordinates(index, trip_data['west-coast-2024'].length, containerHeight)}
+										{#each westCoastEntries as location, index}
+											{@const coords = calculateLineCoordinates(index, westCoastEntries.length, containerHeight)}
 											<div
 												class="line-item-wrapper {selected_location == location.id ? 'selected' : ''}"
 												style="
@@ -205,9 +219,7 @@
 													ref="/travel/west-coast-2024/w{index + 1}"
 													class="font-medium uppercase line-item-content no-color pl-12 p-2 mb-4 hover:cursor-pointer {selected_location == location.id ? 'selected' : ''}"
 													on:click={() => {
-														selected_photo = location.cover;
-														selected_location = location.id;
-														selected_title = location.title;
+														selectLocation(location, index);
 													}}
 												>
 													{location.title}
@@ -325,7 +337,7 @@
 		<div class="container mx-auto px-4 py-6">
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 				{#each places.filter((place) => place.type == 'link') as place}
-					<a href="{place.url ? place.url : '/' + place.name}" class="no-color block h-full">
+					<a href={place.url ? place.url : '/' + place.name} class="no-color block h-full">
 						<div
 							class="relative h-full p-6 transition-all duration-300 group overflow-hidden
 					  bg-gradient-to-b from-transparent to-transparent
@@ -342,7 +354,7 @@
 							<div class="relative z-10">
 								<div class="flex justify-between items-start p-8">
 									<div class="flex-1 pr-4">
-										<h2 title={place.description} class="capitalize text-center  text-2xl font-medium mb-2">
+										<h2 title={place.description} class="capitalize text-center text-2xl font-medium mb-2">
 											{place.name}
 										</h2>
 										<p class="font-medium text-center text-lg leading-relaxed subtle">{place.description}</p>

@@ -1,33 +1,16 @@
 [
   {
-    "name": "Japan Winter Trip",
+    "name": "Japan 2026 Winter Trip",
     "id": "japan-2026",
     "type": "collection",
     "description": "Tokyo, Osaka, Kyoto, Sapporo",
     "start": "December 29, 2025",
     "end": "January 15, 2026",
     "pictures": 0,
-    "cover": "/img/travel.png",
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-meta/7cd2633e263b.webp",
     "hidden": false,
-    "durationType": "day",
-    "entries": [
-      {
-        "title": "Los Angeles",
-        "id": "1",
-        "date": "December 28, 2025",
-        "pictures": 0,
-        "cover": "",
-        "tags": []
-      },
-      {
-        "title": "Tokyo",
-        "id": "2",
-        "date": "December 29, 2025",
-        "pictures": 0,
-        "cover": "",
-        "tags": []
-      }
-    ]
+    "durationType": "week",
+    "entries": []
   },
   {
     "name": "Cycling Across Japan",
@@ -36,8 +19,8 @@
     "description": "A two month, 2700km journey across the entire country of Japan",
     "start": "February 28, 2025",
     "end": "",
-    "pictures": 2,
-    "cover": "/data/trips/japan-2025/attachments/Pasted%20image%2020250121231824.png",
+    "pictures": 5,
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-meta/7cd2633e263b.webp",
     "hidden": true,
     "durationType": "week",
     "entries": [
@@ -46,7 +29,7 @@
         "id": "1",
         "date": "March 1, 2025",
         "pictures": 3,
-        "cover": "/data/trips/japan-2025/attachments/Pasted%20image%2020250121231824.png",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-w1/ffa212e8ab5f.webp",
         "tags": []
       },
       {
@@ -54,7 +37,7 @@
         "id": "2",
         "date": "March 19, 2025",
         "pictures": 2,
-        "cover": "/data/trips/japan-2025/attachments/1044366310.gif",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2025-meta/7cd2633e263b.webp",
         "tags": []
       }
     ]
@@ -66,8 +49,8 @@
     "description": "Woohoo! Japan!",
     "start": "January 19, 2025",
     "end": "January 28, 2025",
-    "pictures": 43,
-    "cover": "/data/trips/japan-2023/attachments/0524-1.jpg",
+    "pictures": 51,
+    "cover": "/img/travel.png",
     "hidden": true,
     "durationType": "week",
     "entries": [
@@ -76,7 +59,7 @@
         "id": "1",
         "date": "May 23, 2023",
         "pictures": 51,
-        "cover": "/data/trips/japan-2023/attachments/0524-1.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-japan-2023-w1/9f74d361a5ed.webp",
         "tags": []
       }
     ]
@@ -88,8 +71,8 @@
     "description": "4 months spent traveling the west coast in a camper van. From Arizona to L.A, <span class=\"text-red-200\">San Francisco</span>, <span class=\"text-orange-100\">Yosemite Park</span>, Seattle, until <span class=\"text-blue-100\">Banff, Canada</span>.",
     "start": "April 28, 2024",
     "end": "September 6, 2024",
-    "pictures": 656,
-    "cover": "/data/trips/west-coast-2024/attachments/0508-4.jpg",
+    "pictures": 654,
+    "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-meta/e95097febb3a.webp",
     "hidden": false,
     "durationType": "week",
     "entries": [
@@ -98,7 +81,7 @@
         "id": "2",
         "date": "May 5, 2024",
         "pictures": 54,
-        "cover": "/data/trips/west-coast-2024/attachments/0508-4.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w2/1a3670f38ec5.webp",
         "tags": []
       },
       {
@@ -106,7 +89,7 @@
         "id": "3",
         "date": "May 12, 2024",
         "pictures": 34,
-        "cover": "/data/trips/west-coast-2024/attachments/0513-6.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w3/ae91f853faa5.webp",
         "tags": []
       },
       {
@@ -114,7 +97,7 @@
         "id": "4",
         "date": "May 19, 2024",
         "pictures": 46,
-        "cover": "/data/trips/west-coast-2024/attachments/0522-5.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w4/e67348a4aeef.webp",
         "tags": []
       },
       {
@@ -122,7 +105,7 @@
         "id": "1",
         "date": "May 23, 2024",
         "pictures": 49,
-        "cover": "/data/trips/west-coast-2024/attachments/0430-la.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w1/8373121272ab.webp",
         "tags": []
       },
       {
@@ -130,7 +113,7 @@
         "id": "5",
         "date": "May 28, 2024",
         "pictures": 40,
-        "cover": "/data/trips/west-coast-2024/attachments/0529-2.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w5/f41341805e8d.webp",
         "tags": []
       },
       {
@@ -138,7 +121,7 @@
         "id": "6",
         "date": "June 3, 2024",
         "pictures": 31,
-        "cover": "/data/trips/west-coast-2024/attachments/0607-1.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w6/993082613168.webp",
         "tags": []
       },
       {
@@ -146,7 +129,7 @@
         "id": "7",
         "date": "June 10, 2024",
         "pictures": 45,
-        "cover": "/data/trips/west-coast-2024/attachments/0613-2.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w7/2923f4ca7b10.webp",
         "tags": []
       },
       {
@@ -154,7 +137,7 @@
         "id": "8",
         "date": "June 17, 2024",
         "pictures": 36,
-        "cover": "/data/trips/west-coast-2024/attachments/0620-4.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w8/303dcf42dfed.webp",
         "tags": []
       },
       {
@@ -162,7 +145,7 @@
         "id": "9",
         "date": "June 24, 2024",
         "pictures": 41,
-        "cover": "/data/trips/west-coast-2024/attachments/0624-3.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w8/752185739462.webp",
         "tags": []
       },
       {
@@ -170,7 +153,7 @@
         "id": "10",
         "date": "July 24, 2024",
         "pictures": 70,
-        "cover": "/data/trips/west-coast-2024/attachments/0727-8.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w10/ba28b80add92.webp",
         "tags": []
       },
       {
@@ -178,7 +161,7 @@
         "id": "11",
         "date": "July 31, 2024",
         "pictures": 29,
-        "cover": "/data/trips/west-coast-2024/attachments/0804-8.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w11/0e460dbdb2e7.webp",
         "tags": []
       },
       {
@@ -186,7 +169,7 @@
         "id": "12",
         "date": "August 7, 2024",
         "pictures": 46,
-        "cover": "/data/trips/west-coast-2024/attachments/0809-7.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w12/fd2aa0d9435d.webp",
         "tags": []
       },
       {
@@ -194,7 +177,7 @@
         "id": "13",
         "date": "August 12, 2024",
         "pictures": 33,
-        "cover": "/data/trips/west-coast-2024/attachments/0814-7.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w13/8fd865cbea23.webp",
         "tags": []
       },
       {
@@ -202,7 +185,7 @@
         "id": "14",
         "date": "August 19, 2024",
         "pictures": 42,
-        "cover": "/data/trips/west-coast-2024/attachments/0821-8.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w14/c62f6fe1e730.webp",
         "tags": []
       },
       {
@@ -210,7 +193,7 @@
         "id": "15",
         "date": "August 26, 2024",
         "pictures": 16,
-        "cover": "/data/trips/west-coast-2024/attachments/0828-4.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w15/33caaa0f1ca8.webp",
         "tags": []
       },
       {
@@ -218,7 +201,7 @@
         "id": "16",
         "date": "September 1, 2024",
         "pictures": 42,
-        "cover": "/data/trips/west-coast-2024/attachments/0903-7.jpg",
+        "cover": "https://pub-8f2b7e64b3064c33bd70bc9335b354b3.r2.dev/trips/trips-west-coast-2024-w16/6593c8ca47a3.webp",
         "tags": []
       }
     ]

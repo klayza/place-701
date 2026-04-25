@@ -1,7 +1,6 @@
 import path from 'node:path';
 import { loadConfig, parseCliOptions } from './config.js';
 import { exportMarkdown, toExportedPost, writeIndexes } from './exportData.js';
-import { commitAndPush } from './git.js';
 import { loadManifest, saveManifest } from './manifest.js';
 import { normalizeNote } from './normalizeNote.js';
 import { ProgressBar } from './progress.js';
@@ -30,10 +29,11 @@ function printHeader(config: ReturnType<typeof loadConfig>): void {
 	console.log('');
 	console.log(`vault: ${config.vaultDir}`);
 	console.log(`content: ${config.contentDir}`);
-	console.log(`data repo: ${config.dataRepo}`);
+	console.log(`output: ${config.outputDir}`);
 	if (config.dryRun) console.log('mode: dry run');
 	if (config.check) console.log('mode: check');
 	if (config.skipOptimize) console.log('optimization: skipped');
+	if (config.reuseMedia) console.log('media: reused from manifest');
 	if (config.preview) console.log(`previews: ${config.previewDir}`);
 	console.log('');
 }
@@ -146,8 +146,6 @@ async function main() {
 	await writeIndexes(config, exportedPosts, mediaIndex);
 	console.log('saving manifest...');
 	await saveManifest(config, manifest);
-	console.log('checking git...');
-	const gitResult = await commitAndPush(config);
 
 	console.log(`found notes: ${summary.foundNotes}`);
 	console.log(`published: ${summary.publishedNotes}`);
@@ -168,15 +166,12 @@ async function main() {
 	console.log('exported:');
 	if (summary.exported.length === 0) console.log('  none');
 	for (const file of summary.exported) console.log(`  ${file}`);
-	console.log('');
-	console.log(`git: ${gitResult}`);
 
 	if (config.dryRun) {
 		console.log('');
 		console.log('dry run only');
 		console.log('no files written');
 		console.log('no images uploaded');
-		console.log('no git commit made');
 	}
 }
 

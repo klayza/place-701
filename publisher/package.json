@@ -1,5 +1,5 @@
 {
-	"name": "place-701-publisher",
+	"name": "publisher",
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
@@ -8,6 +8,7 @@
 		"publish:dry": "tsx src/publish.ts --dry-run",
 		"publish:fast": "tsx src/publish.ts --dry-run --skip-optimize",
 		"publish:preview": "tsx src/publish.ts --dry-run --preview",
+		"publish:reexport": "tsx src/publish.ts --reuse-media",
 		"check": "tsx src/publish.ts --check",
 		"reset-manifest": "rm -f manifest/uploaded-images.json"
 	},

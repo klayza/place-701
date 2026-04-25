@@ -9,6 +9,7 @@ export function parseCliOptions(argv = process.argv.slice(2)): CliOptions {
 		dryRun: argv.includes('--dry-run'),
 		check: argv.includes('--check'),
 		skipOptimize: argv.includes('--skip-optimize'),
+		reuseMedia: argv.includes('--reuse-media'),
 		preview: argv.includes('--preview'),
 		previewLimit: previewLimitArg ? Number(previewLimitArg.split('=')[1]) : 12
 	};
@@ -46,9 +47,9 @@ export function loadConfig(options: CliOptions): PublisherConfig {
 		.map((dir) => dir.trim())
 		.filter(Boolean)
 		.map((dir) => path.resolve(vaultDir, dir));
-	const dataRepo = normalizePath(requireEnv('DATA_REPO'));
+	const outputDir = normalizePath(process.env.OUTPUT_DIR ?? path.resolve(rootDir, '..', 'static', 'data'));
 
-	const needsR2 = !options.dryRun && !options.check;
+	const needsR2 = !options.dryRun && !options.check && !options.reuseMedia;
 
 	return {
 		rootDir,
@@ -58,7 +59,7 @@ export function loadConfig(options: CliOptions): PublisherConfig {
 		attachmentDir,
 		attachmentRoot: path.join(vaultDir, attachmentDir),
 		attachmentRoots,
-		dataRepo,
+		outputDir,
 		r2AccountId: needsR2 ? requireEnv('R2_ACCOUNT_ID') : process.env.R2_ACCOUNT_ID ?? '',
 		r2AccessKeyId: needsR2 ? requireEnv('R2_ACCESS_KEY_ID') : process.env.R2_ACCESS_KEY_ID ?? '',
 		r2SecretAccessKey: needsR2 ? requireEnv('R2_SECRET_ACCESS_KEY') : process.env.R2_SECRET_ACCESS_KEY ?? '',
@@ -67,10 +68,9 @@ export function loadConfig(options: CliOptions): PublisherConfig {
 		outputImageFormat: 'webp',
 		outputImageQuality: readNumber('OUTPUT_IMAGE_QUALITY', 82),
 		maxImageWidth: readNumber('MAX_IMAGE_WIDTH', 1800),
-		autoCommit: readBoolean('AUTO_COMMIT', true),
-		autoPush: readBoolean('AUTO_PUSH', true),
 		requirePublishedFlag: readBoolean('PUBLISH_REQUIRE_FLAG', true),
 		skipOptimize: options.skipOptimize,
+		reuseMedia: options.reuseMedia,
 		preview: options.preview,
 		previewLimit: options.previewLimit,
 		previewDir: path.join(rootDir, 'previews'),

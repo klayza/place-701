@@ -8,7 +8,6 @@
 
 */
 
-
 /* meta.md example
 ---
 title: Japan
@@ -18,8 +17,6 @@ end: 2025-01-29
 ---
 
 */
-
-
 
 /* w1.md example
 ---
@@ -48,8 +45,6 @@ These are my pet frongs.
 
 This is a video that totally worked the first time.
 */
-
-
 
 /* ~~~Expected output:
 
@@ -86,11 +81,6 @@ This is a video that totally worked the first time.
 
 */
 
-
-
-
-
-
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
@@ -99,103 +89,118 @@ import { format } from 'date-fns';
 const TRIPS_DIR = './static/data/trips';
 const OUTPUT_FILE = './src/lib/data/trips.json';
 
+function isAbsoluteUrl(value) {
+	return /^https?:\/\//i.test(value);
+}
+
+function tripAssetPath(dirName, value) {
+	if (!value) return '';
+	if (isAbsoluteUrl(value) || value.startsWith('/')) return value;
+	return encodeURI(`/data/trips/${dirName}/attachments/${value}`);
+}
+
+function countMediaReferences(content) {
+	const matches = content.match(/\.(avif|gif|jpe?g|m4v|mkv|mov|mp4|png|webm|webp)(?=[\s)"'\]>]|$)/gi);
+	return matches?.length ?? 0;
+}
+
 async function getTripData() {
-    // Get all directories in the trips folder
-    const tripDirs = await fs.readdir(TRIPS_DIR);
-    const tripsData = [];
+	// Get all directories in the trips folder
+	const tripDirs = await fs.readdir(TRIPS_DIR);
+	const tripsData = [];
 
-    for (const dirName of tripDirs) {
-        const dirPath = path.join(TRIPS_DIR, dirName);
-        const stats = await fs.stat(dirPath);
+	for (const dirName of tripDirs) {
+		const dirPath = path.join(TRIPS_DIR, dirName);
+		const stats = await fs.stat(dirPath);
 
-        if (!stats.isDirectory()) continue;
+		if (!stats.isDirectory()) continue;
 
-        // Read all files in the directory
-        const files = await fs.readdir(dirPath);
-        const mdFiles = files.filter(file => file.endsWith('.md'));
-        const attachmentsPath = path.join(dirPath, 'attachments');
+		// Read all files in the directory
+		const files = await fs.readdir(dirPath);
+		const mdFiles = files.filter((file) => file.endsWith('.md'));
+		const attachmentsPath = path.join(dirPath, 'attachments');
 
-        // Read meta.md file
-        let meta = { title: '', description: '', start: '', end: '', hidden: false, durationType: 'week' };
-        try {
-            const metaContent = await fs.readFile(path.join(dirPath, 'meta.md'), 'utf-8');
-            meta = matter(metaContent).data;
-        } catch (error) {
-            console.warn(`meta.md file not found for ${dirName}`);
-        }
+		// Read meta.md file
+		let meta = { title: '', description: '', start: '', end: '', hidden: false, durationType: 'week' };
+		try {
+			const metaContent = await fs.readFile(path.join(dirPath, 'meta.md'), 'utf-8');
+			meta = matter(metaContent).data;
+		} catch (error) {
+			console.warn(`meta.md file not found for ${dirName}`);
+		}
 
-        // Count pictures in attachments folder
-        let pictureCount = 0;
-        try {
-            const attachments = await fs.readdir(attachmentsPath);
-            pictureCount = attachments.length;
-        } catch (error) {
-            console.warn(`No attachments folder found for ${dirName}`);
-        }
+		const contentFiles = mdFiles.filter((file) => file !== 'meta.md');
 
-        // Determine if it's a single trip or collection
-        const type = mdFiles.length === 2 ? 'single' : 'collection'; // 2 because of meta.md
-        const tripData = {
-            name: meta.title,
-            id: dirName,
-            type,
-            description: meta.description,
-            start: meta.start ? format(new Date(meta.start), 'MMMM d, yyyy') : '',
-            end: meta.end ? format(new Date(meta.end), 'MMMM d, yyyy') : '',
-            pictures: pictureCount,
-            cover: meta.cover ? (meta.cover.startsWith('/') ? meta.cover : encodeURI(`/data/trips/${dirName}/attachments/${meta.cover}`)) : '',
-            hidden: meta.hidden || false,
-            durationType: meta.durationType || 'week'
-        };
+		// Count media files in local attachments first, then fall back to markdown references.
+		let pictureCount = 0;
+		try {
+			const attachments = await fs.readdir(attachmentsPath);
+			pictureCount = attachments.filter((file) => /\.(avif|gif|jpe?g|m4v|mkv|mov|mp4|png|webm|webp)$/i.test(file)).length;
+		} catch (error) {
+			for (const file of contentFiles) {
+				const content = await fs.readFile(path.join(dirPath, file), 'utf-8');
+				pictureCount += countMediaReferences(content);
+			}
+		}
 
-        const entries = [];
-        const contentFiles = mdFiles.filter(file => file !== 'meta.md');
+		// Determine if it's a single trip or collection
+		const type = mdFiles.length === 2 ? 'single' : 'collection'; // 2 because of meta.md
+		const tripData = {
+			name: meta.title,
+			id: dirName,
+			type,
+			description: meta.description,
+			start: meta.start ? format(new Date(meta.start), 'MMMM d, yyyy') : '',
+			end: meta.end ? format(new Date(meta.end), 'MMMM d, yyyy') : '',
+			pictures: pictureCount,
+			cover: tripAssetPath(dirName, meta.cover),
+			hidden: meta.hidden || false,
+			durationType: meta.durationType || 'week'
+		};
 
-        for (const file of contentFiles) {
-            const content = await fs.readFile(path.join(dirPath, file), 'utf-8');
-            const { data: frontmatter } = matter(content);
+		const entries = [];
 
-            // Count pictures and videos referenced in the content
-            const referencedPictures = content.split('\n').filter(line =>
-                line.includes('.jpg') || line.includes('.png') || line.includes('.jpeg') ||
-                line.includes('.webp') || line.includes('.gif') || line.includes('.mp4') ||
-                line.includes('.mkv')
-            ).length;
+		for (const file of contentFiles) {
+			const content = await fs.readFile(path.join(dirPath, file), 'utf-8');
+			const { data: frontmatter } = matter(content);
 
-            entries.push({
-                title: frontmatter.title,
-                id: path.basename(file, '.md').replace('w', ''),
-                date: frontmatter.date ? format(new Date(frontmatter.date), 'MMMM d, yyyy') : '',
-                pictures: referencedPictures,
-                cover: frontmatter.cover ? encodeURI(`/data/trips/${dirName}/attachments/${frontmatter.cover}`) : '',
-                tags: frontmatter.tags || []
-            });
-        }
+			// Count pictures and videos referenced in the content
+			const referencedPictures = countMediaReferences(content);
 
-        // Sort entries by date
-        entries.sort((a, b) => new Date(a.date) - new Date(b.date));
+			entries.push({
+				title: frontmatter.title,
+				id: path.basename(file, '.md').replace('w', ''),
+				date: frontmatter.date ? format(new Date(frontmatter.date), 'MMMM d, yyyy') : '',
+				pictures: referencedPictures,
+				cover: tripAssetPath(dirName, frontmatter.cover),
+				tags: frontmatter.tags || []
+			});
+		}
 
-        // For collections, set the img to the cover of the first entry
-        tripData.cover = entries[0]?.cover || '/img/travel.png';
-        tripData.entries = entries;
+		// Sort entries by date
+		entries.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        tripsData.push(tripData);
-    }
+		// For collections, set the img to the cover of the first entry
+		tripData.cover = tripData.cover || entries[0]?.cover || '/img/travel.png';
+		tripData.entries = entries;
 
-    // Sort trips by start date
-    return tripsData.sort((a, b) => new Date(b.start) - new Date(a.start));
+		tripsData.push(tripData);
+	}
+
+	// Sort trips by start date
+	return tripsData.sort((a, b) => new Date(b.start) - new Date(a.start));
 }
 
 async function main() {
-    try {
-        const data = await getTripData();
-        await fs.mkdir(path.dirname(OUTPUT_FILE), { recursive: true });
-        await fs.writeFile(OUTPUT_FILE, JSON.stringify(data, null, 2));
-        console.log('Trip data successfully generated!');
-    } catch (error) {
-        console.error('Error generating trip data:', error);
-        process.exit(1);
-    }
+	try {
+		const data = await getTripData();
+		await fs.mkdir(path.dirname(OUTPUT_FILE), { recursive: true });
+		await fs.writeFile(OUTPUT_FILE, JSON.stringify(data, null, 2));
+		console.log('Trip data successfully generated!');
+	} catch (error) {
+		console.error('Error generating trip data:', error);
+		process.exit(1);
+	}
 }
 
 main();

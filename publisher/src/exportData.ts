@@ -6,7 +6,7 @@ import { ensureArray, formatDate } from './utils.js';
 
 export async function exportMarkdown(config: PublisherConfig, note: ParsedNote, frontmatter: NoteFrontmatter, body: string): Promise<{ outputPath: string; relativePath: string }> {
 	const relativePath = note.relativePath;
-	const outputPath = path.join(config.dataRepo, relativePath);
+	const outputPath = path.join(config.outputDir, relativePath);
 
 	if (!config.dryRun && !config.check) {
 		await fs.mkdir(path.dirname(outputPath), { recursive: true });
@@ -36,10 +36,10 @@ export async function writeIndexes(config: PublisherConfig, posts: ExportedPost[
 
 	if (config.dryRun || config.check) return;
 
-	await fs.mkdir(config.dataRepo, { recursive: true });
-	await fs.writeFile(path.join(config.dataRepo, 'index.json'), `${JSON.stringify(sortedPosts, null, 2)}\n`);
-	await fs.writeFile(path.join(config.dataRepo, 'tags.json'), `${JSON.stringify(tags, null, 2)}\n`);
-	await fs.writeFile(path.join(config.dataRepo, 'media.json'), `${JSON.stringify(media, null, 2)}\n`);
+	await fs.mkdir(config.outputDir, { recursive: true });
+	await fs.writeFile(path.join(config.outputDir, 'index.json'), `${JSON.stringify(sortedPosts, null, 2)}\n`);
+	await fs.writeFile(path.join(config.outputDir, 'tags.json'), `${JSON.stringify(tags, null, 2)}\n`);
+	await fs.writeFile(path.join(config.outputDir, 'media.json'), `${JSON.stringify(media, null, 2)}\n`);
 }
 
 function buildTags(posts: ExportedPost[]): Record<string, string[]> {

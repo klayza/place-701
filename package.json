@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"prebuild": "npm run fetch-data && npm run generate-misc-data && npm run generate-previews && npm run generate-trip-data",
+		"prebuild": "npm run generate-misc-data && npm run generate-previews && npm run generate-trip-data",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"lint": "prettier --check . && eslint .",
@@ -15,12 +15,12 @@
 		"generate-previews": "node src/tools/generatePreviews.js",
 		"generate-trip-data": "node src/tools/generateTripData.js",
 		"generate-misc-data": "node src/tools/generateMiscData.js",
-		"fetch-data": "node src/tools/fetchData.js",
-		"publisher:publish": "npm --prefix place-701-publisher run publish",
-		"publisher:dry": "npm --prefix place-701-publisher run publish:dry",
-		"publisher:fast": "npm --prefix place-701-publisher run publish:fast",
-		"publisher:preview": "npm --prefix place-701-publisher run publish:preview",
-		"publisher:check": "npm --prefix place-701-publisher run check"
+		"publisher:publish": "npm --prefix publisher run publish",
+		"publisher:dry": "npm --prefix publisher run publish:dry",
+		"publisher:fast": "npm --prefix publisher run publish:fast",
+		"publisher:preview": "npm --prefix publisher run publish:preview",
+		"publisher:reexport": "npm --prefix publisher run publish:reexport",
+		"publisher:check": "npm --prefix publisher run check"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",

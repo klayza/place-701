@@ -70,11 +70,12 @@
 		mdText = mdText.replace(/!\[\[(.*?)\]\]|\!\[(.*?)\]\((.*?)\)/g, (match, doubleFile, altText, singleFile) => {
 			const filename = doubleFile || singleFile;
 			if (!filename) return match;
+			if (/^https?:\/\//i.test(filename) || filename.startsWith('/')) return match;
 
 			const ext = filename.split('.').pop().toLowerCase();
-			const filepath = relativeImgDir ? `${relativeImgDir}/${filename}`.replace("//", "/") : filename;
+			const filepath = relativeImgDir ? `${relativeImgDir}/${filename}`.replace('//', '/') : filename;
 			const encodedPath = encodeURI(filepath);
-			
+
 			if (['mp4', 'webm', 'ogg'].includes(ext)) {
 				return `<video type="video/mp4" autoplay="" loop="" muted="" playsinline="" loading="lazy" src="${encodedPath}" type="video/${ext}"></video>`;
 			} else if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
@@ -121,13 +122,13 @@
 	function addLazyLoading(html) {
 		const parser = new DOMParser();
 		const doc = parser.parseFromString(html, 'text/html');
-		doc.querySelectorAll('img').forEach(img => {
+		doc.querySelectorAll('img').forEach((img) => {
 			img.setAttribute('loading', 'lazy');
 		});
-		doc.querySelectorAll('iframe').forEach(iframe => {
+		doc.querySelectorAll('iframe').forEach((iframe) => {
 			iframe.setAttribute('loading', 'lazy');
 		});
-		doc.querySelectorAll('video').forEach(iframe => {
+		doc.querySelectorAll('video').forEach((iframe) => {
 			iframe.setAttribute('loading', 'lazy');
 		});
 		return doc.body.innerHTML;
@@ -139,7 +140,7 @@
 </script>
 
 <img class="loading mx-auto p-12 w-16 h-16" src="/ico/loading.gif" alt="loading" />
-{@html marked(text)}
+{@html text}
 
 {#if text !== ''}
 	<p class="text-center my-10">
@@ -148,7 +149,7 @@
 {/if}
 
 {#if showScrollToTop}
-	<button on:click={scrollToTop} class="fixed bottom-2 sm:bottom-12 right-2  sm:right-6 py-2 m-0 px-4 bg-black  border  shadow-md z-50">
+	<button on:click={scrollToTop} class="fixed bottom-2 sm:bottom-12 right-2 sm:right-6 py-2 m-0 px-4 bg-black border shadow-md z-50">
 		<i class="bx bx-up-arrow-alt text-xl"></i>
 	</button>
 {/if}
