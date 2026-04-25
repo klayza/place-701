@@ -1,0 +1,29 @@
+{
+	"name": "place-701-publisher",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"publish": "tsx src/publish.ts",
+		"publish:dry": "tsx src/publish.ts --dry-run",
+		"publish:fast": "tsx src/publish.ts --dry-run --skip-optimize",
+		"publish:preview": "tsx src/publish.ts --dry-run --preview",
+		"check": "tsx src/publish.ts --check",
+		"reset-manifest": "rm -f manifest/uploaded-images.json"
+	},
+	"dependencies": {
+		"@aws-sdk/client-s3": "^3.800.0",
+		"dotenv": "^16.4.7",
+		"fast-glob": "^3.3.3",
+		"fs-extra": "^11.3.0",
+		"gray-matter": "^4.0.3",
+		"sharp": "^0.33.5",
+		"slugify": "^1.6.6"
+	},
+	"devDependencies": {
+		"@types/fs-extra": "^11.0.4",
+		"@types/node": "^22.15.3",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3"
+	}
+}

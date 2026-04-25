@@ -1,0 +1,6 @@
+.env
+logs/
+previews/
+manifest/*.bak
+dist/
+node_modules/

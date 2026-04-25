@@ -15,7 +15,12 @@
 		"generate-previews": "node src/tools/generatePreviews.js",
 		"generate-trip-data": "node src/tools/generateTripData.js",
 		"generate-misc-data": "node src/tools/generateMiscData.js",
-		"fetch-data": "node src/tools/fetchData.js"
+		"fetch-data": "node src/tools/fetchData.js",
+		"publisher:publish": "npm --prefix place-701-publisher run publish",
+		"publisher:dry": "npm --prefix place-701-publisher run publish:dry",
+		"publisher:fast": "npm --prefix place-701-publisher run publish:fast",
+		"publisher:preview": "npm --prefix place-701-publisher run publish:preview",
+		"publisher:check": "npm --prefix place-701-publisher run check"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
