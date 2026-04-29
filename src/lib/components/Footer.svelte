@@ -6,7 +6,7 @@
 		{ name: 'linkedin', username: 'clayton-wieberg', url: 'https://www.linkedin.com/in/clayton-wieberg-31a148219', icon: 'bxl-linkedin' },
 		{ name: 'twitter', username: 'LegoshiNet', url: 'https://twitter.com/LegoshiNet', icon: 'bxl-twitter' },
 		{ name: 'instagram', username: 'clay.e621', url: 'https://www.instagram.com/clay.e621', icon: 'bxl-instagram' },
-		{ name: 'email', username: 'cw1a@protonmail.com', url: 'mailto:cw1a@protonmail.com', icon: 'bx-mail-send' }
+		{ name: 'email', username: 'claytonw@claycode.net', url: 'mailto:claytonw@claycode.net', icon: 'bx-mail-send' }
 	];
 
 	let canvas;
